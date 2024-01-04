@@ -1,17 +1,14 @@
 [gd_scene load_steps=6 format=3 uid="uid://vm3xuvxvwil"]
 
 [ext_resource type="PackedScene" uid="uid://mkdb5plpgl08" path="res://characters/player.tscn" id="1_3j6ua"]
-[ext_resource type="PackedScene" uid="uid://qhmpl601pxhk" path="res://environment/tree.tscn" id="2_bhrkh"]
 [ext_resource type="PackedScene" uid="uid://csuln5rc3m60t" path="res://inventory/player_inv.tscn" id="3_8u4rr"]
 [ext_resource type="PackedScene" uid="uid://cxlux5i4y5p8k" path="res://environment/base.tscn" id="4_ftq7q"]
+[ext_resource type="PackedScene" uid="uid://qhmpl601pxhk" path="res://characters/resourceNode.tscn" id="5_0c0th"]
 [ext_resource type="PackedScene" uid="uid://ckpj7fady7b4" path="res://inventory/base_inv.tscn" id="5_ljope"]
 
 [node name="GameLevel" type="Node2D"]
 
 [node name="player" parent="." instance=ExtResource("1_3j6ua")]
-
-[node name="StaticBody2D" parent="." instance=ExtResource("2_bhrkh")]
-position = Vector2(248, 87)
 
 [node name="PlayerInv" parent="." instance=ExtResource("3_8u4rr")]
 position = Vector2(-30, 605)
@@ -21,3 +18,12 @@ position = Vector2(602, 303)
 script = null
 
 [node name="BaseInv" parent="Base" instance=ExtResource("5_ljope")]
+
+[node name="tree1" parent="." instance=ExtResource("5_0c0th")]
+position = Vector2(310, 226)
+
+[node name="tree2" parent="." instance=ExtResource("5_0c0th")]
+position = Vector2(278, 88)
+
+[node name="tree3" parent="." instance=ExtResource("5_0c0th")]
+position = Vector2(203, 186)
