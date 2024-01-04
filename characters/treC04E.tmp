@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://qhmpl601pxhk"]
+
+[ext_resource type="Texture2D" uid="uid://c6mfff6qbgxmh" path="res://assets/tree0030000.png" id="1_ep4ln"]
+[ext_resource type="Script" path="res://characters/tree.gd" id="1_xeoos"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hvndp"]
+size = Vector2(14, 32.5)
+
+[node name="tree" type="StaticBody2D"]
+input_pickable = true
+script = ExtResource("1_xeoos")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ep4ln")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_hvndp")
