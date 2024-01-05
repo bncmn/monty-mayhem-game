@@ -1,3 +1,10 @@
-[gd_scene format=3 uid="uid://dcvlwaixa66hf"]
+[gd_scene load_steps=2 format=3 uid="uid://dcvlwaixa66hf"]
+
+[ext_resource type="Texture2D" uid="uid://ba2q2j3lkloto" path="res://assets/inventory/InventoryBackground.png" id="1_wba32"]
 
 [node name="EquipInv" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1159.0
+offset_bottom = 512.0
+texture = ExtResource("1_wba32")

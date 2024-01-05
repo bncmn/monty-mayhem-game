@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://mkdb5plpgl08" path="res://characters/player.tscn" id="1_3j6ua"]
 [ext_resource type="PackedScene" uid="uid://csuln5rc3m60t" path="res://inventory/player_inv.tscn" id="3_8u4rr"]
 [ext_resource type="PackedScene" uid="uid://cxlux5i4y5p8k" path="res://environment/base.tscn" id="4_ftq7q"]
-[ext_resource type="PackedScene" uid="uid://qhmpl601pxhk" path="res://characters/resourceNode.tscn" id="5_0c0th"]
+[ext_resource type="PackedScene" uid="uid://qhmpl601pxhk" path="res://environment/tree.tscn" id="5_0c0th"]
 [ext_resource type="PackedScene" uid="uid://ckpj7fady7b4" path="res://inventory/base_inv.tscn" id="5_ljope"]
 
 [node name="GameLevel" type="Node2D"]
@@ -15,9 +15,9 @@ position = Vector2(-30, 605)
 
 [node name="Base" parent="." instance=ExtResource("4_ftq7q")]
 position = Vector2(602, 303)
-script = null
 
 [node name="BaseInv" parent="Base" instance=ExtResource("5_ljope")]
+script = null
 
 [node name="tree1" parent="." instance=ExtResource("5_0c0th")]
 position = Vector2(310, 226)

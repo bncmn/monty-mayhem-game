@@ -1,19 +1,37 @@
-[gd_scene load_steps=3 format=3 uid="uid://cxlux5i4y5p8k"]
+[gd_scene load_steps=5 format=3 uid="uid://cxlux5i4y5p8k"]
 
+[ext_resource type="Script" path="res://environment/base.gd" id="1_fqjy0"]
 [ext_resource type="Texture2D" uid="uid://cbp8gkbsq7o8v" path="res://assets/sample_asset_pack/Tilesets/Wooden House.png" id="1_rgjgv"]
 
-[sub_resource type="GDScript" id="GDScript_10u3x"]
-script/source = "extends Node2D
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q4kmv"]
+size = Vector2(282, 208.5)
 
-func _input(event):
-	if event.is_action_pressed(\"mouseLeft\"):
-		self.visible = false
-"
+[sub_resource type="CircleShape2D" id="CircleShape2D_em65i"]
+radius = 366.853
 
 [node name="Base" type="Node2D"]
-script = SubResource("GDScript_10u3x")
+position = Vector2(861, 401)
+script = ExtResource("1_fqjy0")
 
 [node name="WoodenHouse" type="Sprite2D" parent="."]
 position = Vector2(241, 149)
 scale = Vector2(2.90179, 2.8125)
 texture = ExtResource("1_rgjgv")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(230, 139.75)
+shape = SubResource("RectangleShape2D_q4kmv")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(229, 141)
+shape = SubResource("CircleShape2D_em65i")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
