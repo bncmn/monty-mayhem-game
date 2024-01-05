@@ -1,19 +1,19 @@
 [gd_scene load_steps=4 format=3 uid="uid://qhmpl601pxhk"]
 
-[ext_resource type="Texture2D" uid="uid://c6mfff6qbgxmh" path="res://assets/tree0030000.png" id="1_ep4ln"]
-[ext_resource type="Script" path="res://characters/resourceNode.gd" id="1_xeoos"]
+[ext_resource type="Script" path="res://interactables/resourceNode.gd" id="1_xeoos"]
+[ext_resource type="Texture2D" uid="uid://cs05fis302t8c" path="res://assets/icon.svg" id="2_cn0n4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dx5y7"]
-size = Vector2(57.5, 97.5)
+size = Vector2(58, 48.5)
 
 [node name="resourceNode" type="StaticBody2D"]
 input_pickable = true
 script = ExtResource("1_xeoos")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(4, 3)
-texture = ExtResource("1_ep4ln")
+position = Vector2(0, -1.19209e-07)
+scale = Vector2(0.453125, 0.382813)
+texture = ExtResource("2_cn0n4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -0.28125)
 shape = SubResource("RectangleShape2D_dx5y7")

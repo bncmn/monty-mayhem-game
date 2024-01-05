@@ -5,5 +5,7 @@ func _ready():
 
 func _input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.pressed:
-		# TODO: Write logic for resource harvesting here.
-		print("DEBUG: Tree clicked!")
+		PlayerInventory.addTool("axe")
+		queue_free()
+		print("DEBUG: Player picked up axe!")
+		print(PlayerInventory.getAll())
