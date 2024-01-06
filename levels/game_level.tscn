@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://vm3xuvxvwil"]
+[gd_scene load_steps=8 format=3 uid="uid://vm3xuvxvwil"]
 
-[ext_resource type="PackedScene" uid="uid://mkdb5plpgl08" path="res://characters/player.tscn" id="1_3j6ua"]
+[ext_resource type="PackedScene" uid="uid://mkdb5plpgl08" path="res://interactables/player.tscn" id="1_3j6ua"]
 [ext_resource type="PackedScene" uid="uid://csuln5rc3m60t" path="res://inventory/player_inv.tscn" id="3_8u4rr"]
 [ext_resource type="PackedScene" uid="uid://cxlux5i4y5p8k" path="res://environment/base.tscn" id="4_ftq7q"]
-[ext_resource type="PackedScene" uid="uid://qhmpl601pxhk" path="res://environment/tree.tscn" id="5_0c0th"]
+[ext_resource type="PackedScene" uid="uid://but0hqifpinsb" path="res://interactables/tree_node.tscn" id="5_7t57d"]
 [ext_resource type="PackedScene" uid="uid://ckpj7fady7b4" path="res://inventory/base_inv.tscn" id="5_ljope"]
+[ext_resource type="PackedScene" uid="uid://d1dq4grn1ug7p" path="res://interactables/rock_node.tscn" id="6_6xdk6"]
+[ext_resource type="PackedScene" uid="uid://baa6tpbjgbiju" path="res://interactables/axe.tscn" id="7_214vd"]
 
 [node name="GameLevel" type="Node2D"]
 
@@ -17,13 +19,24 @@ position = Vector2(-30, 605)
 position = Vector2(602, 303)
 
 [node name="BaseInv" parent="Base" instance=ExtResource("5_ljope")]
-script = null
 
-[node name="tree1" parent="." instance=ExtResource("5_0c0th")]
-position = Vector2(310, 226)
+[node name="treeNode" parent="." instance=ExtResource("5_7t57d")]
+position = Vector2(127, 112)
 
-[node name="tree2" parent="." instance=ExtResource("5_0c0th")]
-position = Vector2(278, 88)
+[node name="treeNode2" parent="." instance=ExtResource("5_7t57d")]
+position = Vector2(185, 112)
 
-[node name="tree3" parent="." instance=ExtResource("5_0c0th")]
-position = Vector2(203, 186)
+[node name="treeNode3" parent="." instance=ExtResource("5_7t57d")]
+position = Vector2(243, 112)
+
+[node name="rockNode" parent="." instance=ExtResource("6_6xdk6")]
+position = Vector2(127, 187)
+
+[node name="rockNode2" parent="." instance=ExtResource("6_6xdk6")]
+position = Vector2(185, 187)
+
+[node name="rockNode3" parent="." instance=ExtResource("6_6xdk6")]
+position = Vector2(243, 187)
+
+[node name="axe" parent="." instance=ExtResource("7_214vd")]
+position = Vector2(98, 32)
