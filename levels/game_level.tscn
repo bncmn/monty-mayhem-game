@@ -12,14 +12,6 @@
 
 [node name="player" parent="." instance=ExtResource("1_3j6ua")]
 
-[node name="PlayerInv" parent="." instance=ExtResource("3_8u4rr")]
-position = Vector2(-30, 605)
-
-[node name="Base" parent="." instance=ExtResource("4_ftq7q")]
-position = Vector2(602, 303)
-
-[node name="BaseInv" parent="Base" instance=ExtResource("5_ljope")]
-
 [node name="treeNode" parent="." instance=ExtResource("5_7t57d")]
 position = Vector2(127, 112)
 
@@ -40,3 +32,16 @@ position = Vector2(243, 187)
 
 [node name="axe" parent="." instance=ExtResource("7_214vd")]
 position = Vector2(98, 32)
+
+[node name="Base" parent="." instance=ExtResource("4_ftq7q")]
+position = Vector2(773, 324)
+
+[node name="BaseInv" parent="Base" instance=ExtResource("5_ljope")]
+position = Vector2(-105, -410)
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="Base/BaseInv"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PlayerInv" parent="CanvasLayer" instance=ExtResource("3_8u4rr")]
+position = Vector2(-30, 605)

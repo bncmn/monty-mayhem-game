@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://draenn81hx7ol"]
+
+[ext_resource type="Texture2D" uid="uid://bb3n0q8wag30f" path="res://assets/resources/Gold.png" id="1_8t37s"]
+
+[node name="ItemTextureRect" type="TextureRect"]
+custom_minimum_size = Vector2(80, 80)
+offset_left = -37.0
+offset_top = -38.0
+offset_right = 43.0
+offset_bottom = 42.0
+texture = ExtResource("1_8t37s")
+expand_mode = 1

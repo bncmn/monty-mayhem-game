@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://csuln5rc3m60t"]
+[gd_scene load_steps=7 format=3 uid="uid://csuln5rc3m60t"]
 
 [ext_resource type="Texture2D" uid="uid://ba2q2j3lkloto" path="res://assets/inventory/InventoryBackground.png" id="1_4qnni"]
 [ext_resource type="Texture2D" uid="uid://c6w8yf24vtcwj" path="res://assets/inventory/InventoryBackgroundItem.png" id="2_iqrry"]
 [ext_resource type="PackedScene" uid="uid://cv6whbl5e6rkj" path="res://environment/gold.tscn" id="3_122yj"]
+[ext_resource type="Script" path="res://inventory/Slot.gd" id="3_m0ceu"]
+[ext_resource type="PackedScene" uid="uid://draenn81hx7ol" path="res://inventory/item_texture_rect.tscn" id="4_aom3n"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ul2hl"]
 texture = ExtResource("2_iqrry")
@@ -28,6 +30,14 @@ columns = 5
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_ul2hl")
+script = ExtResource("3_m0ceu")
+
+[node name="ItemTextureRect" parent="GridContainer/Slot1" instance=ExtResource("4_aom3n")]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 80.0
+offset_bottom = 80.0
 
 [node name="Gold" parent="GridContainer/Slot1" instance=ExtResource("3_122yj")]
 position = Vector2(36, 36)
@@ -36,6 +46,14 @@ position = Vector2(36, 36)
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_ul2hl")
+script = ExtResource("3_m0ceu")
+
+[node name="ItemTextureRect" parent="GridContainer/Slot2" instance=ExtResource("4_aom3n")]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 80.0
+offset_bottom = 80.0
 
 [node name="Gold" parent="GridContainer/Slot2" instance=ExtResource("3_122yj")]
 position = Vector2(35, 34)
@@ -44,6 +62,14 @@ position = Vector2(35, 34)
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_ul2hl")
+script = ExtResource("3_m0ceu")
+
+[node name="ItemTextureRect" parent="GridContainer/Slot3" instance=ExtResource("4_aom3n")]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 80.0
+offset_bottom = 80.0
 
 [node name="Gold" parent="GridContainer/Slot3" instance=ExtResource("3_122yj")]
 position = Vector2(38, 38)
@@ -52,8 +78,10 @@ position = Vector2(38, 38)
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_ul2hl")
+script = ExtResource("3_m0ceu")
 
 [node name="Slot5" type="Panel" parent="GridContainer"]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_ul2hl")
+script = ExtResource("3_m0ceu")
