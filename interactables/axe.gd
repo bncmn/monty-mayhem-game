@@ -5,7 +5,7 @@ func _ready():
 
 func _input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.pressed:
-		PlayerInventory.addTool("axe")
+		PlayerInventory.addTool("axe", 10)
 		queue_free()
-		print("DEBUG: Player picked up axe!")
-		print(PlayerInventory.getAll())
+		
+		PlayerInventory.printToConsole()

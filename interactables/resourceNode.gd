@@ -8,7 +8,3 @@ var currentClicks = 0;
 
 func _ready():
 	set_process_input(true)
-
-func addResource(resource, amount):
-	for n in amount:
-		PlayerInventory.addResource(resource)

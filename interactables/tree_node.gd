@@ -6,17 +6,20 @@ func _input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.pressed:
 		currentClicks += 1
 		
-		print("DEBUG: Tree node clicked! ", currentClicks, "/", clicksToDie)
 		if (currentClicks != clicksToDie):
 			if (PlayerInventory.tools.has("axe")):
-				addResource("wood", 2)
+				PlayerInventory.bulkAddResource("wood", 2)
 			else:
-				addResource("wood", 1)
+				PlayerInventory.addResource("wood")
 		if (currentClicks == clicksToDie):
-			# Add last resource and delete node from the map.
+			# Add the last resource.
 			if (PlayerInventory.tools.has("axe")):
-				addResource("wood", 2)
+				PlayerInventory.bulkAddResource("wood", 2)
 			else:
-				addResource("wood", 1)
+				PlayerInventory.addResource("wood")
+			# Delete the node from the scene.
 			queue_free()
-		print(PlayerInventory.getAll())
+			
+		# Adjust weapon durability.
+		PlayerInventory.decreaseToolDurability("axe")
+		PlayerInventory.printToConsole()

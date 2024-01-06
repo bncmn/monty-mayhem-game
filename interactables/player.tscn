@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://interactables/player.gd" id="1_8pvhl"]
 [ext_resource type="Texture2D" uid="uid://cs05fis302t8c" path="res://assets/icon.svg" id="2_5xcn3"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jqo43"]
-size = Vector2(65, 65)
+[sub_resource type="CircleShape2D" id="CircleShape2D_jrf2w"]
+radius = 32.0
 
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_8pvhl")
@@ -14,6 +14,6 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_5xcn3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_jqo43")
+shape = SubResource("CircleShape2D_jrf2w")
 
 [node name="Camera2D" type="Camera2D" parent="."]
