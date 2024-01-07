@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://vm3xuvxvwil"]
+
+[ext_resource type="PackedScene" uid="uid://mkdb5plpgl08" path="res://interactables/player.tscn" id="1_3j6ua"]
+[ext_resource type="PackedScene" uid="uid://csuln5rc3m60t" path="res://inventory/player_inv.tscn" id="3_8u4rr"]
+[ext_resource type="PackedScene" uid="uid://cxlux5i4y5p8k" path="res://environment/base.tscn" id="4_ftq7q"]
+[ext_resource type="PackedScene" uid="uid://but0hqifpinsb" path="res://interactables/tree_node.tscn" id="5_7t57d"]
+[ext_resource type="PackedScene" uid="uid://d1dq4grn1ug7p" path="res://interactables/rock_node.tscn" id="6_6xdk6"]
+[ext_resource type="PackedScene" uid="uid://baa6tpbjgbiju" path="res://interactables/axe.tscn" id="7_214vd"]
+[ext_resource type="PackedScene" uid="uid://bd54106u2btey" path="res://interactables/pickaxe.tscn" id="8_vw01h"]
+
+[node name="GameLevel" type="Node2D"]
+
+[node name="player" parent="." instance=ExtResource("1_3j6ua")]
+
+[node name="treeNode" parent="." instance=ExtResource("5_7t57d")]
+position = Vector2(127, 112)
+
+[node name="treeNode2" parent="." instance=ExtResource("5_7t57d")]
+position = Vector2(185, 112)
+
+[node name="treeNode3" parent="." instance=ExtResource("5_7t57d")]
+position = Vector2(243, 112)
+
+[node name="rockNode" parent="." instance=ExtResource("6_6xdk6")]
+position = Vector2(127, 187)
+
+[node name="rockNode2" parent="." instance=ExtResource("6_6xdk6")]
+position = Vector2(185, 187)
+
+[node name="rockNode3" parent="." instance=ExtResource("6_6xdk6")]
+position = Vector2(243, 187)
+
+[node name="axe" parent="." instance=ExtResource("7_214vd")]
+position = Vector2(32, 112)
+
+[node name="Base" parent="." instance=ExtResource("4_ftq7q")]
+position = Vector2(773, 324)
+
+[node name="PlayerInv" parent="." instance=ExtResource("3_8u4rr")]
+position = Vector2(-30, 605)
+
+[node name="TextureRect" parent="PlayerInv/CanvasLayer" index="0"]
+offset_left = 610.0
+offset_top = 826.0
+offset_right = 1094.0
+offset_bottom = 952.0
+
+[node name="GridContainer" parent="PlayerInv/CanvasLayer" index="1"]
+offset_left = 639.0
+offset_top = 842.0
+offset_right = 1058.0
+offset_bottom = 928.0
+
+[node name="pickaxe" parent="." instance=ExtResource("8_vw01h")]
+position = Vector2(32, 187)
+
+[editable path="PlayerInv"]

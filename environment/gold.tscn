@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cv6whbl5e6rkj"]
-
-[ext_resource type="PackedScene" uid="uid://draenn81hx7ol" path="res://inventory/item_texture_rect.tscn" id="1_vycn1"]
-
-[node name="Gold" type="Node2D"]
-
-[node name="ItemTextureRect" parent="." instance=ExtResource("1_vycn1")]

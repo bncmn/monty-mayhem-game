@@ -1,0 +1,338 @@
+[gd_scene load_steps=8 format=3 uid="uid://ckpj7fady7b4"]
+
+[ext_resource type="Script" path="res://inventory/CanvasLayer.gd" id="1_4absy"]
+[ext_resource type="Script" path="res://inventory/Control.gd" id="1_37a32"]
+[ext_resource type="Texture2D" uid="uid://ba2q2j3lkloto" path="res://assets/inventory/InventoryBackground.png" id="2_vncj6"]
+[ext_resource type="Script" path="res://inventory/Panel.gd" id="3_ew2ry"]
+[ext_resource type="Texture2D" uid="uid://c6w8yf24vtcwj" path="res://assets/inventory/InventoryBackgroundItem.png" id="3_uacpm"]
+[ext_resource type="Texture2D" uid="uid://f6y2qy8cf41p" path="res://assets/placeholders/rock_material_placeholder.png" id="4_rq7bp"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_orbxb"]
+texture = ExtResource("3_uacpm")
+
+[node name="BaseInv" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("1_4absy")
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+custom_minimum_size = Vector2(512, 512)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -256.0
+offset_right = 256.0
+offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_37a32")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -256.0
+offset_right = 256.0
+offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_vncj6")
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -216.0
+offset_top = -209.5
+offset_right = 216.0
+offset_bottom = 209.5
+grow_horizontal = 2
+grow_vertical = 2
+columns = 5
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_orbxb")
+script = ExtResource("3_ew2ry")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/GridContainer/Panel"]
+layout_mode = 0
+offset_right = 82.0
+offset_bottom = 79.0
+texture = ExtResource("4_rq7bp")
+
+[node name="Panel2" type="Panel" parent="CanvasLayer/Control/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_orbxb")
+script = ExtResource("3_ew2ry")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/GridContainer/Panel2"]
+layout_mode = 0
+offset_right = 82.0
+offset_bottom = 79.0
+
+[node name="Panel3" type="Panel" parent="CanvasLayer/Control/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_orbxb")
+script = ExtResource("3_ew2ry")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/GridContainer/Panel3"]
+layout_mode = 0
+offset_right = 82.0
+offset_bottom = 79.0
+
+[node name="Panel4" type="Panel" parent="CanvasLayer/Control/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_orbxb")
+script = ExtResource("3_ew2ry")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/GridContainer/Panel4"]
+layout_mode = 0
+offset_right = 82.0
+offset_bottom = 79.0
+
+[node name="Panel5" type="Panel" parent="CanvasLayer/Control/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_orbxb")
+script = ExtResource("3_ew2ry")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/GridContainer/Panel5"]
+layout_mode = 0
+offset_right = 82.0
+offset_bottom = 79.0
+
+[node name="Panel6" type="Panel" parent="CanvasLayer/Control/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_orbxb")
+script = ExtResource("3_ew2ry")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/GridContainer/Panel6"]
+layout_mode = 0
+offset_right = 82.0
+offset_bottom = 79.0
+
+[node name="Panel7" type="Panel" parent="CanvasLayer/Control/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_orbxb")
+script = ExtResource("3_ew2ry")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/GridContainer/Panel7"]
+layout_mode = 0
+offset_right = 82.0
+offset_bottom = 79.0
+
+[node name="Panel8" type="Panel" parent="CanvasLayer/Control/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_orbxb")
+script = ExtResource("3_ew2ry")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/GridContainer/Panel8"]
+layout_mode = 0
+offset_right = 82.0
+offset_bottom = 79.0
+
+[node name="Panel9" type="Panel" parent="CanvasLayer/Control/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_orbxb")
+script = ExtResource("3_ew2ry")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/GridContainer/Panel9"]
+layout_mode = 0
+offset_right = 82.0
+offset_bottom = 79.0
+
+[node name="Panel10" type="Panel" parent="CanvasLayer/Control/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_orbxb")
+script = ExtResource("3_ew2ry")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/GridContainer/Panel10"]
+layout_mode = 0
+offset_right = 82.0
+offset_bottom = 79.0
+
+[node name="Panel11" type="Panel" parent="CanvasLayer/Control/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_orbxb")
+script = ExtResource("3_ew2ry")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/GridContainer/Panel11"]
+layout_mode = 0
+offset_right = 82.0
+offset_bottom = 79.0
+
+[node name="Panel12" type="Panel" parent="CanvasLayer/Control/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_orbxb")
+script = ExtResource("3_ew2ry")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/GridContainer/Panel12"]
+layout_mode = 0
+offset_right = 82.0
+offset_bottom = 79.0
+
+[node name="Panel13" type="Panel" parent="CanvasLayer/Control/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_orbxb")
+script = ExtResource("3_ew2ry")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/GridContainer/Panel13"]
+layout_mode = 0
+offset_right = 82.0
+offset_bottom = 79.0
+
+[node name="Panel14" type="Panel" parent="CanvasLayer/Control/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_orbxb")
+script = ExtResource("3_ew2ry")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/GridContainer/Panel14"]
+layout_mode = 0
+offset_right = 82.0
+offset_bottom = 79.0
+
+[node name="Panel15" type="Panel" parent="CanvasLayer/Control/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_orbxb")
+script = ExtResource("3_ew2ry")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/GridContainer/Panel15"]
+layout_mode = 0
+offset_right = 82.0
+offset_bottom = 79.0
+
+[node name="Panel16" type="Panel" parent="CanvasLayer/Control/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_orbxb")
+script = ExtResource("3_ew2ry")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/GridContainer/Panel16"]
+layout_mode = 0
+offset_right = 82.0
+offset_bottom = 79.0
+
+[node name="Panel17" type="Panel" parent="CanvasLayer/Control/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_orbxb")
+script = ExtResource("3_ew2ry")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/GridContainer/Panel17"]
+layout_mode = 0
+offset_right = 82.0
+offset_bottom = 79.0
+
+[node name="Panel18" type="Panel" parent="CanvasLayer/Control/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_orbxb")
+script = ExtResource("3_ew2ry")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/GridContainer/Panel18"]
+layout_mode = 0
+offset_right = 82.0
+offset_bottom = 79.0
+
+[node name="Panel19" type="Panel" parent="CanvasLayer/Control/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_orbxb")
+script = ExtResource("3_ew2ry")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/GridContainer/Panel19"]
+layout_mode = 0
+offset_right = 82.0
+offset_bottom = 79.0
+
+[node name="Panel20" type="Panel" parent="CanvasLayer/Control/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_orbxb")
+script = ExtResource("3_ew2ry")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/GridContainer/Panel20"]
+layout_mode = 0
+offset_right = 82.0
+offset_bottom = 79.0
+
+[node name="Panel21" type="Panel" parent="CanvasLayer/Control/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_orbxb")
+script = ExtResource("3_ew2ry")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/GridContainer/Panel21"]
+layout_mode = 0
+offset_right = 82.0
+offset_bottom = 79.0
+
+[node name="Panel22" type="Panel" parent="CanvasLayer/Control/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_orbxb")
+script = ExtResource("3_ew2ry")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/GridContainer/Panel22"]
+layout_mode = 0
+offset_right = 82.0
+offset_bottom = 79.0
+
+[node name="Panel23" type="Panel" parent="CanvasLayer/Control/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_orbxb")
+script = ExtResource("3_ew2ry")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/GridContainer/Panel23"]
+layout_mode = 0
+offset_right = 82.0
+offset_bottom = 79.0
+
+[node name="Panel24" type="Panel" parent="CanvasLayer/Control/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_orbxb")
+script = ExtResource("3_ew2ry")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/GridContainer/Panel24"]
+layout_mode = 0
+offset_right = 82.0
+offset_bottom = 79.0
+
+[node name="Panel25" type="Panel" parent="CanvasLayer/Control/GridContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_orbxb")
+script = ExtResource("3_ew2ry")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/GridContainer/Panel25"]
+layout_mode = 0
+offset_right = 82.0
+offset_bottom = 79.0

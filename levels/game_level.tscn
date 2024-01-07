@@ -1,15 +1,34 @@
-[gd_scene load_steps=9 format=3 uid="uid://vm3xuvxvwil"]
+[gd_scene load_steps=19 format=3 uid="uid://vm3xuvxvwil"]
 
 [ext_resource type="PackedScene" uid="uid://mkdb5plpgl08" path="res://interactables/player.tscn" id="1_3j6ua"]
-[ext_resource type="PackedScene" uid="uid://csuln5rc3m60t" path="res://inventory/player_inv.tscn" id="3_8u4rr"]
-[ext_resource type="PackedScene" uid="uid://cxlux5i4y5p8k" path="res://environment/base.tscn" id="4_ftq7q"]
+[ext_resource type="Script" path="res://levels/game_level.gd" id="1_kbdnv"]
 [ext_resource type="PackedScene" uid="uid://but0hqifpinsb" path="res://interactables/tree_node.tscn" id="5_7t57d"]
-[ext_resource type="PackedScene" uid="uid://ckpj7fady7b4" path="res://inventory/base_inv.tscn" id="5_ljope"]
 [ext_resource type="PackedScene" uid="uid://d1dq4grn1ug7p" path="res://interactables/rock_node.tscn" id="6_6xdk6"]
 [ext_resource type="PackedScene" uid="uid://baa6tpbjgbiju" path="res://interactables/axe.tscn" id="7_214vd"]
 [ext_resource type="PackedScene" uid="uid://bd54106u2btey" path="res://interactables/pickaxe.tscn" id="8_vw01h"]
+[ext_resource type="Texture2D" uid="uid://ba2q2j3lkloto" path="res://assets/inventory/InventoryBackground.png" id="10_kwlv3"]
+[ext_resource type="Script" path="res://inventory/base/BaseUI.gd" id="10_r8yvr"]
+[ext_resource type="Script" path="res://inventory/base/BaseInvUI.gd" id="11_6ebf1"]
+[ext_resource type="Texture2D" uid="uid://c6w8yf24vtcwj" path="res://assets/inventory/InventoryBackgroundItem.png" id="11_qk1k7"]
+[ext_resource type="Texture2D" uid="uid://dkauk0kh6rjw4" path="res://assets/placeholders/base_placeholder.png" id="12_808mr"]
+[ext_resource type="Texture2D" uid="uid://f6y2qy8cf41p" path="res://assets/placeholders/rock_material_placeholder.png" id="13_mp1pa"]
+[ext_resource type="Texture2D" uid="uid://ys02vli4stj" path="res://assets/placeholders/wood_placeholder.png" id="13_o3obc"]
+[ext_resource type="Script" path="res://inventory/base/Slot.gd" id="14_s1yvu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lj6w2"]
+radius = 104.087
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v8xol"]
+radius = 105.119
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uu4ar"]
+radius = 259.095
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dd3du"]
+texture = ExtResource("11_qk1k7")
 
 [node name="GameLevel" type="Node2D"]
+script = ExtResource("1_kbdnv")
 
 [node name="player" parent="." instance=ExtResource("1_3j6ua")]
 
@@ -34,18 +53,508 @@ position = Vector2(243, 187)
 [node name="axe" parent="." instance=ExtResource("7_214vd")]
 position = Vector2(32, 112)
 
-[node name="Base" parent="." instance=ExtResource("4_ftq7q")]
-position = Vector2(773, 324)
-
-[node name="BaseInv" parent="Base" instance=ExtResource("5_ljope")]
-position = Vector2(-105, -410)
-
-[node name="CanvasLayer2" type="CanvasLayer" parent="Base/BaseInv"]
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="PlayerInv" parent="CanvasLayer" instance=ExtResource("3_8u4rr")]
-position = Vector2(-30, 605)
-
 [node name="pickaxe" parent="." instance=ExtResource("8_vw01h")]
 position = Vector2(32, 187)
+
+[node name="BaseStatic" type="StaticBody2D" parent="."]
+position = Vector2(1600, 475)
+
+[node name="BaseSprite" type="Sprite2D" parent="BaseStatic"]
+texture = ExtResource("12_808mr")
+
+[node name="Base" type="Area2D" parent="BaseStatic/BaseSprite"]
+
+[node name="BaseCollision" type="CollisionShape2D" parent="BaseStatic/BaseSprite/Base"]
+shape = SubResource("CircleShape2D_lj6w2")
+
+[node name="BaseStaticCollision" type="CollisionShape2D" parent="BaseStatic"]
+shape = SubResource("CircleShape2D_v8xol")
+
+[node name="BaseArea" type="Area2D" parent="."]
+position = Vector2(1598, 474)
+
+[node name="BaseAreaCollision" type="CollisionShape2D" parent="BaseArea"]
+shape = SubResource("CircleShape2D_uu4ar")
+
+[node name="PlayerUI" type="CanvasLayer" parent="."]
+process_mode = 3
+
+[node name="PlayerInvBG" type="TextureRect" parent="PlayerUI"]
+process_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -235.0
+offset_right = 235.0
+offset_bottom = 112.0
+grow_horizontal = 2
+texture = ExtResource("10_kwlv3")
+expand_mode = 1
+
+[node name="PlayerInvGrid" type="GridContainer" parent="PlayerUI"]
+process_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -208.0
+offset_top = 14.0
+offset_right = 208.0
+offset_bottom = 94.0
+grow_horizontal = 2
+columns = 5
+
+[node name="Slot" type="Panel" parent="PlayerUI/PlayerInvGrid"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_dd3du")
+script = ExtResource("14_s1yvu")
+
+[node name="Item" type="TextureRect" parent="PlayerUI/PlayerInvGrid/Slot"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 0
+offset_top = -1.0
+offset_right = 80.0
+offset_bottom = 79.0
+texture = ExtResource("13_o3obc")
+
+[node name="Slot2" type="Panel" parent="PlayerUI/PlayerInvGrid"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_dd3du")
+script = ExtResource("14_s1yvu")
+
+[node name="Item" type="TextureRect" parent="PlayerUI/PlayerInvGrid/Slot2"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 0
+offset_top = -1.0
+offset_right = 80.0
+offset_bottom = 79.0
+
+[node name="Slot3" type="Panel" parent="PlayerUI/PlayerInvGrid"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_dd3du")
+script = ExtResource("14_s1yvu")
+
+[node name="Item" type="TextureRect" parent="PlayerUI/PlayerInvGrid/Slot3"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 0
+offset_top = -1.0
+offset_right = 80.0
+offset_bottom = 79.0
+
+[node name="Slot4" type="Panel" parent="PlayerUI/PlayerInvGrid"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_dd3du")
+script = ExtResource("14_s1yvu")
+
+[node name="Item" type="TextureRect" parent="PlayerUI/PlayerInvGrid/Slot4"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 0
+offset_top = -1.0
+offset_right = 80.0
+offset_bottom = 79.0
+
+[node name="Slot5" type="Panel" parent="PlayerUI/PlayerInvGrid"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_dd3du")
+script = ExtResource("14_s1yvu")
+
+[node name="Item" type="TextureRect" parent="PlayerUI/PlayerInvGrid/Slot5"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 0
+offset_top = -1.0
+offset_right = 80.0
+offset_bottom = 79.0
+
+[node name="BaseUI" type="CanvasLayer" parent="."]
+process_mode = 3
+script = ExtResource("10_r8yvr")
+
+[node name="BaseInvUI" type="Control" parent="BaseUI"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -254.0
+offset_top = -256.5
+offset_right = 254.0
+offset_bottom = 256.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("11_6ebf1")
+
+[node name="BaseInvBG" type="TextureRect" parent="BaseUI/BaseInvUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -256.0
+offset_right = 256.0
+offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_kwlv3")
+
+[node name="BaseInvExit" type="Button" parent="BaseUI/BaseInvUI"]
+offset_left = 445.0
+offset_top = 10.5
+offset_right = 499.0
+offset_bottom = 43.5
+text = "exit"
+
+[node name="BaseInvGrid" type="GridContainer" parent="BaseUI/BaseInvUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -208.0
+offset_top = -208.0
+offset_right = 208.0
+offset_bottom = 208.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 5
+
+[node name="Slot" type="Panel" parent="BaseUI/BaseInvUI/BaseInvGrid"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_dd3du")
+script = ExtResource("14_s1yvu")
+
+[node name="Item" type="TextureRect" parent="BaseUI/BaseInvUI/BaseInvGrid/Slot"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 0
+offset_top = -1.0
+offset_right = 80.0
+offset_bottom = 79.0
+texture = ExtResource("13_mp1pa")
+
+[node name="Slot2" type="Panel" parent="BaseUI/BaseInvUI/BaseInvGrid"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_dd3du")
+script = ExtResource("14_s1yvu")
+
+[node name="Item" type="TextureRect" parent="BaseUI/BaseInvUI/BaseInvGrid/Slot2"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 0
+offset_top = -1.0
+offset_right = 80.0
+offset_bottom = 79.0
+
+[node name="Slot3" type="Panel" parent="BaseUI/BaseInvUI/BaseInvGrid"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_dd3du")
+script = ExtResource("14_s1yvu")
+
+[node name="Item" type="TextureRect" parent="BaseUI/BaseInvUI/BaseInvGrid/Slot3"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 0
+offset_top = -1.0
+offset_right = 80.0
+offset_bottom = 79.0
+
+[node name="Slot4" type="Panel" parent="BaseUI/BaseInvUI/BaseInvGrid"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_dd3du")
+script = ExtResource("14_s1yvu")
+
+[node name="Item" type="TextureRect" parent="BaseUI/BaseInvUI/BaseInvGrid/Slot4"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 0
+offset_top = -1.0
+offset_right = 80.0
+offset_bottom = 79.0
+
+[node name="Slot5" type="Panel" parent="BaseUI/BaseInvUI/BaseInvGrid"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_dd3du")
+script = ExtResource("14_s1yvu")
+
+[node name="Item" type="TextureRect" parent="BaseUI/BaseInvUI/BaseInvGrid/Slot5"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 0
+offset_top = -1.0
+offset_right = 80.0
+offset_bottom = 79.0
+
+[node name="Slot6" type="Panel" parent="BaseUI/BaseInvUI/BaseInvGrid"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_dd3du")
+script = ExtResource("14_s1yvu")
+
+[node name="Item" type="TextureRect" parent="BaseUI/BaseInvUI/BaseInvGrid/Slot6"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 0
+offset_top = -1.0
+offset_right = 80.0
+offset_bottom = 79.0
+
+[node name="Slot7" type="Panel" parent="BaseUI/BaseInvUI/BaseInvGrid"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_dd3du")
+script = ExtResource("14_s1yvu")
+
+[node name="Item" type="TextureRect" parent="BaseUI/BaseInvUI/BaseInvGrid/Slot7"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 0
+offset_top = -1.0
+offset_right = 80.0
+offset_bottom = 79.0
+
+[node name="Slot8" type="Panel" parent="BaseUI/BaseInvUI/BaseInvGrid"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_dd3du")
+script = ExtResource("14_s1yvu")
+
+[node name="Item" type="TextureRect" parent="BaseUI/BaseInvUI/BaseInvGrid/Slot8"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 0
+offset_top = -1.0
+offset_right = 80.0
+offset_bottom = 79.0
+
+[node name="Slot9" type="Panel" parent="BaseUI/BaseInvUI/BaseInvGrid"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_dd3du")
+script = ExtResource("14_s1yvu")
+
+[node name="Item" type="TextureRect" parent="BaseUI/BaseInvUI/BaseInvGrid/Slot9"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 0
+offset_top = -1.0
+offset_right = 80.0
+offset_bottom = 79.0
+
+[node name="Slot10" type="Panel" parent="BaseUI/BaseInvUI/BaseInvGrid"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_dd3du")
+script = ExtResource("14_s1yvu")
+
+[node name="Item" type="TextureRect" parent="BaseUI/BaseInvUI/BaseInvGrid/Slot10"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 0
+offset_top = -1.0
+offset_right = 80.0
+offset_bottom = 79.0
+
+[node name="Slot11" type="Panel" parent="BaseUI/BaseInvUI/BaseInvGrid"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_dd3du")
+script = ExtResource("14_s1yvu")
+
+[node name="Item" type="TextureRect" parent="BaseUI/BaseInvUI/BaseInvGrid/Slot11"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 0
+offset_top = -1.0
+offset_right = 80.0
+offset_bottom = 79.0
+
+[node name="Slot12" type="Panel" parent="BaseUI/BaseInvUI/BaseInvGrid"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_dd3du")
+script = ExtResource("14_s1yvu")
+
+[node name="Item" type="TextureRect" parent="BaseUI/BaseInvUI/BaseInvGrid/Slot12"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 0
+offset_top = -1.0
+offset_right = 80.0
+offset_bottom = 79.0
+
+[node name="Slot13" type="Panel" parent="BaseUI/BaseInvUI/BaseInvGrid"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_dd3du")
+script = ExtResource("14_s1yvu")
+
+[node name="Item" type="TextureRect" parent="BaseUI/BaseInvUI/BaseInvGrid/Slot13"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 0
+offset_top = -1.0
+offset_right = 80.0
+offset_bottom = 79.0
+
+[node name="Slot14" type="Panel" parent="BaseUI/BaseInvUI/BaseInvGrid"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_dd3du")
+script = ExtResource("14_s1yvu")
+
+[node name="Item" type="TextureRect" parent="BaseUI/BaseInvUI/BaseInvGrid/Slot14"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 0
+offset_top = -1.0
+offset_right = 80.0
+offset_bottom = 79.0
+
+[node name="Slot15" type="Panel" parent="BaseUI/BaseInvUI/BaseInvGrid"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_dd3du")
+script = ExtResource("14_s1yvu")
+
+[node name="Item" type="TextureRect" parent="BaseUI/BaseInvUI/BaseInvGrid/Slot15"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 0
+offset_top = -1.0
+offset_right = 80.0
+offset_bottom = 79.0
+
+[node name="Slot16" type="Panel" parent="BaseUI/BaseInvUI/BaseInvGrid"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_dd3du")
+script = ExtResource("14_s1yvu")
+
+[node name="Item" type="TextureRect" parent="BaseUI/BaseInvUI/BaseInvGrid/Slot16"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 0
+offset_top = -1.0
+offset_right = 80.0
+offset_bottom = 79.0
+
+[node name="Slot17" type="Panel" parent="BaseUI/BaseInvUI/BaseInvGrid"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_dd3du")
+script = ExtResource("14_s1yvu")
+
+[node name="Item" type="TextureRect" parent="BaseUI/BaseInvUI/BaseInvGrid/Slot17"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 0
+offset_top = -1.0
+offset_right = 80.0
+offset_bottom = 79.0
+
+[node name="Slot18" type="Panel" parent="BaseUI/BaseInvUI/BaseInvGrid"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_dd3du")
+script = ExtResource("14_s1yvu")
+
+[node name="Item" type="TextureRect" parent="BaseUI/BaseInvUI/BaseInvGrid/Slot18"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 0
+offset_top = -1.0
+offset_right = 80.0
+offset_bottom = 79.0
+
+[node name="Slot19" type="Panel" parent="BaseUI/BaseInvUI/BaseInvGrid"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_dd3du")
+script = ExtResource("14_s1yvu")
+
+[node name="Item" type="TextureRect" parent="BaseUI/BaseInvUI/BaseInvGrid/Slot19"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 0
+offset_top = -1.0
+offset_right = 80.0
+offset_bottom = 79.0
+
+[node name="Slot20" type="Panel" parent="BaseUI/BaseInvUI/BaseInvGrid"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_dd3du")
+script = ExtResource("14_s1yvu")
+
+[node name="Item" type="TextureRect" parent="BaseUI/BaseInvUI/BaseInvGrid/Slot20"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 0
+offset_top = -1.0
+offset_right = 80.0
+offset_bottom = 79.0
+
+[node name="Slot21" type="Panel" parent="BaseUI/BaseInvUI/BaseInvGrid"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_dd3du")
+script = ExtResource("14_s1yvu")
+
+[node name="Item" type="TextureRect" parent="BaseUI/BaseInvUI/BaseInvGrid/Slot21"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 0
+offset_top = -1.0
+offset_right = 80.0
+offset_bottom = 79.0
+
+[node name="Slot22" type="Panel" parent="BaseUI/BaseInvUI/BaseInvGrid"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_dd3du")
+script = ExtResource("14_s1yvu")
+
+[node name="Item" type="TextureRect" parent="BaseUI/BaseInvUI/BaseInvGrid/Slot22"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 0
+offset_top = -1.0
+offset_right = 80.0
+offset_bottom = 79.0
+
+[node name="Slot23" type="Panel" parent="BaseUI/BaseInvUI/BaseInvGrid"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_dd3du")
+script = ExtResource("14_s1yvu")
+
+[node name="Item" type="TextureRect" parent="BaseUI/BaseInvUI/BaseInvGrid/Slot23"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 0
+offset_top = -1.0
+offset_right = 80.0
+offset_bottom = 79.0
+
+[node name="Slot24" type="Panel" parent="BaseUI/BaseInvUI/BaseInvGrid"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_dd3du")
+script = ExtResource("14_s1yvu")
+
+[node name="Item" type="TextureRect" parent="BaseUI/BaseInvUI/BaseInvGrid/Slot24"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 0
+offset_top = -1.0
+offset_right = 80.0
+offset_bottom = 79.0
+
+[node name="Slot25" type="Panel" parent="BaseUI/BaseInvUI/BaseInvGrid"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_dd3du")
+script = ExtResource("14_s1yvu")
+
+[node name="Item" type="TextureRect" parent="BaseUI/BaseInvUI/BaseInvGrid/Slot25"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 0
+offset_top = -1.0
+offset_right = 80.0
+offset_bottom = 79.0
+
+[connection signal="mouse_entered" from="BaseStatic/BaseSprite/Base" to="BaseUI" method="_on_base_mouse_entered"]
+[connection signal="mouse_exited" from="BaseStatic/BaseSprite/Base" to="BaseUI" method="_on_base_mouse_exited"]
+[connection signal="body_entered" from="BaseArea" to="BaseUI" method="_on_base_area_body_entered"]
+[connection signal="body_exited" from="BaseArea" to="BaseUI" method="_on_base_area_body_exited"]
+[connection signal="closed" from="BaseUI/BaseInvUI" to="." method="_on_base_inv_ui_closed"]
+[connection signal="opened" from="BaseUI/BaseInvUI" to="." method="_on_base_inv_ui_opened"]
+[connection signal="pressed" from="BaseUI/BaseInvUI/BaseInvExit" to="BaseUI" method="_on_base_inv_exit_pressed"]
