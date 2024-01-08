@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://vm3xuvxvwil"]
+[gd_scene load_steps=20 format=3 uid="uid://vm3xuvxvwil"]
 
 [ext_resource type="PackedScene" uid="uid://mkdb5plpgl08" path="res://interactables/player.tscn" id="1_3j6ua"]
 [ext_resource type="Script" path="res://levels/game_level.gd" id="1_kbdnv"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://f6y2qy8cf41p" path="res://assets/placeholders/rock_material_placeholder.png" id="13_mp1pa"]
 [ext_resource type="Texture2D" uid="uid://ys02vli4stj" path="res://assets/placeholders/wood_placeholder.png" id="13_o3obc"]
 [ext_resource type="Script" path="res://inventory/base/Slot.gd" id="14_s1yvu"]
+[ext_resource type="PackedScene" uid="uid://qu62atcx28if" path="res://interactables/enemy.tscn" id="15_a61rt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lj6w2"]
 radius = 104.087
@@ -32,29 +33,32 @@ script = ExtResource("1_kbdnv")
 
 [node name="player" parent="." instance=ExtResource("1_3j6ua")]
 
+[node name="enemy" parent="." instance=ExtResource("15_a61rt")]
+position = Vector2(266, -222)
+
 [node name="treeNode" parent="." instance=ExtResource("5_7t57d")]
-position = Vector2(127, 112)
+position = Vector2(-310, 327)
 
 [node name="treeNode2" parent="." instance=ExtResource("5_7t57d")]
-position = Vector2(185, 112)
+position = Vector2(464, 332)
 
 [node name="treeNode3" parent="." instance=ExtResource("5_7t57d")]
-position = Vector2(243, 112)
+position = Vector2(416, -5)
 
 [node name="rockNode" parent="." instance=ExtResource("6_6xdk6")]
-position = Vector2(127, 187)
+position = Vector2(31, -171)
 
 [node name="rockNode2" parent="." instance=ExtResource("6_6xdk6")]
-position = Vector2(185, 187)
+position = Vector2(-255, 37)
 
 [node name="rockNode3" parent="." instance=ExtResource("6_6xdk6")]
-position = Vector2(243, 187)
+position = Vector2(-326, -171)
 
 [node name="axe" parent="." instance=ExtResource("7_214vd")]
-position = Vector2(32, 112)
+position = Vector2(142, 37)
 
 [node name="pickaxe" parent="." instance=ExtResource("8_vw01h")]
-position = Vector2(32, 187)
+position = Vector2(83, 125)
 
 [node name="BaseStatic" type="StaticBody2D" parent="."]
 position = Vector2(1600, 475)
@@ -204,6 +208,7 @@ grow_vertical = 2
 texture = ExtResource("10_kwlv3")
 
 [node name="BaseInvExit" type="Button" parent="BaseUI/BaseInvUI"]
+layout_mode = 0
 offset_left = 445.0
 offset_top = 10.5
 offset_right = 499.0

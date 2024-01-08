@@ -1,13 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://but0hqifpinsb"]
+[gd_scene load_steps=5 format=3 uid="uid://but0hqifpinsb"]
 
 [ext_resource type="PackedScene" uid="uid://qhmpl601pxhk" path="res://interactables/resourceNode.tscn" id="1_k3t0l"]
 [ext_resource type="Script" path="res://interactables/tree_node.gd" id="2_8u8ir"]
-[ext_resource type="Texture2D" uid="uid://c6mfff6qbgxmh" path="res://assets/tree0030000.png" id="3_clqr5"]
+[ext_resource type="Texture2D" uid="uid://buls2xbauhsoc" path="res://assets/placeholders/tree_placeholder.png" id="3_naht5"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dtwnn"]
+radius = 21.0
+height = 82.0
 
 [node name="treeNode" instance=ExtResource("1_k3t0l")]
 script = ExtResource("2_8u8ir")
 
 [node name="Sprite2D" parent="." index="0"]
-position = Vector2(0, 1.90735e-06)
-scale = Vector2(3.625, 1.51563)
-texture = ExtResource("3_clqr5")
+position = Vector2(0, -90)
+scale = Vector2(1.183, 1)
+texture = ExtResource("3_naht5")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(-16, -30)
+shape = SubResource("CapsuleShape2D_dtwnn")

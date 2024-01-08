@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
-@export var moveSpeed : float = 500
+@export var moveSpeed : float = 300
+@onready var animations = $AnimationPlayer
 var targetLocation = global_position
 
 func _input(event):

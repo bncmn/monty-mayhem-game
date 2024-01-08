@@ -1,20 +1,19 @@
 [gd_scene load_steps=4 format=3 uid="uid://baa6tpbjgbiju"]
 
 [ext_resource type="Script" path="res://interactables/axe.gd" id="1_n7de3"]
-[ext_resource type="Texture2D" uid="uid://j3i3ria3nxjf" path="res://assets/axe.png" id="2_x81yk"]
+[ext_resource type="Texture2D" uid="uid://7afqmapkb65e" path="res://assets/placeholders/wood axe_placeholder.png" id="2_fmcjc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2nb1i"]
-size = Vector2(27, 25)
+size = Vector2(39, 47)
 
 [node name="axe" type="StaticBody2D"]
+collision_mask = 6
 input_pickable = true
 script = ExtResource("1_n7de3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-9.53674e-07, 1.90735e-06)
-scale = Vector2(0.107, 0.1)
-texture = ExtResource("2_x81yk")
+scale = Vector2(0.5, 0.467)
+texture = ExtResource("2_fmcjc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_2nb1i")
