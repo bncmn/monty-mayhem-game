@@ -3,7 +3,7 @@
 extends "res://interactables/resourceNode.gd"
 
 func _input_event(viewport, event, shape_idx):
-	if event is InputEventMouseButton and event.pressed:
+	if event is InputEventMouseButton and event.pressed and isCollectable:
 		currentClicks += 1
 	
 		if (currentClicks != clicksToDie):

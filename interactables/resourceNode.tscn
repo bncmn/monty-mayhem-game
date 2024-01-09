@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://qhmpl601pxhk"]
+[gd_scene load_steps=5 format=3 uid="uid://qhmpl601pxhk"]
 
 [ext_resource type="Script" path="res://interactables/resourceNode.gd" id="1_xeoos"]
 [ext_resource type="Texture2D" uid="uid://cs05fis302t8c" path="res://assets/icon.svg" id="2_cn0n4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7x6en"]
 radius = 53.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8vfns"]
+radius = 90.0056
 
 [node name="resourceNode" type="StaticBody2D"]
 collision_mask = 6
@@ -18,3 +21,12 @@ texture = ExtResource("2_cn0n4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_7x6en")
+
+[node name="collectionArea" type="Area2D" parent="."]
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="collectionArea"]
+shape = SubResource("CircleShape2D_8vfns")
+
+[connection signal="body_entered" from="collectionArea" to="." method="_on_collection_area_body_entered"]
+[connection signal="body_exited" from="collectionArea" to="." method="_on_collection_area_body_exited"]

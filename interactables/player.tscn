@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://mkdb5plpgl08"]
+[gd_scene load_steps=8 format=3 uid="uid://mkdb5plpgl08"]
 
 [ext_resource type="Script" path="res://interactables/player.gd" id="1_8pvhl"]
 [ext_resource type="Texture2D" uid="uid://crnu73y4t4epj" path="res://assets/placeholders/player_placeholder_animation attack test (100 x 100 px).png" id="2_vhapa"]
@@ -6,21 +6,6 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2yulj"]
 radius = 27.0
 height = 82.0
-
-[sub_resource type="Animation" id="Animation_kh6ti"]
-resource_name = "attack"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7]
-}
 
 [sub_resource type="Animation" id="Animation_s5scj"]
 length = 0.001
@@ -37,11 +22,29 @@ tracks/0/keys = {
 "values": [0]
 }
 
+[sub_resource type="Animation" id="Animation_kh6ti"]
+resource_name = "attack"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5rn2e"]
 _data = {
 "RESET": SubResource("Animation_s5scj"),
 "attack": SubResource("Animation_kh6ti")
 }
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kv5se"]
+radius = 41.0
 
 [node name="player" type="CharacterBody2D"]
 collision_layer = 2
@@ -63,3 +66,17 @@ shape = SubResource("CapsuleShape2D_2yulj")
 libraries = {
 "": SubResource("AnimationLibrary_5rn2e")
 }
+
+[node name="playerHitbox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="playerHitbox"]
+shape = SubResource("CircleShape2D_kv5se")
+
+[node name="attackCooldown" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="body_entered" from="playerHitbox" to="." method="_on_player_hitbox_body_entered"]
+[connection signal="body_exited" from="playerHitbox" to="." method="_on_player_hitbox_body_exited"]
+[connection signal="timeout" from="attackCooldown" to="." method="_on_attack_cooldown_timeout"]

@@ -1,5 +1,10 @@
 extends CharacterBody2D
 
+var enemyInAttackRange = false
+var enemyAttackCooldown = false
+var health = 100
+var playerIsAlive = true
+
 @export var moveSpeed : float = 300
 @onready var animations = $AnimationPlayer
 var targetLocation = global_position
@@ -9,7 +14,34 @@ func _input(event):
 		targetLocation = get_global_mouse_position()
 
 func _physics_process(delta):
+	enemyAttack()
 	velocity = global_position.direction_to(targetLocation) * moveSpeed
 	if global_position.distance_to(targetLocation) > 10:
-		# move_and_collide needed some sort of vector in the first argument.
 		move_and_slide()
+	
+	if health <= 0:
+		playerIsAlive = false # add "Game Over" here!
+		health = 0
+		print("DEBUG: Player is dead!")
+		self.queue_free()
+
+func player():
+	pass
+
+func _on_player_hitbox_body_entered(body):
+	if body.has_method("enemy"):
+		enemyInAttackRange = true
+
+func _on_player_hitbox_body_exited(body):
+	if body.has_method("enemy"):
+		enemyInAttackRange = false
+
+func enemyAttack():
+	if enemyInAttackRange and !enemyAttackCooldown:
+		health -= 5
+		enemyAttackCooldown = true
+		$attackCooldown.start()
+		print("DEBUG: Player took damage!", health)
+
+func _on_attack_cooldown_timeout():
+	enemyAttackCooldown = false
