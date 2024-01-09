@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://vm3xuvxvwil"]
+[gd_scene load_steps=24 format=3 uid="uid://vm3xuvxvwil"]
 
 [ext_resource type="PackedScene" uid="uid://mkdb5plpgl08" path="res://interactables/player.tscn" id="1_3j6ua"]
 [ext_resource type="Script" path="res://levels/game_level.gd" id="1_kbdnv"]
@@ -9,12 +9,15 @@
 [ext_resource type="Texture2D" uid="uid://ba2q2j3lkloto" path="res://assets/inventory/InventoryBackground.png" id="10_kwlv3"]
 [ext_resource type="Script" path="res://inventory/base/BaseUI.gd" id="10_r8yvr"]
 [ext_resource type="Script" path="res://inventory/base/BaseInvUI.gd" id="11_6ebf1"]
+[ext_resource type="Script" path="res://inventory/player/Slot1.gd" id="11_bpbcy"]
 [ext_resource type="Texture2D" uid="uid://c6w8yf24vtcwj" path="res://assets/inventory/InventoryBackgroundItem.png" id="11_qk1k7"]
 [ext_resource type="Texture2D" uid="uid://dkauk0kh6rjw4" path="res://assets/placeholders/base_placeholder.png" id="12_808mr"]
-[ext_resource type="Texture2D" uid="uid://f6y2qy8cf41p" path="res://assets/placeholders/rock_material_placeholder.png" id="13_mp1pa"]
-[ext_resource type="Texture2D" uid="uid://ys02vli4stj" path="res://assets/placeholders/wood_placeholder.png" id="13_o3obc"]
+[ext_resource type="Script" path="res://inventory/player/Slot2.gd" id="13_8rind"]
+[ext_resource type="Script" path="res://inventory/player/Slot3.gd" id="14_3it7t"]
 [ext_resource type="Script" path="res://inventory/base/Slot.gd" id="14_s1yvu"]
 [ext_resource type="PackedScene" uid="uid://qu62atcx28if" path="res://interactables/enemy.tscn" id="15_a61rt"]
+[ext_resource type="Script" path="res://inventory/player/Slot4.gd" id="15_i25ul"]
+[ext_resource type="Script" path="res://inventory/player/Slot5.gd" id="16_qmu4w"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lj6w2"]
 radius = 104.087
@@ -27,6 +30,9 @@ radius = 259.095
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dd3du"]
 texture = ExtResource("11_qk1k7")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_upik3"]
+size = Vector2(542, 158)
 
 [node name="GameLevel" type="Node2D"]
 script = ExtResource("1_kbdnv")
@@ -62,11 +68,15 @@ position = Vector2(83, 125)
 
 [node name="BaseStatic" type="StaticBody2D" parent="."]
 position = Vector2(1600, 475)
+collision_layer = 3
+collision_mask = 7
 
 [node name="BaseSprite" type="Sprite2D" parent="BaseStatic"]
 texture = ExtResource("12_808mr")
 
 [node name="Base" type="Area2D" parent="BaseStatic/BaseSprite"]
+collision_layer = 3
+collision_mask = 7
 
 [node name="BaseCollision" type="CollisionShape2D" parent="BaseStatic/BaseSprite/Base"]
 shape = SubResource("CircleShape2D_lj6w2")
@@ -76,6 +86,8 @@ shape = SubResource("CircleShape2D_v8xol")
 
 [node name="BaseArea" type="Area2D" parent="."]
 position = Vector2(1598, 474)
+collision_layer = 2
+collision_mask = 6
 
 [node name="BaseAreaCollision" type="CollisionShape2D" parent="BaseArea"]
 shape = SubResource("CircleShape2D_uu4ar")
@@ -107,27 +119,26 @@ offset_bottom = 94.0
 grow_horizontal = 2
 columns = 5
 
-[node name="Slot" type="Panel" parent="PlayerUI/PlayerInvGrid"]
+[node name="Slot1" type="Panel" parent="PlayerUI/PlayerInvGrid"]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_dd3du")
-script = ExtResource("14_s1yvu")
+script = ExtResource("11_bpbcy")
 
-[node name="Item" type="TextureRect" parent="PlayerUI/PlayerInvGrid/Slot"]
+[node name="Item1" type="TextureRect" parent="PlayerUI/PlayerInvGrid/Slot1"]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 0
 offset_top = -1.0
 offset_right = 80.0
 offset_bottom = 79.0
-texture = ExtResource("13_o3obc")
 
 [node name="Slot2" type="Panel" parent="PlayerUI/PlayerInvGrid"]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_dd3du")
-script = ExtResource("14_s1yvu")
+script = ExtResource("13_8rind")
 
-[node name="Item" type="TextureRect" parent="PlayerUI/PlayerInvGrid/Slot2"]
+[node name="Item2" type="TextureRect" parent="PlayerUI/PlayerInvGrid/Slot2"]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 0
 offset_top = -1.0
@@ -138,9 +149,9 @@ offset_bottom = 79.0
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_dd3du")
-script = ExtResource("14_s1yvu")
+script = ExtResource("14_3it7t")
 
-[node name="Item" type="TextureRect" parent="PlayerUI/PlayerInvGrid/Slot3"]
+[node name="Item3" type="TextureRect" parent="PlayerUI/PlayerInvGrid/Slot3"]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 0
 offset_top = -1.0
@@ -151,9 +162,9 @@ offset_bottom = 79.0
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_dd3du")
-script = ExtResource("14_s1yvu")
+script = ExtResource("15_i25ul")
 
-[node name="Item" type="TextureRect" parent="PlayerUI/PlayerInvGrid/Slot4"]
+[node name="Item4" type="TextureRect" parent="PlayerUI/PlayerInvGrid/Slot4"]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 0
 offset_top = -1.0
@@ -164,14 +175,20 @@ offset_bottom = 79.0
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_dd3du")
-script = ExtResource("14_s1yvu")
+script = ExtResource("16_qmu4w")
 
-[node name="Item" type="TextureRect" parent="PlayerUI/PlayerInvGrid/Slot5"]
+[node name="Item5" type="TextureRect" parent="PlayerUI/PlayerInvGrid/Slot5"]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 0
 offset_top = -1.0
 offset_right = 80.0
 offset_bottom = 79.0
+
+[node name="PlayerInvArea" type="Area2D" parent="PlayerUI"]
+
+[node name="PlayerInvCollision" type="CollisionShape2D" parent="PlayerUI/PlayerInvArea"]
+position = Vector2(577, 77)
+shape = SubResource("RectangleShape2D_upik3")
 
 [node name="BaseUI" type="CanvasLayer" parent="."]
 process_mode = 3
@@ -184,10 +201,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -254.0
-offset_top = -256.5
-offset_right = 254.0
-offset_bottom = 256.5
+offset_left = -255.5
+offset_top = -193.5
+offset_right = 255.5
+offset_bottom = 193.5
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("11_6ebf1")
@@ -200,19 +217,20 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -256.0
-offset_top = -256.0
+offset_top = -192.0
 offset_right = 256.0
-offset_bottom = 256.0
+offset_bottom = 191.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("10_kwlv3")
+expand_mode = 1
 
 [node name="BaseInvExit" type="Button" parent="BaseUI/BaseInvUI"]
 layout_mode = 0
-offset_left = 445.0
-offset_top = 10.5
-offset_right = 499.0
-offset_bottom = 43.5
+offset_left = 463.5
+offset_top = 7.5
+offset_right = 506.5
+offset_bottom = 38.5
 text = "exit"
 
 [node name="BaseInvGrid" type="GridContainer" parent="BaseUI/BaseInvUI"]
@@ -223,9 +241,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -208.0
-offset_top = -208.0
+offset_top = -166.0
 offset_right = 208.0
-offset_bottom = 208.0
+offset_bottom = 166.0
 grow_horizontal = 2
 grow_vertical = 2
 columns = 5
@@ -242,7 +260,6 @@ layout_mode = 0
 offset_top = -1.0
 offset_right = 80.0
 offset_bottom = 79.0
-texture = ExtResource("13_mp1pa")
 
 [node name="Slot2" type="Panel" parent="BaseUI/BaseInvUI/BaseInvGrid"]
 custom_minimum_size = Vector2(80, 80)
@@ -491,75 +508,12 @@ offset_top = -1.0
 offset_right = 80.0
 offset_bottom = 79.0
 
-[node name="Slot21" type="Panel" parent="BaseUI/BaseInvUI/BaseInvGrid"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_dd3du")
-script = ExtResource("14_s1yvu")
-
-[node name="Item" type="TextureRect" parent="BaseUI/BaseInvUI/BaseInvGrid/Slot21"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 0
-offset_top = -1.0
-offset_right = 80.0
-offset_bottom = 79.0
-
-[node name="Slot22" type="Panel" parent="BaseUI/BaseInvUI/BaseInvGrid"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_dd3du")
-script = ExtResource("14_s1yvu")
-
-[node name="Item" type="TextureRect" parent="BaseUI/BaseInvUI/BaseInvGrid/Slot22"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 0
-offset_top = -1.0
-offset_right = 80.0
-offset_bottom = 79.0
-
-[node name="Slot23" type="Panel" parent="BaseUI/BaseInvUI/BaseInvGrid"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_dd3du")
-script = ExtResource("14_s1yvu")
-
-[node name="Item" type="TextureRect" parent="BaseUI/BaseInvUI/BaseInvGrid/Slot23"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 0
-offset_top = -1.0
-offset_right = 80.0
-offset_bottom = 79.0
-
-[node name="Slot24" type="Panel" parent="BaseUI/BaseInvUI/BaseInvGrid"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_dd3du")
-script = ExtResource("14_s1yvu")
-
-[node name="Item" type="TextureRect" parent="BaseUI/BaseInvUI/BaseInvGrid/Slot24"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 0
-offset_top = -1.0
-offset_right = 80.0
-offset_bottom = 79.0
-
-[node name="Slot25" type="Panel" parent="BaseUI/BaseInvUI/BaseInvGrid"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_dd3du")
-script = ExtResource("14_s1yvu")
-
-[node name="Item" type="TextureRect" parent="BaseUI/BaseInvUI/BaseInvGrid/Slot25"]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 0
-offset_top = -1.0
-offset_right = 80.0
-offset_bottom = 79.0
-
 [connection signal="mouse_entered" from="BaseStatic/BaseSprite/Base" to="BaseUI" method="_on_base_mouse_entered"]
 [connection signal="mouse_exited" from="BaseStatic/BaseSprite/Base" to="BaseUI" method="_on_base_mouse_exited"]
 [connection signal="body_entered" from="BaseArea" to="BaseUI" method="_on_base_area_body_entered"]
 [connection signal="body_exited" from="BaseArea" to="BaseUI" method="_on_base_area_body_exited"]
+[connection signal="mouse_entered" from="PlayerUI/PlayerInvArea" to="." method="_on_player_inv_area_mouse_entered"]
+[connection signal="mouse_exited" from="PlayerUI/PlayerInvArea" to="." method="_on_player_inv_area_mouse_exited"]
 [connection signal="closed" from="BaseUI/BaseInvUI" to="." method="_on_base_inv_ui_closed"]
 [connection signal="opened" from="BaseUI/BaseInvUI" to="." method="_on_base_inv_ui_opened"]
 [connection signal="pressed" from="BaseUI/BaseInvUI/BaseInvExit" to="BaseUI" method="_on_base_inv_exit_pressed"]
