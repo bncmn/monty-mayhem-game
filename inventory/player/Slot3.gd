@@ -1,14 +1,14 @@
 extends Panel
 
 
-@onready var text_rect = $Item3
+@onready var item = $Item3
 
 
 func _get_drag_data(at_position):
 	
 	set_drag_preview(get_preview())
 	
-	return text_rect
+	return item
 
 
 func _can_drop_data(_pos, data):
@@ -16,15 +16,15 @@ func _can_drop_data(_pos, data):
 
 
 func _drop_data(_pos, data):
-	var temp = text_rect.texture
-	text_rect.texture = data.texture
+	var temp = item.texture
+	item.texture = data.texture
 	data.texture = temp
 	
 
 func get_preview():
 	var preview = TextureRect.new()
 	
-	preview.texture = text_rect.texture
+	preview.texture = item.texture
 	preview.expand_mode = 1
 	preview.size = Vector2(80, 80)
 	
