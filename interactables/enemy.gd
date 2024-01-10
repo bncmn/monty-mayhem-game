@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var moveSpeed = 250
+var moveSpeed = 230
 var playerChase = false
 var player = null
 var health = 100
@@ -39,7 +39,12 @@ func _on_enemy_hitbox_body_exited(body):
 
 func playerAttack():
 	if playerInAttackRange and !playerAttackCooldown:
-		health -= 10
+		if PlayerInventory.tools.has("sword"):
+			health -= 25
+			PlayerInventory.decreaseToolDurability("sword")
+			PlayerInventory.printToConsole()
+		else:
+			health -= 5
 		playerAttackCooldown = true
 		$attackCooldown.start()
 		print("DEBUG: Enemy took damage! ", health)

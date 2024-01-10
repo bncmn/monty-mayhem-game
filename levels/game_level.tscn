@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://vm3xuvxvwil"]
+[gd_scene load_steps=28 format=3 uid="uid://vm3xuvxvwil"]
 
 [ext_resource type="PackedScene" uid="uid://mkdb5plpgl08" path="res://interactables/player.tscn" id="1_3j6ua"]
 [ext_resource type="Script" path="res://levels/game_level.gd" id="1_kbdnv"]
@@ -19,6 +19,7 @@
 [ext_resource type="Script" path="res://levels/CraftMenuUI.gd" id="15_y7nw1"]
 [ext_resource type="Script" path="res://levels/WallUI.gd" id="16_ct1mn"]
 [ext_resource type="Script" path="res://levels/ToolUI.gd" id="17_sji5i"]
+[ext_resource type="PackedScene" uid="uid://dbuyrbtg8i3ul" path="res://interactables/sword.tscn" id="20_c867o"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lj6w2"]
 radius = 104.087
@@ -521,6 +522,9 @@ layout_mode = 0
 offset_top = -1.0
 offset_right = 80.0
 offset_bottom = 79.0
+
+[node name="sword" parent="." instance=ExtResource("20_c867o")]
+position = Vector2(-126, -72)
 
 [connection signal="mouse_entered" from="BaseStatic/BaseSprite/Base" to="BaseUI" method="_on_base_mouse_entered"]
 [connection signal="mouse_exited" from="BaseStatic/BaseSprite/Base" to="BaseUI" method="_on_base_mouse_exited"]
