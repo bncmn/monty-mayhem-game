@@ -18,3 +18,15 @@ func _on_collection_area_body_entered(body):
 func _on_collection_area_body_exited(body):
 	if body.has_method("player"):
 		isCollectable = false
+
+func deleteResource():
+	Global.mouseOverResource = false
+	queue_free()
+
+func _on_mouse_entered():
+	if isCollectable:
+		Global.mouseOverResource = true
+
+func _on_mouse_exited():
+	if isCollectable:
+		Global.mouseOverResource = false

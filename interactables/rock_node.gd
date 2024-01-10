@@ -12,7 +12,7 @@ func _input_event(viewport, event, shape_idx):
 			# Add the last resource.
 			rollNodeDrop(PlayerInventory.tools.has("pickaxe"))
 			# Delete the node from the scene.
-			queue_free()
+			deleteResource()
 			
 		# Adjust weapon durability.
 		PlayerInventory.decreaseToolDurability("pickaxe")

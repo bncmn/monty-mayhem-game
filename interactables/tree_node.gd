@@ -34,7 +34,7 @@ func _input_event(viewport, event, shape_idx):
 			else:
 				PlayerInventory.addResource("wood")
 			# Delete the node from the scene.
-			queue_free()
+			deleteResource()
 			
 		# Adjust weapon durability.
 		PlayerInventory.decreaseToolDurability("axe")
