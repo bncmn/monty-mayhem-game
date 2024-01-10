@@ -44,7 +44,7 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kv5se"]
-radius = 41.0
+radius = 48.0416
 
 [node name="player" type="CharacterBody2D"]
 collision_layer = 2
@@ -75,8 +75,10 @@ collision_mask = 4
 shape = SubResource("CircleShape2D_kv5se")
 
 [node name="attackCooldown" type="Timer" parent="."]
-wait_time = 0.5
+
+[node name="dealDamageCooldown" type="Timer" parent="."]
 
 [connection signal="body_entered" from="playerHitbox" to="." method="_on_player_hitbox_body_entered"]
 [connection signal="body_exited" from="playerHitbox" to="." method="_on_player_hitbox_body_exited"]
 [connection signal="timeout" from="attackCooldown" to="." method="_on_attack_cooldown_timeout"]
+[connection signal="timeout" from="dealDamageCooldown" to="." method="_on_deal_damage_cooldown_timeout"]

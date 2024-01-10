@@ -16,7 +16,7 @@ func _input(event):
 func _physics_process(delta):
 	enemyAttack()
 	velocity = global_position.direction_to(targetLocation) * moveSpeed
-	if global_position.distance_to(targetLocation) > 10:
+	if global_position.distance_to(targetLocation) > 10 and !Global.mouseOverEnemy:
 		move_and_slide()
 	
 	if health <= 0:
@@ -41,7 +41,7 @@ func enemyAttack():
 		health -= 5
 		enemyAttackCooldown = true
 		$attackCooldown.start()
-		print("DEBUG: Player took damage!", health)
+		print("DEBUG: Player took damage! ", health)
 
 func _on_attack_cooldown_timeout():
 	enemyAttackCooldown = false
