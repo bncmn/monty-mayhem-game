@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://biaf5v0c80jrl"
-path="res://.godot/imported/Tool Frame 1.jpg-b78899460bd17194bc402ec11fd3032d.ctex"
+uid="uid://g325f2fefyl5"
+path="res://.godot/imported/tool_axe.png-54643abf9bf9c768b2b42549d96cce2c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/placeholders/placeholder_ui/Tool Frame 1.jpg"
-dest_files=["res://.godot/imported/Tool Frame 1.jpg-b78899460bd17194bc402ec11fd3032d.ctex"]
+source_file="res://assets/ui/tool_axe.png"
+dest_files=["res://.godot/imported/tool_axe.png-54643abf9bf9c768b2b42549d96cce2c.ctex"]
 
 [params]
 

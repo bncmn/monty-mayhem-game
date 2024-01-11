@@ -8,15 +8,15 @@
 [ext_resource type="Texture2D" uid="uid://dkauk0kh6rjw4" path="res://assets/placeholders/base_placeholder.png" id="9_v1sja"]
 [ext_resource type="Texture2D" uid="uid://ba2q2j3lkloto" path="res://assets/inventory/InventoryBackground.png" id="10_7qw5w"]
 [ext_resource type="Texture2D" uid="uid://c6w8yf24vtcwj" path="res://assets/inventory/InventoryBackgroundItem.png" id="11_yp6cy"]
-[ext_resource type="Script" path="res://inventory/player/Slot1.gd" id="12_vg8x0"]
-[ext_resource type="Script" path="res://inventory/player/Slot2.gd" id="13_mhwt2"]
-[ext_resource type="Script" path="res://inventory/player/Slot3.gd" id="14_6bofc"]
-[ext_resource type="Script" path="res://levels/CraftUI.gd" id="15_280bb"]
-[ext_resource type="Script" path="res://levels/CraftMenuUI.gd" id="16_3248v"]
-[ext_resource type="Script" path="res://levels/WallUI.gd" id="17_rf2gt"]
-[ext_resource type="Script" path="res://levels/ToolUI.gd" id="18_uwtug"]
-[ext_resource type="Script" path="res://inventory/base/BaseUI.gd" id="19_nf1fm"]
-[ext_resource type="Script" path="res://inventory/base/BaseInvUI.gd" id="20_5gdyh"]
+[ext_resource type="Script" path="res://ui/inventory/player/Slot1.gd" id="12_vg8x0"]
+[ext_resource type="Script" path="res://ui/inventory/player/Slot2.gd" id="13_mhwt2"]
+[ext_resource type="Script" path="res://ui/inventory/player/Slot3.gd" id="14_6bofc"]
+[ext_resource type="Script" path="res://ui/menu/craft/CraftUI.gd" id="15_280bb"]
+[ext_resource type="Script" path="res://ui/menu/craft/CraftMenuUI.gd" id="16_3248v"]
+[ext_resource type="Script" path="res://ui/menu/craft/WallUI.gd" id="17_rf2gt"]
+[ext_resource type="Script" path="res://ui/menu/craft/ToolUI.gd" id="18_uwtug"]
+[ext_resource type="Script" path="res://ui/inventory/base/BaseUI.gd" id="19_nf1fm"]
+[ext_resource type="Script" path="res://ui/inventory/base/BaseInvUI.gd" id="20_5gdyh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lj6w2"]
 radius = 104.087
@@ -34,10 +34,10 @@ texture = ExtResource("11_yp6cy")
 size = Vector2(150, 326)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nib78"]
-size = Vector2(350, 98.875)
+size = Vector2(446, 108.875)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nyugq"]
-size = Vector2(349.75, 99.5)
+size = Vector2(446, 109.5)
 
 [node name="dayLevel" type="Node2D"]
 script = ExtResource("1_bubci")
@@ -81,7 +81,6 @@ shape = SubResource("CircleShape2D_uu4ar")
 
 [node name="PlayerUI" type="CanvasLayer" parent="."]
 process_mode = 3
-visible = false
 
 [node name="PlayerInvBG" type="TextureRect" parent="PlayerUI"]
 process_mode = 3
@@ -147,7 +146,7 @@ offset_bottom = 79.0
 [node name="PlayerInvArea" type="Area2D" parent="PlayerUI"]
 
 [node name="PlayerInvCollision" type="CollisionShape2D" parent="PlayerUI/PlayerInvArea"]
-position = Vector2(1077, 163)
+position = Vector2(1845, 163)
 shape = SubResource("RectangleShape2D_upik3")
 
 [node name="EquipUI" type="Control" parent="PlayerUI"]
@@ -213,9 +212,9 @@ offset_bottom = 79.0
 
 [node name="CraftButton" type="Button" parent="PlayerUI"]
 custom_minimum_size = Vector2(60, 60)
-offset_left = 468.5
+offset_left = 854.5
 offset_top = 11.0
-offset_right = 528.5
+offset_right = 914.5
 offset_bottom = 71.0
 text = "craft"
 
@@ -260,7 +259,7 @@ text = "walls"
 position = Vector2(-341, -11)
 
 [node name="CraftCollision" type="CollisionShape2D" parent="PlayerUI/CraftUI/CraftArea"]
-position = Vector2(371, 49.5625)
+position = Vector2(323, 54.5625)
 shape = SubResource("RectangleShape2D_nib78")
 
 [node name="BuildUI" type="Control" parent="PlayerUI"]
@@ -302,15 +301,14 @@ text = "wall3"
 
 [node name="CraftMenuUI" type="CanvasLayer" parent="."]
 process_mode = 3
-visible = false
 script = ExtResource("16_3248v")
 
 [node name="WallUI" type="Control" parent="CraftMenuUI"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 211.0
+offset_left = 595.0
 offset_top = 11.0
-offset_right = 465.0
+offset_right = 849.0
 offset_bottom = 71.0
 script = ExtResource("17_rf2gt")
 
@@ -353,15 +351,15 @@ text = "walls"
 position = Vector2(-211, -11)
 
 [node name="WallCollision" type="CollisionShape2D" parent="CraftMenuUI/WallUI/WallArea"]
-position = Vector2(371.125, 49.25)
+position = Vector2(323, 54.25)
 shape = SubResource("RectangleShape2D_nyugq")
 
 [node name="ToolUI" type="Control" parent="CraftMenuUI"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 211.0
-offset_top = 9.0
-offset_right = 465.0
+offset_left = 533.0
+offset_top = 10.0
+offset_right = 848.0
 offset_bottom = 71.0
 script = ExtResource("18_uwtug")
 
@@ -378,7 +376,7 @@ offset_right = 126.0
 offset_bottom = 30.0
 grow_horizontal = 2
 grow_vertical = 2
-columns = 4
+columns = 5
 
 [node name="Axe" type="Button" parent="CraftMenuUI/ToolUI/ToolGrid"]
 custom_minimum_size = Vector2(60, 60)
@@ -389,6 +387,11 @@ text = "axe"
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 text = "pick"
+
+[node name="Sword" type="Button" parent="CraftMenuUI/ToolUI/ToolGrid"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+text = "sword"
 
 [node name="ToolClose" type="Button" parent="CraftMenuUI/ToolUI/ToolGrid"]
 custom_minimum_size = Vector2(60, 60)
@@ -404,12 +407,11 @@ text = "walls"
 position = Vector2(-211, -9)
 
 [node name="ToolCollision" type="CollisionShape2D" parent="CraftMenuUI/ToolUI/ToolArea"]
-position = Vector2(371.125, 49.25)
+position = Vector2(385, 53)
 shape = SubResource("RectangleShape2D_nyugq")
 
 [node name="BaseUI" type="CanvasLayer" parent="."]
 process_mode = 3
-visible = false
 script = ExtResource("19_nf1fm")
 
 [node name="BaseInvUI" type="Control" parent="BaseUI"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://biaf5v0c80jrl"
-path="res://.godot/imported/Tool Frame 1.jpg-b78899460bd17194bc402ec11fd3032d.ctex"
+uid="uid://beclpu7oj8lim"
+path="res://.godot/imported/hint_gate.png-7aea5558fa41de0ef255f762b01d009a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/placeholders/placeholder_ui/Tool Frame 1.jpg"
-dest_files=["res://.godot/imported/Tool Frame 1.jpg-b78899460bd17194bc402ec11fd3032d.ctex"]
+source_file="res://assets/ui/hint_gate.png"
+dest_files=["res://.godot/imported/hint_gate.png-7aea5558fa41de0ef255f762b01d009a.ctex"]
 
 [params]
 

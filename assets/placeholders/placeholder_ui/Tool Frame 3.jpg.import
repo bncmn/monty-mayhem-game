@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dno3d0rfcxlei"
-path="res://.godot/imported/Tool Frame 3.jpg-c64c62c64aeed85285eeb886cd1fb79e.ctex"
+path="res://.godot/imported/Tool Frame 3.jpg-5c8253a1c73e579499613a27b4e73a6a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/placeholder_ui/Tool Frame 3.jpg"
-dest_files=["res://.godot/imported/Tool Frame 3.jpg-c64c62c64aeed85285eeb886cd1fb79e.ctex"]
+source_file="res://assets/placeholders/placeholder_ui/Tool Frame 3.jpg"
+dest_files=["res://.godot/imported/Tool Frame 3.jpg-5c8253a1c73e579499613a27b4e73a6a.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://biaf5v0c80jrl"
-path="res://.godot/imported/Tool Frame 1.jpg-b78899460bd17194bc402ec11fd3032d.ctex"
+uid="uid://s1s30vmm0wxy"
+path="res://.godot/imported/item_iron.png-752cc510a99a187821c96d4f6c9e37ac.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/placeholders/placeholder_ui/Tool Frame 1.jpg"
-dest_files=["res://.godot/imported/Tool Frame 1.jpg-b78899460bd17194bc402ec11fd3032d.ctex"]
+source_file="res://assets/ui/item_iron.png"
+dest_files=["res://.godot/imported/item_iron.png-752cc510a99a187821c96d4f6c9e37ac.ctex"]
 
 [params]
 

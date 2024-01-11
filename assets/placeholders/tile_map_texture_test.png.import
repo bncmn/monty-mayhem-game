@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://biaf5v0c80jrl"
-path="res://.godot/imported/Tool Frame 1.jpg-b78899460bd17194bc402ec11fd3032d.ctex"
+uid="uid://gigw2vribd8a"
+path="res://.godot/imported/tile_map_texture_test.png-7f93c8ddf5dc21b6497ad9fafad61111.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/placeholders/placeholder_ui/Tool Frame 1.jpg"
-dest_files=["res://.godot/imported/Tool Frame 1.jpg-b78899460bd17194bc402ec11fd3032d.ctex"]
+source_file="res://assets/placeholders/tile_map_texture_test.png"
+dest_files=["res://.godot/imported/tile_map_texture_test.png-7f93c8ddf5dc21b6497ad9fafad61111.ctex"]
 
 [params]
 

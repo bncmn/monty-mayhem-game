@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://biaf5v0c80jrl"
-path="res://.godot/imported/Tool Frame 1.jpg-b78899460bd17194bc402ec11fd3032d.ctex"
+uid="uid://5unjfmslxrsd"
+path="res://.godot/imported/tool_pickaxe.png-5f0cf579fb5afa92a8809d8ffddede0c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/placeholders/placeholder_ui/Tool Frame 1.jpg"
-dest_files=["res://.godot/imported/Tool Frame 1.jpg-b78899460bd17194bc402ec11fd3032d.ctex"]
+source_file="res://assets/ui/tool_pickaxe.png"
+dest_files=["res://.godot/imported/tool_pickaxe.png-5f0cf579fb5afa92a8809d8ffddede0c.ctex"]
 
 [params]
 
