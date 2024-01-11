@@ -81,6 +81,7 @@ shape = SubResource("CircleShape2D_uu4ar")
 
 [node name="PlayerUI" type="CanvasLayer" parent="."]
 process_mode = 3
+visible = false
 
 [node name="PlayerInvBG" type="TextureRect" parent="PlayerUI"]
 process_mode = 3
@@ -301,6 +302,7 @@ text = "wall3"
 
 [node name="CraftMenuUI" type="CanvasLayer" parent="."]
 process_mode = 3
+visible = false
 script = ExtResource("16_3248v")
 
 [node name="WallUI" type="Control" parent="CraftMenuUI"]
@@ -407,6 +409,7 @@ shape = SubResource("RectangleShape2D_nyugq")
 
 [node name="BaseUI" type="CanvasLayer" parent="."]
 process_mode = 3
+visible = false
 script = ExtResource("19_nf1fm")
 
 [node name="BaseInvUI" type="Control" parent="BaseUI"]
@@ -502,6 +505,9 @@ offset_top = -1.0
 offset_right = 80.0
 offset_bottom = 79.0
 
+[node name="dayPhaseTimer" type="Timer" parent="."]
+wait_time = 20.0
+
 [connection signal="mouse_entered" from="BaseStatic/BaseSprite/Base" to="BaseUI" method="_on_base_mouse_entered"]
 [connection signal="mouse_exited" from="BaseStatic/BaseSprite/Base" to="BaseUI" method="_on_base_mouse_exited"]
 [connection signal="body_entered" from="BaseArea" to="BaseUI" method="_on_base_area_body_entered"]
@@ -522,3 +528,5 @@ offset_bottom = 79.0
 [connection signal="closed" from="BaseUI/BaseInvUI" to="." method="_on_base_inv_ui_closed"]
 [connection signal="opened" from="BaseUI/BaseInvUI" to="." method="_on_base_inv_ui_opened"]
 [connection signal="pressed" from="BaseUI/BaseInvUI/BaseInvExit" to="BaseUI" method="_on_base_inv_exit_pressed"]
+[connection signal="ready" from="dayPhaseTimer" to="." method="_on_day_phase_timer_ready"]
+[connection signal="timeout" from="dayPhaseTimer" to="." method="_on_day_phase_timer_timeout"]

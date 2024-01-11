@@ -4,14 +4,14 @@ extends Node2D
 @onready var craftMenu = $PlayerUI/CraftUI
 @onready var toolMenu = $CraftMenuUI/ToolUI
 @onready var wallMenu = $CraftMenuUI/WallUI
+@onready var baseNode = get_node("BaseArea")
 
 var randX
 var randY
 
 func _ready():
-	generateEnemies(10)
-	generateTrees(20)
-	generateRocks(20)
+	generateResources(600)
+	$dayPhaseTimer.start()
 
 func _on_base_inv_ui_closed():
 	get_tree().paused = false
@@ -65,7 +65,7 @@ func _on_tool_area_mouse_exited():
 		get_tree().paused = false
 
 func generateEnemies(amountOfEnemies):
-	var maxDistance = 150
+	var maxDistance = 1000
 	var prevX = 0
 	var prevY = 0
 	randomize()
@@ -73,7 +73,7 @@ func generateEnemies(amountOfEnemies):
 		var enemy = preload("res://interactables/enemy.tscn").instantiate()
 		
 		# Get a random location within the ranges provided.
-		randX = randi_range(-500, 2500)
+		randX = randi_range(-1500, 2500)
 		randY = randi_range(-500, 1500)
 		
 		# If the random location is NOT within a distance of the previously spawned node, spawn it...
@@ -86,46 +86,33 @@ func generateEnemies(amountOfEnemies):
 		else:
 			amountOfEnemies += 1
 
-func generateTrees(amountOfTrees):
-	var maxDistance = 300
+func generateResources(amountOfResourceNodes):
+	var maxDistance = 1200
 	var prevX = 0
 	var prevY = 0
 	
 	randomize()
-	for i in amountOfTrees:
-		var tree = preload("res://interactables/tree_node.tscn").instantiate()
-		
-		randX = randi_range(-500, 2500)
+	for i in amountOfResourceNodes:
+		randX = randi_range(-1500, 2500)
 		randY = randi_range(-500, 1500)
 		
 		# If the random location is NOT within a distance of the previously spawned node, spawn it...
 		if abs(randX - prevX) > maxDistance and abs(randY - prevY) > maxDistance:
-			tree.global_position = Vector2(randX, randY)
-			add_child(tree)
-			prevX = randX
-			prevY = randY
+			if i % 2 == 0:
+				var tree = preload("res://interactables/tree_node.tscn").instantiate()
+				tree.global_position = Vector2(randX, randY)
+				add_child(tree)
+				prevX = randX
+				prevY = randY
+			else:
+				var rock = preload("res://interactables/rock_node.tscn").instantiate()
+				rock.global_position = Vector2(randX, randY)
+				add_child(rock)
+				prevX = randX
+				prevY = randY
 		# ...otherwise, add one to reroll.
 		else:
-			amountOfTrees += 1
+			amountOfResourceNodes += 1
 
-func generateRocks(amountOfRocks):
-	var maxDistance = 300
-	var prevX = 0
-	var prevY = 0
-	
-	randomize()
-	for i in amountOfRocks:
-		var rock = preload("res://interactables/rock_node.tscn").instantiate()
-		
-		randX = randi_range(-500, 2500)
-		randY = randi_range(-500, 1500)
-		
-		# If the random location is NOT within a distance of the previously spawned node, spawn it...
-		if abs(randX - prevX) > maxDistance and abs(randY - prevY) > maxDistance:
-			rock.global_position = Vector2(randX, randY)
-			add_child(rock)
-			prevX = randX
-			prevY = randY
-		# ...otherwise, add one to reroll.
-		else:
-			amountOfRocks += 1
+func _on_day_phase_timer_timeout():
+	generateEnemies(10)

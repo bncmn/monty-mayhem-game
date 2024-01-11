@@ -10,6 +10,7 @@ radius = 53.0
 radius = 90.0056
 
 [node name="resourceNode" type="StaticBody2D"]
+y_sort_enabled = true
 collision_mask = 6
 input_pickable = true
 script = ExtResource("1_xeoos")

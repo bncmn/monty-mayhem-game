@@ -12,8 +12,8 @@ height = 110.0
 script = ExtResource("2_ho2dv")
 
 [node name="Sprite2D" parent="." index="0"]
-position = Vector2(0, -28)
-scale = Vector2(1, 0.882)
+position = Vector2(0, -21)
+scale = Vector2(0.76725, 0.676714)
 texture = ExtResource("3_ycis7")
 
 [node name="CollisionShape2D" parent="." index="1"]
