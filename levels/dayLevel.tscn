@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://vm3xuvxvwil"]
+[gd_scene load_steps=28 format=3 uid="uid://vm3xuvxvwil"]
 
 [ext_resource type="Script" path="res://levels/dayLevel.gd" id="1_bubci"]
 [ext_resource type="PackedScene" uid="uid://mkdb5plpgl08" path="res://interactables/player.tscn" id="2_odlqd"]
@@ -7,10 +7,13 @@
 [ext_resource type="PackedScene" uid="uid://dbuyrbtg8i3ul" path="res://interactables/sword.tscn" id="8_xts8i"]
 [ext_resource type="Texture2D" uid="uid://dkauk0kh6rjw4" path="res://assets/placeholders/base_placeholder.png" id="9_v1sja"]
 [ext_resource type="Texture2D" uid="uid://ba2q2j3lkloto" path="res://assets/inventory/InventoryBackground.png" id="10_7qw5w"]
+[ext_resource type="Script" path="res://levels/Counter1.gd" id="10_kui50"]
 [ext_resource type="Texture2D" uid="uid://c6w8yf24vtcwj" path="res://assets/inventory/InventoryBackgroundItem.png" id="11_yp6cy"]
+[ext_resource type="Script" path="res://levels/Counter2.gd" id="12_5rq36"]
 [ext_resource type="Script" path="res://ui/inventory/player/Slot1.gd" id="12_vg8x0"]
 [ext_resource type="Script" path="res://ui/inventory/player/Slot2.gd" id="13_mhwt2"]
 [ext_resource type="Script" path="res://ui/inventory/player/Slot3.gd" id="14_6bofc"]
+[ext_resource type="Script" path="res://levels/Counter3.gd" id="14_e1jjt"]
 [ext_resource type="Script" path="res://ui/menu/craft/CraftUI.gd" id="15_280bb"]
 [ext_resource type="Script" path="res://ui/menu/craft/CraftMenuUI.gd" id="16_3248v"]
 [ext_resource type="Script" path="res://ui/menu/craft/WallUI.gd" id="17_rf2gt"]
@@ -117,6 +120,14 @@ offset_top = -1.0
 offset_right = 80.0
 offset_bottom = 79.0
 
+[node name="Counter1" type="Label" parent="PlayerUI/PlayerInvGrid/Slot1"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 53.0
+offset_right = 33.0
+offset_bottom = 76.0
+script = ExtResource("10_kui50")
+
 [node name="Slot2" type="Panel" parent="PlayerUI/PlayerInvGrid"]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
@@ -130,6 +141,14 @@ offset_top = -1.0
 offset_right = 80.0
 offset_bottom = 79.0
 
+[node name="Counter2" type="Label" parent="PlayerUI/PlayerInvGrid/Slot2"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 53.0
+offset_right = 33.0
+offset_bottom = 76.0
+script = ExtResource("12_5rq36")
+
 [node name="Slot3" type="Panel" parent="PlayerUI/PlayerInvGrid"]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
@@ -142,6 +161,14 @@ layout_mode = 0
 offset_top = -1.0
 offset_right = 80.0
 offset_bottom = 79.0
+
+[node name="Counter3" type="Label" parent="PlayerUI/PlayerInvGrid/Slot3"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 52.0
+offset_right = 33.0
+offset_bottom = 75.0
+script = ExtResource("14_e1jjt")
 
 [node name="PlayerInvArea" type="Area2D" parent="PlayerUI"]
 
