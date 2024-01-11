@@ -561,6 +561,10 @@ custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 text = "wall3"
 
+[node name="TextureProgressBar" type="TextureProgressBar" parent="PlayerUI"]
+offset_right = 40.0
+offset_bottom = 40.0
+
 [node name="CraftMenuUI" type="CanvasLayer" parent="."]
 process_mode = 3
 script = ExtResource("16_3248v")
