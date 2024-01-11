@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cp8wju7sklmxk"
-path="res://.godot/imported/item_wood.png-871e50d191804acb86696b5511c416f1.ctex"
+uid="uid://beclpu7oj8lim"
+path="res://.godot/imported/hint_gate.png-c07ef19f7a9bb542176b82efdd4806bd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/item_wood.png"
-dest_files=["res://.godot/imported/item_wood.png-871e50d191804acb86696b5511c416f1.ctex"]
+source_file="res://ui/in-game/hint_gate.png"
+dest_files=["res://.godot/imported/hint_gate.png-c07ef19f7a9bb542176b82efdd4806bd.ctex"]
 
 [params]
 

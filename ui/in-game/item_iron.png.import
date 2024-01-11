@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5unjfmslxrsd"
-path="res://.godot/imported/tool_pickaxe.png-5f0cf579fb5afa92a8809d8ffddede0c.ctex"
+uid="uid://s1s30vmm0wxy"
+path="res://.godot/imported/item_iron.png-8e02768759b4f12ecb8deafd53887180.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/tool_pickaxe.png"
-dest_files=["res://.godot/imported/tool_pickaxe.png-5f0cf579fb5afa92a8809d8ffddede0c.ctex"]
+source_file="res://ui/in-game/item_iron.png"
+dest_files=["res://.godot/imported/item_iron.png-8e02768759b4f12ecb8deafd53887180.ctex"]
 
 [params]
 

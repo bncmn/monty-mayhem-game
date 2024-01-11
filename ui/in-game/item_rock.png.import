@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbxg0nu7xscb"
-path="res://.godot/imported/btn_build_tool.png-f6877b84a165d6b0f1a5e88323f13b32.ctex"
+uid="uid://c6k44k5ruurrd"
+path="res://.godot/imported/item_rock.png-5d6c09a64db9efef90f4a2c72eebfa36.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/btn_build_tool.png"
-dest_files=["res://.godot/imported/btn_build_tool.png-f6877b84a165d6b0f1a5e88323f13b32.ctex"]
+source_file="res://ui/in-game/item_rock.png"
+dest_files=["res://.godot/imported/item_rock.png-5d6c09a64db9efef90f4a2c72eebfa36.ctex"]
 
 [params]
 

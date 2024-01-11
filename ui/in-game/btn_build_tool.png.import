@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://j0fi6reniowg"
-path="res://.godot/imported/btn_build_wall.png-c88a7b86d8bf41e4c4ab61ac0acb62f2.ctex"
+uid="uid://cbxg0nu7xscb"
+path="res://.godot/imported/btn_build_tool.png-fc773132934d78186a248f66a11ebe49.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/btn_build_wall.png"
-dest_files=["res://.godot/imported/btn_build_wall.png-c88a7b86d8bf41e4c4ab61ac0acb62f2.ctex"]
+source_file="res://ui/in-game/btn_build_tool.png"
+dest_files=["res://.godot/imported/btn_build_tool.png-fc773132934d78186a248f66a11ebe49.ctex"]
 
 [params]
 

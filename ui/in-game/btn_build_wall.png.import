@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fiiu1ixrfg6d"
-path="res://.godot/imported/frame.png-9671cf69952750673daa10046231c287.ctex"
+uid="uid://j0fi6reniowg"
+path="res://.godot/imported/btn_build_wall.png-a38c4bbd90333c90a5870346c0cf0a57.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/frame.png"
-dest_files=["res://.godot/imported/frame.png-9671cf69952750673daa10046231c287.ctex"]
+source_file="res://ui/in-game/btn_build_wall.png"
+dest_files=["res://.godot/imported/btn_build_wall.png-a38c4bbd90333c90a5870346c0cf0a57.ctex"]
 
 [params]
 
