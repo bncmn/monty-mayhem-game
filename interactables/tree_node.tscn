@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://qhmpl601pxhk" path="res://interactables/resourceNode.tscn" id="1_k3t0l"]
 [ext_resource type="Script" path="res://interactables/tree_node.gd" id="2_8u8ir"]
-[ext_resource type="Texture2D" uid="uid://buls2xbauhsoc" path="res://assets/placeholders/tree_placeholder.png" id="3_naht5"]
+[ext_resource type="Texture2D" uid="uid://doym7xvt6v878" path="res://assets/resources/tree.png" id="3_jvxxd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dtwnn"]
 radius = 21.0
@@ -14,7 +14,7 @@ script = ExtResource("2_8u8ir")
 [node name="Sprite2D" parent="." index="0"]
 position = Vector2(-7.62939e-06, -43)
 scale = Vector2(0.622996, 0.526624)
-texture = ExtResource("3_naht5")
+texture = ExtResource("3_jvxxd")
 
 [node name="CollisionShape2D" parent="." index="1"]
 position = Vector2(-16, -30)

@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://baa6tpbjgbiju" path="res://interactables/axe.tscn" id="6_4ixg5"]
 [ext_resource type="PackedScene" uid="uid://bd54106u2btey" path="res://interactables/pickaxe.tscn" id="7_rwamj"]
 [ext_resource type="PackedScene" uid="uid://dbuyrbtg8i3ul" path="res://interactables/sword.tscn" id="8_xts8i"]
-[ext_resource type="Texture2D" uid="uid://dkauk0kh6rjw4" path="res://assets/placeholders/base_placeholder.png" id="9_v1sja"]
+[ext_resource type="Texture2D" uid="uid://r6wyo55xruut" path="res://assets/terrain/base_smiling.png" id="9_sda02"]
 [ext_resource type="Texture2D" uid="uid://ba2q2j3lkloto" path="res://assets/inventory/InventoryBackground.png" id="10_7qw5w"]
 [ext_resource type="Script" path="res://levels/Counter1.gd" id="10_kui50"]
 [ext_resource type="Texture2D" uid="uid://c6w8yf24vtcwj" path="res://assets/inventory/InventoryBackgroundItem.png" id="11_yp6cy"]
@@ -869,7 +869,7 @@ collision_layer = 3
 collision_mask = 7
 
 [node name="BaseSprite" type="Sprite2D" parent="BaseStatic"]
-texture = ExtResource("9_v1sja")
+texture = ExtResource("9_sda02")
 
 [node name="Base" type="Area2D" parent="BaseStatic/BaseSprite"]
 collision_layer = 3

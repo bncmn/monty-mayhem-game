@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://qhmpl601pxhk" path="res://interactables/resourceNode.tscn" id="1_w1w6i"]
 [ext_resource type="Script" path="res://interactables/rock_node.gd" id="2_ho2dv"]
-[ext_resource type="Texture2D" uid="uid://m8lq7mgg43fk" path="res://assets/placeholders/rock_placeholder.png" id="3_ycis7"]
+[ext_resource type="Texture2D" uid="uid://bym7mul4l6yay" path="res://assets/resources/rock.png" id="3_8t5tt"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i3hmg"]
 radius = 20.0
@@ -14,7 +14,7 @@ script = ExtResource("2_ho2dv")
 [node name="Sprite2D" parent="." index="0"]
 position = Vector2(0, -21)
 scale = Vector2(0.76725, 0.676714)
-texture = ExtResource("3_ycis7")
+texture = ExtResource("3_8t5tt")
 
 [node name="CollisionShape2D" parent="." index="1"]
 position = Vector2(0, -11)
