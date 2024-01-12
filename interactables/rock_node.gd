@@ -8,10 +8,19 @@ extends "res://interactables/resourceNode.gd"
 var rock = "res://assets/placeholders/rock_material_placeholder.png"
 var iron = "res://assets/placeholders/metal_placeholder.png"
 
+var rockAdded = false
+var ironAdded = false
+
 func _input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.pressed and isCollectable:
 		currentClicks += 1
-	
+		
+		print(ironAdded)
+		print(rockAdded)
+		
+		#if PlayerInventory.resources.has("iron") && PlayerInventory.resources.has("rock"):
+			#if PlayerInventory.resources["iron"] < 20 || PlayerInventory.resources["rock"] < 20:
+				
 		if (currentClicks != clicksToDie):
 			rollNodeDrop(PlayerInventory.tools.has("pickaxe"))
 		if (currentClicks == clicksToDie):
@@ -19,10 +28,28 @@ func _input_event(viewport, event, shape_idx):
 			rollNodeDrop(PlayerInventory.tools.has("pickaxe"))
 			# Delete the node from the scene.
 			deleteResource()
-			
+		
+		#else: 
+			#if rockAdded == true:
+				#if PlayerInventory.tools.has("pickaxe"):
+					#PlayerInventory.resources["rock"] = 2
+					#PlayerInventory.resources["iron"] = 0
+				#else:
+					#PlayerInventory.resources["rock"] = 1
+					#PlayerInventory.resources["iron"] = 0
+				
+			#elif ironAdded == true:
+				#if PlayerInventory.tools.has("pickaxe"):
+					#PlayerInventory.resources["iron"] = 2
+					#PlayerInventory.resources["rock"] = 0
+				#else:
+					#PlayerInventory.resources["iron"] = 1
+					#PlayerInventory.resources["rock"] = 0
+		
 		# Adjust weapon durability.
 		PlayerInventory.decreaseToolDurability("pickaxe")
 		PlayerInventory.printToConsole()
+		
 
 # This function determines if the rock node will drop iron or stone.
 # This function is run each time the player clicks the rock node.
@@ -34,23 +61,32 @@ func rollNodeDrop(hasPickaxe):
 	
 	if (hasPickaxe):
 		if (isIron):
-			PlayerInventory.bulkAddResource("iron", 2)
-			ironItem.texture = load(iron)
-			ironItem.expand_mode = 1
-			ironItem.size = Vector2(80, 80)
+			ironAdded = true
+			if PlayerInventory.resources.has("iron"):
+				if PlayerInventory.resources["iron"] < 25:
+					PlayerInventory.bulkAddResource("iron", 2)
+					
 		else:
-			PlayerInventory.bulkAddResource("rock", 2)
-			rockItem.texture = load(rock)
-			rockItem.expand_mode = 1
-			rockItem.size = Vector2(80, 80)
+			rockAdded = true
+			if PlayerInventory.resources.has("rock"):
+				if PlayerInventory.resources["rock"] < 25:
+					PlayerInventory.bulkAddResource("rock", 2)
+					
 	else:
 		if (isIron):
-			PlayerInventory.addResource("iron")
-			ironItem.texture = load(iron)
-			ironItem.expand_mode = 1
-			ironItem.size = Vector2(80, 80)
+			ironAdded = true
+			if PlayerInventory.resources.has("iron"):
+				if PlayerInventory.resources["iron"] < 25:
+					PlayerInventory.addResource("iron")
+					
+			else: 
+				PlayerInventory.resources["iron"] = 1
+				
 		else:
-			PlayerInventory.addResource("rock")
-			rockItem.texture = load(rock)
-			rockItem.expand_mode = 1
-			rockItem.size = Vector2(80, 80)
+			rockAdded = true
+			if PlayerInventory.resources.has("rock"):
+				if PlayerInventory.resources["rock"] < 25:
+					PlayerInventory.addResource("rock")
+					
+			else: 
+				PlayerInventory.resources["rock"] = 1
