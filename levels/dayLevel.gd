@@ -5,6 +5,7 @@ extends Node2D
 @onready var toolMenu = $CraftMenuUI/ToolUI
 @onready var wallMenu = $CraftMenuUI/WallUI
 @onready var baseNode = get_node("BaseArea")
+@onready var canvas_modulate = $CanvasModulate
 
 var randX
 var randY

@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://vm3xuvxvwil"]
+[gd_scene load_steps=39 format=3 uid="uid://vm3xuvxvwil"]
 
 [ext_resource type="Script" path="res://levels/dayLevel.gd" id="1_bubci"]
 [ext_resource type="Texture2D" uid="uid://gigw2vribd8a" path="res://assets/placeholders/tile_map_texture_test.png" id="2_cdrgq"]
@@ -11,7 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://r6wyo55xruut" path="res://assets/terrain/base_smiling.png" id="9_sda02"]
 [ext_resource type="Texture2D" uid="uid://ba2q2j3lkloto" path="res://assets/inventory/InventoryBackground.png" id="10_7qw5w"]
 [ext_resource type="Script" path="res://ui/inventory/player/Counter1.gd" id="10_kui50"]
-[ext_resource type="Script" path="res://levels/dayNightCycle.gd" id="10_vqx70"]
 [ext_resource type="Script" path="res://levels/dayNightColour.gd" id="11_004by"]
 [ext_resource type="Texture2D" uid="uid://c6w8yf24vtcwj" path="res://assets/inventory/InventoryBackgroundItem.png" id="11_yp6cy"]
 [ext_resource type="Script" path="res://ui/inventory/player/Counter2.gd" id="12_5rq36"]
@@ -890,9 +889,6 @@ collision_mask = 6
 
 [node name="BaseAreaCollision" type="CollisionShape2D" parent="BaseArea"]
 shape = SubResource("CircleShape2D_uu4ar")
-
-[node name="dayNightCycle" type="Node2D" parent="."]
-script = ExtResource("10_vqx70")
 
 [node name="dayNightColour" type="CanvasModulate" parent="."]
 script = ExtResource("11_004by")
