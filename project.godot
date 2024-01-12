@@ -20,6 +20,7 @@ config/icon="res://assets/icon.svg"
 PlayerInventory="*res://player_inventory.gd"
 PlayerStats="*res://player_stats.gd"
 Global="*res://global.gd"
+BaseInventory="*res://base_inventory.gd"
 
 [display]
 

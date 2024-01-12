@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://vm3xuvxvwil"]
+[gd_scene load_steps=39 format=3 uid="uid://vm3xuvxvwil"]
 
 [ext_resource type="Script" path="res://levels/dayLevel.gd" id="1_bubci"]
 [ext_resource type="Texture2D" uid="uid://gigw2vribd8a" path="res://assets/placeholders/tile_map_texture_test.png" id="2_cdrgq"]
@@ -20,9 +20,12 @@
 [ext_resource type="Script" path="res://ui/menu/craft/CraftUI.gd" id="15_280bb"]
 [ext_resource type="Script" path="res://ui/menu/craft/CraftMenuUI.gd" id="16_3248v"]
 [ext_resource type="Script" path="res://ui/menu/craft/WallUI.gd" id="17_rf2gt"]
+[ext_resource type="Script" path="res://ui/inventory/base/Counter1.gd" id="18_3stdb"]
 [ext_resource type="Script" path="res://ui/menu/craft/ToolUI.gd" id="18_uwtug"]
 [ext_resource type="Script" path="res://ui/inventory/base/BaseUI.gd" id="19_nf1fm"]
 [ext_resource type="Script" path="res://ui/inventory/base/BaseInvUI.gd" id="20_5gdyh"]
+[ext_resource type="Script" path="res://ui/inventory/base/Counter2.gd" id="20_ioara"]
+[ext_resource type="Script" path="res://ui/inventory/base/Counter3.gd" id="22_2d0r4"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_io8oq"]
 rough = true
@@ -1071,6 +1074,14 @@ offset_top = -1.0
 offset_right = 80.0
 offset_bottom = 79.0
 
+[node name="Counter1" type="Label" parent="BaseUI/BaseInvUI/BaseInvGrid/Slot1"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 53.0
+offset_right = 47.0
+offset_bottom = 76.0
+script = ExtResource("18_3stdb")
+
 [node name="Slot2" type="Panel" parent="BaseUI/BaseInvUI/BaseInvGrid"]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
@@ -1084,6 +1095,14 @@ offset_top = -1.0
 offset_right = 80.0
 offset_bottom = 79.0
 
+[node name="Counter2" type="Label" parent="BaseUI/BaseInvUI/BaseInvGrid/Slot2"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 53.0
+offset_right = 48.0
+offset_bottom = 76.0
+script = ExtResource("20_ioara")
+
 [node name="Slot3" type="Panel" parent="BaseUI/BaseInvUI/BaseInvGrid"]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
@@ -1096,6 +1115,14 @@ layout_mode = 0
 offset_top = -1.0
 offset_right = 80.0
 offset_bottom = 79.0
+
+[node name="Counter3" type="Label" parent="BaseUI/BaseInvUI/BaseInvGrid/Slot3"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 53.0
+offset_right = 47.0
+offset_bottom = 76.0
+script = ExtResource("22_2d0r4")
 
 [node name="PlayerUI" type="CanvasLayer" parent="."]
 process_mode = 3

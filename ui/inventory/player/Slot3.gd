@@ -23,10 +23,12 @@ func _drop_data(_pos, data):
 	if PlayerInventory.resources.has("iron"):
 		if PlayerInventory.resources["iron"] > 0:
 			PlayerInventory.removeResource("iron")
+			BaseInventory.addResource("iron")
 		else: 
 			PlayerInventory.resources["iron"] = 0
 	
 	PlayerInventory.printToConsole()
+	BaseInventory.printToConsole()
 
 func get_preview():
 	var preview = TextureRect.new()

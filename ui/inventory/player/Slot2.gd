@@ -23,10 +23,12 @@ func _drop_data(_pos, data):
 	if PlayerInventory.resources.has("rock"):
 		if PlayerInventory.resources["rock"] > 0:
 			PlayerInventory.removeResource("rock")
+			BaseInventory.addResource("rock")
 		else: 
 			PlayerInventory.resources["rock"] = 0
 	
 	PlayerInventory.printToConsole()
+	BaseInventory.printToConsole()
 	
 
 func get_preview():

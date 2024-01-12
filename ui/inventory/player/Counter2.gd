@@ -12,7 +12,8 @@ func _process(delta):
 		rockItem.expand_mode = 1
 		rockItem.size = Vector2(80, 80)
 		
-	elif PlayerInventory.resources.has("rock") && PlayerInventory.resources["rock"] == 0:
+	elif !PlayerInventory.resources.has("rock") || \
+	(PlayerInventory.resources.has("rock") && PlayerInventory.resources["rock"] == 0):
 		text = ""
 		rockItem.texture = load(rockEmpty)
 		rockItem.expand_mode = 1

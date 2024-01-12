@@ -12,7 +12,8 @@ func _process(delta):
 		ironItem.expand_mode = 1
 		ironItem.size = Vector2(80, 80)
 	
-	elif PlayerInventory.resources.has("iron") && PlayerInventory.resources["iron"] == 0:
+	elif !PlayerInventory.resources.has("iron") || \
+	(PlayerInventory.resources.has("iron") && PlayerInventory.resources["iron"] == 0):
 		text = ""
 		ironItem.texture = load(ironEmpty)
 		ironItem.expand_mode = 1
