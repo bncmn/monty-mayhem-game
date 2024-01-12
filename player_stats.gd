@@ -1,3 +1,4 @@
+"""
 extends Control
 
 var player_health : float = 100
@@ -30,3 +31,4 @@ func increase_health(amount: float):
 
 func update_health_bar():
 	health_bar.value = player_health
+"""
