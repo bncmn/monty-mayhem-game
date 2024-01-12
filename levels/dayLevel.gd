@@ -10,7 +10,7 @@ var randX
 var randY
 
 func _ready():
-	generateResources(600)
+	generateResources(1200)
 	$dayPhaseTimer.start()
 
 func _on_base_inv_ui_closed():
@@ -71,8 +71,8 @@ func generateResources(amountOfResourceNodes):
 	
 	randomize()
 	for i in amountOfResourceNodes:
-		randX = randi_range(-1500, 2500)
-		randY = randi_range(-500, 1500)
+		randX = randi_range(-2500, 3500)
+		randY = randi_range(-850, 1750)
 		
 		# If the random location is NOT within a distance of the previously spawned node, spawn it...
 		if abs(randX - prevX) > maxDistance and abs(randY - prevY) > maxDistance:
