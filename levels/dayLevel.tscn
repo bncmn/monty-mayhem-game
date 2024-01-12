@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://vm3xuvxvwil"]
+[gd_scene load_steps=40 format=3 uid="uid://vm3xuvxvwil"]
 
 [ext_resource type="Script" path="res://levels/dayLevel.gd" id="1_bubci"]
 [ext_resource type="Texture2D" uid="uid://gigw2vribd8a" path="res://assets/placeholders/tile_map_texture_test.png" id="2_cdrgq"]
@@ -20,15 +20,14 @@
 [ext_resource type="Script" path="res://ui/inventory/player/Slot2.gd" id="13_mhwt2"]
 [ext_resource type="Script" path="res://ui/inventory/player/Slot3.gd" id="14_6bofc"]
 [ext_resource type="Script" path="res://ui/inventory/player/Counter3.gd" id="14_e1jjt"]
-[ext_resource type="Script" path="res://ui/menu/craft/CraftUI.gd" id="15_280bb"]
-[ext_resource type="Script" path="res://ui/menu/craft/CraftMenuUI.gd" id="16_3248v"]
-[ext_resource type="Script" path="res://ui/menu/craft/WallUI.gd" id="17_rf2gt"]
 [ext_resource type="Script" path="res://ui/inventory/base/Counter1.gd" id="18_3stdb"]
-[ext_resource type="Script" path="res://ui/menu/craft/ToolUI.gd" id="18_uwtug"]
 [ext_resource type="Script" path="res://ui/inventory/base/BaseUI.gd" id="19_nf1fm"]
 [ext_resource type="Script" path="res://ui/inventory/base/BaseInvUI.gd" id="20_5gdyh"]
 [ext_resource type="Script" path="res://ui/inventory/base/Counter2.gd" id="20_ioara"]
 [ext_resource type="Script" path="res://ui/inventory/base/Counter3.gd" id="22_2d0r4"]
+[ext_resource type="Script" path="res://ui/menu/craft/CraftSlot1.gd" id="26_ujcxy"]
+[ext_resource type="Script" path="res://ui/menu/craft/CraftSlot2.gd" id="27_5cfbo"]
+[ext_resource type="Script" path="res://ui/menu/craft/CraftSlot3.gd" id="28_bwtbx"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_io8oq"]
 rough = true
@@ -836,9 +835,6 @@ radius = 105.119
 [sub_resource type="CircleShape2D" id="CircleShape2D_uu4ar"]
 radius = 259.095
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nyugq"]
-size = Vector2(446, 109.5)
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dd3du"]
 texture = ExtResource("11_yp6cy")
 
@@ -902,117 +898,6 @@ script = ExtResource("10_vqx70")
 script = ExtResource("11_004by")
 gradient = ExtResource("12_y4w1e")
 INGAME_SPEED = 20.0
-
-[node name="CraftMenuUI" type="CanvasLayer" parent="."]
-process_mode = 3
-script = ExtResource("16_3248v")
-
-[node name="WallUI" type="Control" parent="CraftMenuUI"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 595.0
-offset_top = 11.0
-offset_right = 849.0
-offset_bottom = 71.0
-script = ExtResource("17_rf2gt")
-
-[node name="WallGrid" type="GridContainer" parent="CraftMenuUI/WallUI"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -126.0
-offset_top = -30.0
-offset_right = 126.0
-offset_bottom = 30.0
-grow_horizontal = 2
-grow_vertical = 2
-columns = 4
-
-[node name="WallType1" type="Button" parent="CraftMenuUI/WallUI/WallGrid"]
-custom_minimum_size = Vector2(60, 60)
-layout_mode = 2
-text = "wall1"
-
-[node name="WallType2" type="Button" parent="CraftMenuUI/WallUI/WallGrid"]
-custom_minimum_size = Vector2(60, 60)
-layout_mode = 2
-text = "wall2"
-
-[node name="WallType3" type="Button" parent="CraftMenuUI/WallUI/WallGrid"]
-custom_minimum_size = Vector2(60, 60)
-layout_mode = 2
-text = "wall3"
-
-[node name="WallClose" type="Button" parent="CraftMenuUI/WallUI/WallGrid"]
-custom_minimum_size = Vector2(60, 60)
-layout_mode = 2
-text = "walls"
-
-[node name="WallArea" type="Area2D" parent="CraftMenuUI/WallUI"]
-position = Vector2(-211, -11)
-
-[node name="WallCollision" type="CollisionShape2D" parent="CraftMenuUI/WallUI/WallArea"]
-position = Vector2(323, 54.25)
-shape = SubResource("RectangleShape2D_nyugq")
-
-[node name="ToolUI" type="Control" parent="CraftMenuUI"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 533.0
-offset_top = 10.0
-offset_right = 848.0
-offset_bottom = 71.0
-script = ExtResource("18_uwtug")
-
-[node name="ToolGrid" type="GridContainer" parent="CraftMenuUI/ToolUI"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -126.0
-offset_top = -30.0
-offset_right = 126.0
-offset_bottom = 30.0
-grow_horizontal = 2
-grow_vertical = 2
-columns = 5
-
-[node name="Axe" type="Button" parent="CraftMenuUI/ToolUI/ToolGrid"]
-custom_minimum_size = Vector2(60, 60)
-layout_mode = 2
-text = "axe"
-
-[node name="Pickaxe" type="Button" parent="CraftMenuUI/ToolUI/ToolGrid"]
-custom_minimum_size = Vector2(60, 60)
-layout_mode = 2
-text = "pick"
-
-[node name="Sword" type="Button" parent="CraftMenuUI/ToolUI/ToolGrid"]
-custom_minimum_size = Vector2(60, 60)
-layout_mode = 2
-text = "sword"
-
-[node name="ToolClose" type="Button" parent="CraftMenuUI/ToolUI/ToolGrid"]
-custom_minimum_size = Vector2(60, 60)
-layout_mode = 2
-text = "tools"
-
-[node name="WallOpenFromTool" type="Button" parent="CraftMenuUI/ToolUI/ToolGrid"]
-custom_minimum_size = Vector2(60, 60)
-layout_mode = 2
-text = "walls"
-
-[node name="ToolArea" type="Area2D" parent="CraftMenuUI/ToolUI"]
-position = Vector2(-211, -9)
-
-[node name="ToolCollision" type="CollisionShape2D" parent="CraftMenuUI/ToolUI/ToolArea"]
-position = Vector2(385, 53)
-shape = SubResource("RectangleShape2D_nyugq")
 
 [node name="BaseUI" type="CanvasLayer" parent="."]
 process_mode = 3
@@ -1255,7 +1140,7 @@ offset_bottom = 264.0
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_dd3du")
-script = ExtResource("12_vg8x0")
+script = ExtResource("26_ujcxy")
 
 [node name="Item1" type="TextureRect" parent="PlayerUI/EquipUI/EquipGrid/Slot1"]
 custom_minimum_size = Vector2(80, 80)
@@ -1268,7 +1153,7 @@ offset_bottom = 79.0
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_dd3du")
-script = ExtResource("13_mhwt2")
+script = ExtResource("27_5cfbo")
 
 [node name="Item2" type="TextureRect" parent="PlayerUI/EquipUI/EquipGrid/Slot2"]
 custom_minimum_size = Vector2(80, 80)
@@ -1281,7 +1166,7 @@ offset_bottom = 79.0
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_dd3du")
-script = ExtResource("14_6bofc")
+script = ExtResource("28_bwtbx")
 
 [node name="Item3" type="TextureRect" parent="PlayerUI/EquipUI/EquipGrid/Slot3"]
 custom_minimum_size = Vector2(80, 80)
@@ -1289,14 +1174,6 @@ layout_mode = 0
 offset_top = -1.0
 offset_right = 80.0
 offset_bottom = 79.0
-
-[node name="CraftButton" type="Button" parent="PlayerUI"]
-custom_minimum_size = Vector2(60, 60)
-offset_left = 854.5
-offset_top = 11.0
-offset_right = 914.5
-offset_bottom = 71.0
-text = "craft"
 
 [node name="CraftUI" type="Control" parent="PlayerUI"]
 layout_mode = 3
@@ -1308,7 +1185,6 @@ offset_top = 11.0
 offset_right = -48.0
 offset_bottom = 71.0
 grow_horizontal = 2
-script = ExtResource("15_280bb")
 
 [node name="CraftGrid" type="GridContainer" parent="PlayerUI/CraftUI"]
 layout_mode = 1
@@ -1317,23 +1193,33 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -94.0
+offset_left = -162.0
 offset_top = -30.0
-offset_right = 94.0
+offset_right = 90.0
 offset_bottom = 30.0
 grow_horizontal = 2
 grow_vertical = 2
-columns = 2
+columns = 4
 
-[node name="ToolOpen" type="Button" parent="PlayerUI/CraftUI/CraftGrid"]
+[node name="Axe" type="Button" parent="PlayerUI/CraftUI/CraftGrid"]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
-text = "tools"
+text = "axe"
 
-[node name="WallOpen" type="Button" parent="PlayerUI/CraftUI/CraftGrid"]
+[node name="Pickaxe" type="Button" parent="PlayerUI/CraftUI/CraftGrid"]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
-text = "walls"
+text = "pick"
+
+[node name="Sword" type="Button" parent="PlayerUI/CraftUI/CraftGrid"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+text = "sword"
+
+[node name="CraftButton" type="Button" parent="PlayerUI/CraftUI/CraftGrid"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+text = "craft"
 
 [node name="CraftArea" type="Area2D" parent="PlayerUI/CraftUI"]
 position = Vector2(-341, -11)
@@ -1390,20 +1276,23 @@ wait_time = 20.0
 [connection signal="mouse_exited" from="BaseStatic/BaseSprite/Base" to="BaseUI" method="_on_base_mouse_exited"]
 [connection signal="body_entered" from="BaseArea" to="BaseUI" method="_on_base_area_body_entered"]
 [connection signal="body_exited" from="BaseArea" to="BaseUI" method="_on_base_area_body_exited"]
-[connection signal="pressed" from="CraftMenuUI/WallUI/WallGrid/WallClose" to="CraftMenuUI" method="_on_wall_close_pressed"]
-[connection signal="mouse_entered" from="CraftMenuUI/WallUI/WallArea" to="." method="_on_wall_area_mouse_entered"]
-[connection signal="mouse_exited" from="CraftMenuUI/WallUI/WallArea" to="." method="_on_wall_area_mouse_exited"]
-[connection signal="pressed" from="CraftMenuUI/ToolUI/ToolGrid/ToolClose" to="CraftMenuUI" method="_on_tool_close_pressed"]
-[connection signal="pressed" from="CraftMenuUI/ToolUI/ToolGrid/WallOpenFromTool" to="CraftMenuUI" method="_on_wall_open_from_tool_pressed"]
-[connection signal="mouse_entered" from="CraftMenuUI/ToolUI/ToolArea" to="." method="_on_tool_area_mouse_entered"]
-[connection signal="mouse_exited" from="CraftMenuUI/ToolUI/ToolArea" to="." method="_on_tool_area_mouse_exited"]
 [connection signal="closed" from="BaseUI/BaseInvUI" to="." method="_on_base_inv_ui_closed"]
 [connection signal="opened" from="BaseUI/BaseInvUI" to="." method="_on_base_inv_ui_opened"]
 [connection signal="pressed" from="BaseUI/BaseInvUI/BaseInvExit" to="BaseUI" method="_on_base_inv_exit_pressed"]
 [connection signal="mouse_entered" from="PlayerUI/PlayerInvArea" to="." method="_on_player_inv_area_mouse_entered"]
 [connection signal="mouse_exited" from="PlayerUI/PlayerInvArea" to="." method="_on_player_inv_area_mouse_exited"]
-[connection signal="pressed" from="PlayerUI/CraftUI/CraftGrid/ToolOpen" to="CraftMenuUI" method="_on_tool_open_pressed"]
-[connection signal="pressed" from="PlayerUI/CraftUI/CraftGrid/WallOpen" to="CraftMenuUI" method="_on_wall_open_pressed"]
+[connection signal="pressed" from="PlayerUI/CraftUI/CraftGrid/Axe" to="PlayerUI/EquipUI/EquipGrid/Slot1" method="_on_axe_pressed"]
+[connection signal="pressed" from="PlayerUI/CraftUI/CraftGrid/Axe" to="PlayerUI/EquipUI/EquipGrid/Slot2" method="_on_axe_pressed"]
+[connection signal="pressed" from="PlayerUI/CraftUI/CraftGrid/Axe" to="PlayerUI/EquipUI/EquipGrid/Slot3" method="_on_axe_pressed"]
+[connection signal="pressed" from="PlayerUI/CraftUI/CraftGrid/Pickaxe" to="PlayerUI/EquipUI/EquipGrid/Slot1" method="_on_pickaxe_pressed"]
+[connection signal="pressed" from="PlayerUI/CraftUI/CraftGrid/Pickaxe" to="PlayerUI/EquipUI/EquipGrid/Slot2" method="_on_pickaxe_pressed"]
+[connection signal="pressed" from="PlayerUI/CraftUI/CraftGrid/Pickaxe" to="PlayerUI/EquipUI/EquipGrid/Slot3" method="_on_pickaxe_pressed"]
+[connection signal="pressed" from="PlayerUI/CraftUI/CraftGrid/Sword" to="PlayerUI/EquipUI/EquipGrid/Slot1" method="_on_sword_pressed"]
+[connection signal="pressed" from="PlayerUI/CraftUI/CraftGrid/Sword" to="PlayerUI/EquipUI/EquipGrid/Slot2" method="_on_sword_pressed"]
+[connection signal="pressed" from="PlayerUI/CraftUI/CraftGrid/Sword" to="PlayerUI/EquipUI/EquipGrid/Slot3" method="_on_sword_pressed"]
+[connection signal="pressed" from="PlayerUI/CraftUI/CraftGrid/CraftButton" to="PlayerUI/EquipUI/EquipGrid/Slot1" method="_on_craft_button_pressed"]
+[connection signal="pressed" from="PlayerUI/CraftUI/CraftGrid/CraftButton" to="PlayerUI/EquipUI/EquipGrid/Slot2" method="_on_craft_button_pressed"]
+[connection signal="pressed" from="PlayerUI/CraftUI/CraftGrid/CraftButton" to="PlayerUI/EquipUI/EquipGrid/Slot3" method="_on_craft_button_pressed"]
 [connection signal="mouse_entered" from="PlayerUI/CraftUI/CraftArea" to="." method="_on_craft_area_mouse_entered"]
 [connection signal="mouse_exited" from="PlayerUI/CraftUI/CraftArea" to="." method="_on_craft_area_mouse_exited"]
 [connection signal="ready" from="dayPhaseTimer" to="." method="_on_day_phase_timer_ready"]
