@@ -2,8 +2,17 @@ extends Panel
 
 @onready var swordText = $Item3
 
-var sword = "res://assets/equipment/SwordDestroyer.png"
+var sword = "res://assets/inventory/sword.png"
+var swordBroken = "res://assets/inventory/sword_grey.png"
 var swordPress = false
+
+func _process(delta):
+	if (PlayerInventory.tools.has("sword") && PlayerInventory.tools["sword"]["durabilityRemaining"] == 0) || \
+	!PlayerInventory.tools.has("sword"):
+		swordText.texture = load(swordBroken)
+		swordText.expand_mode = 1
+		swordText.size = Vector2(80, 80)
+		PlayerInventory.printToConsole()
 
 func _on_axe_pressed():
 	swordPress = false

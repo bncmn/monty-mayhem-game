@@ -2,8 +2,17 @@ extends Panel
 
 @onready var pickaxeText = $Item2
 
-var pickaxe = "res://assets/placeholders/Pickaxe_placeholder.png"
+var pickaxe = "res://assets/inventory/Pickaxe.png"
+var pickaxeBroken = "res://assets/inventory/Pickaxe_grey.png"
 var pickaxePress = false
+
+func _process(delta):
+	if (PlayerInventory.tools.has("pickaxe") && PlayerInventory.tools["pickaxe"]["durabilityRemaining"] == 0) || \
+	!PlayerInventory.tools.has("pickaxe"):
+		pickaxeText.texture = load(pickaxeBroken)
+		pickaxeText.expand_mode = 1
+		pickaxeText.size = Vector2(80, 80)
+		PlayerInventory.printToConsole()
 
 func _on_axe_pressed():
 	pickaxePress = false

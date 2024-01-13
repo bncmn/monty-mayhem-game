@@ -2,9 +2,17 @@ extends Panel
 
 @onready var axeText = $Item1
 
-var axe = "res://assets/placeholders/wood axe_placeholder.png"
-var axeBroken = "res://assets/icon.svg"
+var axe = "res://assets/inventory/Axe.png"
+var axeBroken = "res://assets/inventory/Axe_grey.png"
 var axePress = false
+
+func _process(delta):
+	if (PlayerInventory.tools.has("axe") && PlayerInventory.tools["axe"]["durabilityRemaining"] == 0) || \
+	!PlayerInventory.tools.has("axe"):
+		axeText.texture = load(axeBroken)
+		axeText.expand_mode = 1
+		axeText.size = Vector2(80, 80)
+		PlayerInventory.printToConsole()
 
 func _on_axe_pressed():
 	axePress = true
@@ -30,9 +38,4 @@ func _on_craft_button_pressed():
 	PlayerInventory.printToConsole()
 	BaseInventory.printToConsole()
 
-func _process(delta):
-	if PlayerInventory.tools.has("axe") && PlayerInventory.tools["axe"]["durabilityRemaining"] == 0:
-		axeText.texture = load(axeBroken)
-		axeText.expand_mode = 1
-		axeText.size = Vector2(80, 80)
-		PlayerInventory.printToConsole()
+
