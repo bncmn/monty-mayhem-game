@@ -3,11 +3,18 @@
 [sub_resource type="GDScript" id="GDScript_2i21k"]
 script/source = "extends Control
 
+@onready var themeSong = $themeSong
+
+func _on_ready():
+	themeSong.play()
+
 func _on_start_pressed():
 	get_tree().change_scene_to_file(\"res://levels/dayLevel.tscn\")
 
 func _on_exit_pressed():
 	get_tree().quit()
+
+	
 "
 
 [node name="StartMenu" type="Control"]
@@ -41,6 +48,9 @@ text = "Start"
 layout_mode = 2
 text = "Exit"
 
+[node name="themeSong" type="AudioStreamPlayer" parent="."]
+
+[connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="toggled" from="VBoxContainer/Start" to="." method="_on_start_toggled"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
