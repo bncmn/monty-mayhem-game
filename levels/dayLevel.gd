@@ -2,8 +2,6 @@ extends Node2D
 
 @onready var baseInv = $BaseUI/BaseInvUI
 @onready var craftMenu = $PlayerUI/CraftUI
-@onready var toolMenu = $CraftMenuUI/ToolUI
-@onready var wallMenu = $CraftMenuUI/WallUI
 @onready var baseNode = get_node("BaseArea")
 @onready var canvas_modulate = $CanvasModulate
 
@@ -11,21 +9,37 @@ var randX
 var randY
 var enemies = []
 
+var woodPress = false
+var stonePress = false
+var ironPress = false
+
 func _ready():
 	generateResources(1200)
 	$dayPhaseTimer.start()
+	
+	Global.tilemap = $BuildMap 
+	set_process(false)
+
+func _process(delta):
+	var woodWall = preload("res://interactables/woodWall.tscn").instantiate()
+	var stoneWall = preload("res://interactables/stoneWall.tscn").instantiate()
+	var ironWall = preload("res://interactables/ironWall.tscn").instantiate()
+	
+	if woodPress == true:
+		add_child(woodWall)
+	elif stonePress == true:
+		add_child(stoneWall)
+	elif ironPress == true:
+		add_child(ironWall)
 
 func _on_base_inv_ui_closed():
 	get_tree().paused = false
 
-
 func _on_base_inv_ui_opened():
 	get_tree().paused = true
 
-
 func _on_player_inv_area_mouse_entered():
 	get_tree().paused = true
-
 
 func _on_player_inv_area_mouse_exited():
 	if baseInv.isOpen:
@@ -33,12 +47,19 @@ func _on_player_inv_area_mouse_exited():
 	else: 
 		get_tree().paused = false
 
-
 func _on_craft_area_mouse_entered():
 	get_tree().paused = true
 
-
 func _on_craft_area_mouse_exited():
+	if baseInv.isOpen:
+		get_tree().paused = true
+	else: 
+		get_tree().paused = false
+		
+func _on_build_area_mouse_entered():
+	get_tree().paused = true
+
+func _on_build_area_mouse_exited():
 	if baseInv.isOpen:
 		get_tree().paused = true
 	else: 
@@ -105,3 +126,14 @@ func _on_night_phase_timer_timeout():
 		enemy.queue_free()
 	enemies.clear()
 	$dayPhaseTimer.start()
+
+func _on_wall_type_1_pressed():
+	woodPress = true
+
+
+func _on_wall_type_2_pressed():
+	stonePress = true
+
+
+func _on_wall_type_3_pressed():
+	ironPress = true

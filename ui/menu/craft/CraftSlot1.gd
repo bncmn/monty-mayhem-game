@@ -31,7 +31,7 @@ func _on_craft_button_pressed():
 	BaseInventory.printToConsole()
 
 func _process(delta):
-	if PlayerInventory.tools.has("axe") && PlayerInventory.tools["pickaxe"]["durabilityRemaining"] == 0:
+	if PlayerInventory.tools.has("axe") && PlayerInventory.tools["axe"]["durabilityRemaining"] == 0:
 		axeText.texture = load(axeBroken)
 		axeText.expand_mode = 1
 		axeText.size = Vector2(80, 80)

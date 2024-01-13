@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://c4qjrf3wbotn0"]
+[gd_scene load_steps=4 format=3 uid="uid://c4qjrf3wbotn0"]
 
 [ext_resource type="PackedScene" uid="uid://dkfuogdndq437" path="res://interactables/genericWall.tscn" id="1_bndig"]
 [ext_resource type="Script" path="res://interactables/stoneWall.gd" id="2_cn381"]
+[ext_resource type="Script" path="res://interactables/stoneWallSprite.gd" id="3_njoat"]
 
 [node name="stoneWall" instance=ExtResource("1_bndig")]
 script = ExtResource("2_cn381")
+
+[node name="Sprite2D" parent="." index="0"]
+script = ExtResource("3_njoat")
