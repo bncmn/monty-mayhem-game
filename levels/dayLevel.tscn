@@ -895,7 +895,7 @@ shape = SubResource("CircleShape2D_uu4ar")
 [node name="dayNightColour" type="CanvasModulate" parent="."]
 script = ExtResource("11_004by")
 gradient = ExtResource("12_y4w1e")
-INGAME_SPEED = 20.0
+INGAME_SPEED = 6.0
 
 [node name="BaseUI" type="CanvasLayer" parent="."]
 process_mode = 3
@@ -1268,13 +1268,16 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="dayPhaseTimer" type="Timer" parent="."]
-wait_time = 20.0
+wait_time = 120.0
 
 [node name="enemy" parent="." instance=ExtResource("28_44p0h")]
 position = Vector2(-632, 536)
 
 [node name="genericWall" parent="." instance=ExtResource("29_8agjn")]
 position = Vector2(-221, 536)
+
+[node name="nightPhaseTimer" type="Timer" parent="."]
+wait_time = 120.0
 
 [connection signal="mouse_entered" from="BaseStatic/BaseSprite/Base" to="BaseUI" method="_on_base_mouse_entered"]
 [connection signal="mouse_exited" from="BaseStatic/BaseSprite/Base" to="BaseUI" method="_on_base_mouse_exited"]
@@ -1301,3 +1304,4 @@ position = Vector2(-221, 536)
 [connection signal="mouse_exited" from="PlayerUI/CraftUI/CraftArea" to="." method="_on_craft_area_mouse_exited"]
 [connection signal="ready" from="dayPhaseTimer" to="." method="_on_day_phase_timer_ready"]
 [connection signal="timeout" from="dayPhaseTimer" to="." method="_on_day_phase_timer_timeout"]
+[connection signal="timeout" from="nightPhaseTimer" to="." method="_on_night_phase_timer_timeout"]
