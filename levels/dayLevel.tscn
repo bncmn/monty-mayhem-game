@@ -1267,6 +1267,14 @@ text = "wall3"
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="HealthBar" type="ProgressBar" parent="PlayerUI"]
+offset_left = 648.0
+offset_top = 943.0
+offset_right = 1265.0
+offset_bottom = 1018.0
+step = 1.0
+value = 100.0
+
 [node name="dayPhaseTimer" type="Timer" parent="."]
 wait_time = 120.0
 

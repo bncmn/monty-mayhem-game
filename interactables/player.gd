@@ -9,6 +9,11 @@ var playerIsAlive = true
 @onready var animations = $AnimationPlayer
 var targetLocation = global_position
 
+func update_health_bar():
+	print("New bar value is:", $"../PlayerUI/HealthBar".value)
+	print("Actual Health his:", health)
+	$"../PlayerUI/HealthBar".value = health
+
 func _input(event):
 	if event.is_action_pressed("mouseLeft") and !Global.mouseOverResource:
 		targetLocation = get_global_mouse_position()
@@ -40,6 +45,7 @@ func enemyAttack():
 	if enemyInAttackRange and !enemyAttackCooldown:
 		health -= 5
 		enemyAttackCooldown = true
+		update_health_bar()
 		$attackCooldown.start()
 		print("DEBUG: Player took damage! ", health)
 
