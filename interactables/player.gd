@@ -10,8 +10,6 @@ var playerIsAlive = true
 var targetLocation = global_position
 
 func update_health_bar():
-	print("New bar value is:", $"../PlayerUI/HealthBar".value)
-	print("Actual Health his:", health)
 	$"../PlayerUI/HealthBar".value = health
 
 func _input(event):
