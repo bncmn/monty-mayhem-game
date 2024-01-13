@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsixx6j6xsccg"
-path="res://.godot/imported/axe.png-59e95a3410d04d8b3c4096ef1f721548.ctex"
+uid="uid://b3yonesrviy1d"
+path="res://.godot/imported/Axe_grey.png-db6a9459ed15bcd7838904d865ed87d6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ui/in-game/axe.png"
-dest_files=["res://.godot/imported/axe.png-59e95a3410d04d8b3c4096ef1f721548.ctex"]
+source_file="res://assets/inventory/Axe_grey.png"
+dest_files=["res://.godot/imported/Axe_grey.png-db6a9459ed15bcd7838904d865ed87d6.ctex"]
 
 [params]
 

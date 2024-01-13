@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://beclpu7oj8lim"
-path="res://.godot/imported/hint_gate.png-c07ef19f7a9bb542176b82efdd4806bd.ctex"
+path="res://.godot/imported/hint_gate.png-5d118bf96a2cc37db3a203a3c61f7fb4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ui/in-game/hint_gate.png"
-dest_files=["res://.godot/imported/hint_gate.png-c07ef19f7a9bb542176b82efdd4806bd.ctex"]
+source_file="res://assets/buttons/hint_gate.png"
+dest_files=["res://.godot/imported/hint_gate.png-5d118bf96a2cc37db3a203a3c61f7fb4.ctex"]
 
 [params]
 

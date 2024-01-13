@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6mfff6qbgxmh"
-path="res://.godot/imported/tree0030000.png-dfc3c72cfd93856a1d677e0d8cc8842b.ctex"
+uid="uid://bdeobf2m68dx4"
+path="res://.godot/imported/tool_pickaxe.png-d572ec4854ea8ec2b90cb00b7a0c4336.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tree0030000.png"
-dest_files=["res://.godot/imported/tree0030000.png-dfc3c72cfd93856a1d677e0d8cc8842b.ctex"]
+source_file="res://assets/item_icons/tool_pickaxe.png"
+dest_files=["res://.godot/imported/tool_pickaxe.png-d572ec4854ea8ec2b90cb00b7a0c4336.ctex"]
 
 [params]
 

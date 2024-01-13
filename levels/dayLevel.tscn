@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://levels/dayLevel.gd" id="1_bubci"]
 [ext_resource type="Texture2D" uid="uid://gigw2vribd8a" path="res://assets/placeholders/tile_map_texture_test.png" id="2_cdrgq"]
 [ext_resource type="PackedScene" uid="uid://mkdb5plpgl08" path="res://interactables/player.tscn" id="2_odlqd"]
-[ext_resource type="Texture2D" uid="uid://cs05fis302t8c" path="res://assets/icon.svg" id="3_mtj8y"]
+[ext_resource type="Texture2D" uid="uid://cs05fis302t8c" path="res://assets/placeholders/icon.svg" id="3_mtj8y"]
 [ext_resource type="Texture2D" uid="uid://cqm1g6oepjy74" path="res://assets/terrain/terrain.png" id="4_v8ocn"]
 [ext_resource type="PackedScene" uid="uid://baa6tpbjgbiju" path="res://interactables/axe.tscn" id="6_4ixg5"]
 [ext_resource type="PackedScene" uid="uid://bd54106u2btey" path="res://interactables/pickaxe.tscn" id="7_rwamj"]

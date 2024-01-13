@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fiiu1ixrfg6d"
-path="res://.godot/imported/frame.png-0eac863a78d75b7ca45e8dbcf5940d98.ctex"
+uid="uid://dnodk6usw6ht8"
+path="res://.godot/imported/btn_exit.png-6cc9429638369362234d10374f5144f2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ui/in-game/frame.png"
-dest_files=["res://.godot/imported/frame.png-0eac863a78d75b7ca45e8dbcf5940d98.ctex"]
+source_file="res://assets/buttons/btn_exit.png"
+dest_files=["res://.godot/imported/btn_exit.png-6cc9429638369362234d10374f5144f2.ctex"]
 
 [params]
 

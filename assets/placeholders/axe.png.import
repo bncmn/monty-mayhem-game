@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbxg0nu7xscb"
-path="res://.godot/imported/btn_build_tool.png-fc773132934d78186a248f66a11ebe49.ctex"
+uid="uid://j3i3ria3nxjf"
+path="res://.godot/imported/axe.png-e128bfc29ffd9544beaa6b3c1019ec79.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ui/in-game/btn_build_tool.png"
-dest_files=["res://.godot/imported/btn_build_tool.png-fc773132934d78186a248f66a11ebe49.ctex"]
+source_file="res://assets/placeholders/axe.png"
+dest_files=["res://.godot/imported/axe.png-e128bfc29ffd9544beaa6b3c1019ec79.ctex"]
 
 [params]
 

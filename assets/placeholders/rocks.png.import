@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://g325f2fefyl5"
-path="res://.godot/imported/tool_axe.png-5dabdf501d4ca950a6270039c8bfced5.ctex"
+uid="uid://cqkevi0e1rmkl"
+path="res://.godot/imported/rocks.png-cd8429c8637b7fbc0ccfd18536207a8b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ui/in-game/tool_axe.png"
-dest_files=["res://.godot/imported/tool_axe.png-5dabdf501d4ca950a6270039c8bfced5.ctex"]
+source_file="res://assets/placeholders/rocks.png"
+dest_files=["res://.godot/imported/rocks.png-cd8429c8637b7fbc0ccfd18536207a8b.ctex"]
 
 [params]
 

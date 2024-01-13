@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddl2suhcrdil0"
-path="res://.godot/imported/rock.png-0f48ec1fe65511a5edc2c8627665670c.ctex"
+uid="uid://do85wk73ny5gx"
+path="res://.godot/imported/sword_grey.png-1c4f6a9d9e3b7bac832ed50748fd30c8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ui/in-game/rock.png"
-dest_files=["res://.godot/imported/rock.png-0f48ec1fe65511a5edc2c8627665670c.ctex"]
+source_file="res://assets/inventory/sword_grey.png"
+dest_files=["res://.godot/imported/sword_grey.png-1c4f6a9d9e3b7bac832ed50748fd30c8.ctex"]
 
 [params]
 

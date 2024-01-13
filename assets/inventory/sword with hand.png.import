@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7fyy8i3w7m7m"
-path="res://.godot/imported/wall_wood.png-0ee196a85c28d5fdf0a457c4f5d01934.ctex"
+uid="uid://dtmihmmdk05jo"
+path="res://.godot/imported/sword with hand.png-d8e1a08e6432ddd02ef6d8b699fc760f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ui/in-game/wall_wood.png"
-dest_files=["res://.godot/imported/wall_wood.png-0ee196a85c28d5fdf0a457c4f5d01934.ctex"]
+source_file="res://assets/inventory/sword with hand.png"
+dest_files=["res://.godot/imported/sword with hand.png-d8e1a08e6432ddd02ef6d8b699fc760f.ctex"]
 
 [params]
 

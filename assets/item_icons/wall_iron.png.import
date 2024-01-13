@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cp8wju7sklmxk"
-path="res://.godot/imported/item_wood.png-f9a3fcb2d7b15cd317c9301a871d440c.ctex"
+uid="uid://buej5ayf6bj4g"
+path="res://.godot/imported/wall_iron.png-17da3450da4c0283439b675622dd5019.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ui/in-game/item_wood.png"
-dest_files=["res://.godot/imported/item_wood.png-f9a3fcb2d7b15cd317c9301a871d440c.ctex"]
+source_file="res://assets/item_icons/wall_iron.png"
+dest_files=["res://.godot/imported/wall_iron.png-17da3450da4c0283439b675622dd5019.ctex"]
 
 [params]
 
