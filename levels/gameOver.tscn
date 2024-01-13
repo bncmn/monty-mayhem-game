@@ -1,0 +1,128 @@
+[gd_scene load_steps=6 format=3 uid="uid://podi2c22gd7q"]
+
+[ext_resource type="Script" path="res://levels/gameOver.gd" id="1_fs202"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x33y4"]
+bg_color = Color(0.0862745, 0.627451, 0.8, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.392157, 0.843137, 0.988235, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qld54"]
+bg_color = Color(0, 0, 0, 0.356863)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_jxknv"]
+font_size = 40
+outline_size = 11
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8rqew"]
+font_size = 30
+outline_size = 9
+outline_color = Color(0, 0, 0, 1)
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fs202")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 0.490196)
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -170.0
+offset_top = -135.0
+offset_right = 173.0
+offset_bottom = 144.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_x33y4")
+
+[node name="PanelContainer" type="PanelContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.5
+offset_top = -59.5
+offset_right = 150.5
+offset_bottom = 118.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qld54")
+
+[node name="GameOver" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 66.0
+offset_top = 16.0
+offset_right = 281.0
+offset_bottom = 71.0
+text = "Game Over"
+label_settings = SubResource("LabelSettings_jxknv")
+
+[node name="PlayAgain" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -73.5
+offset_top = -47.0
+offset_right = 88.5
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Play Again?"
+label_settings = SubResource("LabelSettings_8rqew")
+
+[node name="RestartButton" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = -124.0
+offset_right = 170.0
+offset_bottom = -60.0
+grow_vertical = 0
+text = "Yes"
+
+[node name="NoExitButton" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 178.0
+offset_top = -124.0
+offset_right = 298.0
+offset_bottom = -60.0
+grow_vertical = 0
+text = "No"
+
+[connection signal="pressed" from="Panel/RestartButton" to="." method="_on_restart_button_pressed"]
