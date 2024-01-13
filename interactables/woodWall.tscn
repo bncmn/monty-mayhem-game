@@ -8,4 +8,5 @@
 script = ExtResource("2_ktw75")
 
 [node name="Sprite2D" parent="." index="0"]
+texture = null
 script = ExtResource("3_siats")

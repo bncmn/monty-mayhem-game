@@ -4,6 +4,7 @@ extends Node2D
 @onready var craftMenu = $PlayerUI/CraftUI
 @onready var baseNode = get_node("BaseArea")
 @onready var canvas_modulate = $CanvasModulate
+@onready var buildMap = $BuildMap
 
 var randX
 var randY
@@ -17,7 +18,8 @@ func _ready():
 	generateResources(1200)
 	$dayPhaseTimer.start()
 	
-	Global.tilemap = $BuildMap 
+	buildMap.close()
+	Global.tilemap = buildMap
 	set_process(false)
 
 func _process(delta):
@@ -130,10 +132,12 @@ func _on_night_phase_timer_timeout():
 func _on_wall_type_1_pressed():
 	woodPress = true
 
-
 func _on_wall_type_2_pressed():
 	stonePress = true
 
-
 func _on_wall_type_3_pressed():
 	ironPress = true
+
+func _on_build_button_pressed():
+	set_process(true)
+	buildMap.open()
