@@ -9,6 +9,7 @@ var wood = "res://assets/placeholders/wood_placeholder.png"
 func _input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.pressed and isCollectable:
 		currentClicks += 1
+		$collectionArea/woodDust.emitting = true
 		
 		if PlayerInventory.resources.has("wood"):
 			if PlayerInventory.resources["wood"] < 25:
