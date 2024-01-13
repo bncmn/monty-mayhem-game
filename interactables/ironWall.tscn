@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://tl0kh487byv7"]
+
+[ext_resource type="PackedScene" uid="uid://dkfuogdndq437" path="res://interactables/genericWall.tscn" id="1_m25fo"]
+[ext_resource type="Script" path="res://interactables/ironWall.gd" id="2_mkbek"]
+
+[node name="ironWall" instance=ExtResource("1_m25fo")]
+script = ExtResource("2_mkbek")

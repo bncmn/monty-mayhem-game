@@ -7,7 +7,7 @@
 size = Vector2(64.9375, 67)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_787qe"]
-radius = 73.0
+radius = 133.135
 
 [node name="genericWall" type="StaticBody2D"]
 collision_layer = 2

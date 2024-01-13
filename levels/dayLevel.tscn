@@ -28,7 +28,7 @@
 [ext_resource type="Script" path="res://ui/menu/craft/CraftSlot2.gd" id="27_5cfbo"]
 [ext_resource type="PackedScene" uid="uid://qu62atcx28if" path="res://interactables/enemy.tscn" id="28_44p0h"]
 [ext_resource type="Script" path="res://ui/menu/craft/CraftSlot3.gd" id="28_bwtbx"]
-[ext_resource type="PackedScene" uid="uid://dkfuogdndq437" path="res://interactables/genericWall.tscn" id="29_d6tgm"]
+[ext_resource type="PackedScene" uid="uid://27j5i3owdr35" path="res://interactables/woodWall.tscn" id="29_8agjn"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_io8oq"]
 rough = true
@@ -1270,11 +1270,11 @@ offset_bottom = 40.0
 [node name="dayPhaseTimer" type="Timer" parent="."]
 wait_time = 20.0
 
-[node name="genericWall" parent="." instance=ExtResource("29_d6tgm")]
-position = Vector2(-254, 536)
-
 [node name="enemy" parent="." instance=ExtResource("28_44p0h")]
 position = Vector2(-632, 536)
+
+[node name="genericWall" parent="." instance=ExtResource("29_8agjn")]
+position = Vector2(-221, 536)
 
 [connection signal="mouse_entered" from="BaseStatic/BaseSprite/Base" to="BaseUI" method="_on_base_mouse_entered"]
 [connection signal="mouse_exited" from="BaseStatic/BaseSprite/Base" to="BaseUI" method="_on_base_mouse_exited"]

@@ -2,7 +2,7 @@ extends StaticBody2D
 
 var enemyInAttackRange = false
 var enemyAttackCooldown = false
-var wallHealth = 100
+var wallHealth
 
 func _physics_process(delta):
 	enemyHitWall()
