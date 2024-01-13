@@ -16,10 +16,8 @@ corner_radius_bottom_left = 25
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qld54"]
 bg_color = Color(0, 0, 0, 0.356863)
-corner_radius_top_left = 25
-corner_radius_top_right = 25
-corner_radius_bottom_right = 25
-corner_radius_bottom_left = 25
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [sub_resource type="LabelSettings" id="LabelSettings_jxknv"]
 font_size = 40
@@ -28,7 +26,6 @@ outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_8rqew"]
 font_size = 30
-outline_size = 9
 outline_color = Color(0, 0, 0, 1)
 
 [node name="GameOver" type="Control"]
@@ -93,9 +90,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -73.5
-offset_top = -47.0
+offset_top = -40.5
 offset_right = 88.5
-offset_bottom = -5.0
+offset_bottom = 1.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "Play Again?"
