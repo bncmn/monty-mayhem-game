@@ -1,8 +1,10 @@
 extends CharacterBody2D
 
-var moveSpeed = 230
+var moveSpeed = 100#230
 var playerChase = false
+var goToWall = false
 var player = null
+var wall = null
 var health = 100
 var playerInAttackRange = true
 var playerAttackCooldown = false
@@ -13,18 +15,33 @@ func _physics_process(delta):
 		if global_position.distance_to(player.position) > 60:
 			move_and_slide()
 	
+	elif goToWall:
+		velocity = global_position.direction_to(wall.position) * moveSpeed
+		if global_position.distance_to(wall.position) > 60:
+			move_and_slide()
+	
 	if health <= 0:
 		print("DEBUG: Enemy is dead!")
 		Global.mouseOverEnemy = false
 		self.queue_free()
 
 func _on_detection_area_body_entered(body):
-	player = body
-	playerChase = true
+	if body.has_method("player"):
+		player = body
+		playerChase = true
+	
+	if body.has_method("wall"):
+		wall = body
+		goToWall = true
 
 func _on_detection_area_body_exited(body):
-	player = null
-	playerChase = false
+	if body.has_method("player"):
+		player = null
+		playerChase = false
+	
+	if body.has_method("wall"):
+		wall = null
+		goToWall = false
 
 func enemy():
 	pass

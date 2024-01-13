@@ -11,7 +11,7 @@ var randX
 var randY
 
 func _ready():
-	generateResources(1200)
+	#generateResources(1200)
 	$dayPhaseTimer.start()
 
 func _on_base_inv_ui_closed():

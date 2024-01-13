@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://dkfuogdndq437"]
+
+[ext_resource type="Script" path="res://interactables/genericWall.gd" id="1_ogffa"]
+[ext_resource type="Texture2D" uid="uid://cs05fis302t8c" path="res://assets/icon.svg" id="2_4kwwp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v7mq1"]
+size = Vector2(64.9375, 67)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_787qe"]
+radius = 73.0
+
+[node name="genericWall" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_ogffa")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_4kwwp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_v7mq1")
+
+[node name="attackCooldown" type="Timer" parent="."]
+
+[node name="wallHitbox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wallHitbox"]
+shape = SubResource("CircleShape2D_787qe")
+
+[connection signal="timeout" from="attackCooldown" to="." method="_on_attack_cooldown_timeout"]
+[connection signal="body_entered" from="wallHitbox" to="." method="_on_wall_hitbox_body_entered"]
+[connection signal="body_exited" from="wallHitbox" to="." method="_on_wall_hitbox_body_exited"]

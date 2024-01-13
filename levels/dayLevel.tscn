@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://vm3xuvxvwil"]
+[gd_scene load_steps=41 format=3 uid="uid://vm3xuvxvwil"]
 
 [ext_resource type="Script" path="res://levels/dayLevel.gd" id="1_bubci"]
 [ext_resource type="Texture2D" uid="uid://gigw2vribd8a" path="res://assets/placeholders/tile_map_texture_test.png" id="2_cdrgq"]
@@ -26,7 +26,9 @@
 [ext_resource type="Script" path="res://ui/inventory/base/Counter3.gd" id="22_2d0r4"]
 [ext_resource type="Script" path="res://ui/menu/craft/CraftSlot1.gd" id="26_ujcxy"]
 [ext_resource type="Script" path="res://ui/menu/craft/CraftSlot2.gd" id="27_5cfbo"]
+[ext_resource type="PackedScene" uid="uid://qu62atcx28if" path="res://interactables/enemy.tscn" id="28_44p0h"]
 [ext_resource type="Script" path="res://ui/menu/craft/CraftSlot3.gd" id="28_bwtbx"]
+[ext_resource type="PackedScene" uid="uid://dkfuogdndq437" path="res://interactables/genericWall.tscn" id="29_d6tgm"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_io8oq"]
 rough = true
@@ -1267,6 +1269,12 @@ offset_bottom = 40.0
 
 [node name="dayPhaseTimer" type="Timer" parent="."]
 wait_time = 20.0
+
+[node name="genericWall" parent="." instance=ExtResource("29_d6tgm")]
+position = Vector2(-254, 536)
+
+[node name="enemy" parent="." instance=ExtResource("28_44p0h")]
+position = Vector2(-632, 536)
 
 [connection signal="mouse_entered" from="BaseStatic/BaseSprite/Base" to="BaseUI" method="_on_base_mouse_entered"]
 [connection signal="mouse_exited" from="BaseStatic/BaseSprite/Base" to="BaseUI" method="_on_base_mouse_exited"]
