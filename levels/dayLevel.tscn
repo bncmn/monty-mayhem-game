@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://vm3xuvxvwil"]
+[gd_scene load_steps=67 format=3 uid="uid://vm3xuvxvwil"]
 
 [ext_resource type="Script" path="res://levels/dayLevel.gd" id="1_bubci"]
 [ext_resource type="Texture2D" uid="uid://gigw2vribd8a" path="res://assets/placeholders/tile_map_texture_test.png" id="2_cdrgq"]
@@ -47,8 +47,9 @@
 [ext_resource type="Script" path="res://levels/ExitBuild.gd" id="42_w02kr"]
 [ext_resource type="Script" path="res://interactables/stone wall/StoneMenu.gd" id="43_boehq"]
 [ext_resource type="Script" path="res://levels/IronMenu.gd" id="44_ge7r8"]
-[ext_resource type="PackedScene" uid="uid://ds6uwb3ncfu6i" path="res://interactables/egg.tscn" id="45_wwnm0"]
+[ext_resource type="PackedScene" path="res://interactables/egg.tscn" id="45_wwnm0"]
 [ext_resource type="PackedScene" uid="uid://sbjs32ppw3x" path="res://interactables/larva.tscn" id="46_momso"]
+[ext_resource type="AudioStream" uid="uid://c1dg4ax4tdfc8" path="res://assets/sound/UI SELECT BUTTON.mp3" id="50_g8ula"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_io8oq"]
 rough = true
@@ -1547,6 +1548,10 @@ position = Vector2(303, -360)
 
 [node name="egg" parent="." instance=ExtResource("45_wwnm0")]
 position = Vector2(-570, -316)
+
+[node name="ButtonContinue" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("50_g8ula")
+volume_db = -6.0
 
 [connection signal="mouse_entered" from="BaseStatic/BaseSprite/Base" to="BaseUI" method="_on_base_mouse_entered"]
 [connection signal="mouse_exited" from="BaseStatic/BaseSprite/Base" to="BaseUI" method="_on_base_mouse_exited"]
