@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://vm3xuvxvwil"]
+[gd_scene load_steps=93 format=3 uid="uid://vm3xuvxvwil"]
 
 [ext_resource type="Script" path="res://levels/dayLevel.gd" id="1_bubci"]
 [ext_resource type="Texture2D" uid="uid://gigw2vribd8a" path="res://assets/placeholders/tile_map_texture_test.png" id="2_cdrgq"]
@@ -50,6 +50,35 @@
 [ext_resource type="PackedScene" path="res://interactables/egg.tscn" id="45_wwnm0"]
 [ext_resource type="PackedScene" uid="uid://sbjs32ppw3x" path="res://interactables/larva.tscn" id="46_momso"]
 [ext_resource type="AudioStream" uid="uid://c1dg4ax4tdfc8" path="res://assets/sound/UI SELECT BUTTON.mp3" id="50_g8ula"]
+[ext_resource type="Script" path="res://ui/menu/IronMenu.gd" id="44_ge7r8"]
+[ext_resource type="Texture2D" uid="uid://dnodk6usw6ht8" path="res://assets/buttons/btn_exit.png" id="44_kur8a"]
+[ext_resource type="PackedScene" uid="uid://ds6uwb3ncfu6i" path="res://interactables/egg.tscn" id="45_wwnm0"]
+[ext_resource type="PackedScene" uid="uid://b6ybtaffae5hs" path="res://interactables/larva.tscn" id="46_momso"]
+[ext_resource type="Texture2D" uid="uid://db6wdbndvwrqx" path="res://assets/terrain/wall_tiles/wood_left_top_corner.png" id="47_3n7mu"]
+[ext_resource type="Texture2D" uid="uid://c8anpstk0u30q" path="res://assets/terrain/wall_tiles/wood_horizontal_side.png" id="48_s0o3e"]
+[ext_resource type="Texture2D" uid="uid://cggbunlx1sv7n" path="res://assets/terrain/wall_tiles/wood_top_right_corner.png" id="49_84178"]
+[ext_resource type="Texture2D" uid="uid://3vfyapgvlple" path="res://assets/terrain/wall_tiles/wood_left_side.png" id="50_kn8xm"]
+[ext_resource type="Texture2D" uid="uid://px4ndam7ltx2" path="res://assets/terrain/wall_tiles/wood_right_side.png" id="51_glipe"]
+[ext_resource type="Texture2D" uid="uid://ix32sqs0xvdx" path="res://assets/terrain/wall_tiles/wood_bottom_left_corner.png" id="52_g2jja"]
+[ext_resource type="Texture2D" uid="uid://cg0rjyvb7rfvu" path="res://assets/terrain/wall_tiles/wood_gate.png" id="53_bdl86"]
+[ext_resource type="Texture2D" uid="uid://bygjdp7jmfjes" path="res://assets/terrain/wall_tiles/wood_bottom_right_corner.png" id="54_rt4jk"]
+[ext_resource type="Texture2D" uid="uid://dyeid3gk0cc62" path="res://assets/terrain/wall_tiles/stone_top_left_corner.png" id="56_h6cyu"]
+[ext_resource type="Texture2D" uid="uid://bcocc2a0qoi5p" path="res://assets/terrain/wall_tiles/stone_horizontal_side.png" id="57_3klma"]
+[ext_resource type="Texture2D" uid="uid://dgb242dcp6eea" path="res://assets/terrain/wall_tiles/stone_top_right_corner.png" id="58_b27oi"]
+[ext_resource type="Texture2D" uid="uid://qvvdcgufae5q" path="res://assets/terrain/wall_tiles/stone_left_side.png" id="59_5nt71"]
+[ext_resource type="Texture2D" uid="uid://42hu5xqfnpis" path="res://assets/terrain/wall_tiles/stone_right_side.png" id="60_s3o44"]
+[ext_resource type="Texture2D" uid="uid://d2wgubgiyqnkg" path="res://assets/terrain/wall_tiles/stone_bottom_left_corner.png" id="61_ftc36"]
+[ext_resource type="Texture2D" uid="uid://2xpahjb251kt" path="res://assets/item_icons/tool_sword.png" id="62_70gig"]
+[ext_resource type="Texture2D" uid="uid://dxvy3vjr1k82d" path="res://assets/terrain/wall_tiles/stone_gate.png" id="62_rp1a3"]
+[ext_resource type="Texture2D" uid="uid://bglxyq5agwy2k" path="res://assets/terrain/wall_tiles/stone_bottom_right_corner.png" id="63_f8xnl"]
+[ext_resource type="Texture2D" uid="uid://bmkcp62dmn17t" path="res://assets/terrain/wall_tiles/iron_top_left_corner.png" id="65_vs2yp"]
+[ext_resource type="Texture2D" uid="uid://cij00rqy8lo3f" path="res://assets/terrain/wall_tiles/iron_horizontal_side.png" id="66_0bdde"]
+[ext_resource type="Texture2D" uid="uid://cukqkkn1rr8o8" path="res://assets/terrain/wall_tiles/iron_top_right_corner.png" id="67_nvst2"]
+[ext_resource type="Texture2D" uid="uid://dtna8dvflslkg" path="res://assets/terrain/wall_tiles/iron_left_side.png" id="68_iiuvq"]
+[ext_resource type="Texture2D" uid="uid://b2waax34xufsc" path="res://assets/terrain/wall_tiles/iron_right_side.png" id="69_748dc"]
+[ext_resource type="Texture2D" uid="uid://cgpuah2jfmk52" path="res://assets/terrain/wall_tiles/iron_bottom_left_corner.png" id="70_8gd8v"]
+[ext_resource type="Texture2D" uid="uid://cppc1452dyocj" path="res://assets/terrain/wall_tiles/iron_gate.png" id="71_516l7"]
+[ext_resource type="Texture2D" uid="uid://dlaqjpmsmdunq" path="res://assets/terrain/wall_tiles/iron_right_bottom_corner.png" id="72_isirw"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_io8oq"]
 rough = true
@@ -1089,17 +1118,6 @@ script = ExtResource("22_2d0r4")
 [node name="PlayerUI" type="CanvasLayer" parent="."]
 process_mode = 3
 
-[node name="PlayerInvBG" type="TextureRect" parent="PlayerUI"]
-process_mode = 3
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -102.0
-offset_bottom = 280.0
-grow_horizontal = 0
-texture = ExtResource("10_7qw5w")
-expand_mode = 1
-
 [node name="PlayerInvGrid" type="GridContainer" parent="PlayerUI"]
 process_mode = 3
 anchors_preset = 1
@@ -1185,14 +1203,6 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-
-[node name="EquipBG" type="TextureRect" parent="PlayerUI/EquipUI"]
-process_mode = 3
-layout_mode = 1
-offset_right = 102.0
-offset_bottom = 280.0
-texture = ExtResource("10_7qw5w")
-expand_mode = 1
 
 [node name="EquipGrid" type="GridContainer" parent="PlayerUI/EquipUI"]
 process_mode = 3
@@ -1282,7 +1292,7 @@ flat = true
 [node name="Sword" type="Button" parent="PlayerUI/CraftUI/CraftGrid"]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
-icon = ExtResource("18_bcj72")
+icon = ExtResource("62_70gig")
 flat = true
 
 [node name="CraftButton" type="Button" parent="PlayerUI/CraftUI/CraftGrid"]
