@@ -63,9 +63,9 @@ func playerAttack():
 		else:
 			health -= 5
 		playerAttackCooldown = true
-		$Sprite2D.modulate = Color.INDIAN_RED
+		$AnimatedSprite2D.modulate = Color.INDIAN_RED
 		await get_tree().create_timer(0.2).timeout
-		$Sprite2D.modulate = Color.WHITE
+		$AnimatedSprite2D.modulate = Color.WHITE
 		$attackCooldown.start()
 		print("DEBUG: Enemy took damage! ", health)
 
