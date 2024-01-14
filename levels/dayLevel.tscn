@@ -926,6 +926,8 @@ collision_layer = 3
 collision_mask = 7
 
 [node name="BaseSprite" type="Sprite2D" parent="BaseStatic"]
+position = Vector2(-15.1172, 13.5)
+scale = Vector2(0.859375, 0.859375)
 texture = ExtResource("9_sda02")
 
 [node name="Base" type="Area2D" parent="BaseStatic/BaseSprite"]
@@ -936,6 +938,7 @@ collision_mask = 7
 shape = SubResource("CircleShape2D_lj6w2")
 
 [node name="BaseStaticCollision" type="CollisionShape2D" parent="BaseStatic"]
+position = Vector2(-12, 15)
 shape = SubResource("CircleShape2D_v8xol")
 
 [node name="BaseArea" type="Area2D" parent="."]
@@ -944,6 +947,7 @@ collision_layer = 2
 collision_mask = 6
 
 [node name="BaseAreaCollision" type="CollisionShape2D" parent="BaseArea"]
+visible = false
 shape = SubResource("CircleShape2D_uu4ar")
 
 [node name="dayNightColour" type="CanvasModulate" parent="."]

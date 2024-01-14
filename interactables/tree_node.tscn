@@ -16,16 +16,19 @@ point_count = 2
 script = ExtResource("2_8u8ir")
 
 [node name="Sprite2D" parent="." index="0"]
-position = Vector2(-7.62939e-06, -43)
-scale = Vector2(0.622996, 0.526624)
+position = Vector2(14.5048, -52.5401)
+scale = Vector2(0.777302, 0.64368)
 texture = ExtResource("3_jvxxd")
 
 [node name="CollisionShape2D" parent="." index="1"]
-position = Vector2(-16, -30)
+position = Vector2(5, -29)
 shape = SubResource("CapsuleShape2D_dtwnn")
 
+[node name="CollisionShape2D" parent="collectionArea" index="0"]
+position = Vector2(13, -30)
+
 [node name="woodDust" type="CPUParticles2D" parent="collectionArea" index="1"]
-position = Vector2(-7, -46)
+position = Vector2(6, -47)
 emitting = false
 one_shot = true
 speed_scale = 3.0
