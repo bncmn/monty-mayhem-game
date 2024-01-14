@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=58 format=3 uid="uid://vm3xuvxvwil"]
+=======
+[gd_scene load_steps=59 format=3 uid="uid://vm3xuvxvwil"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Script" path="res://levels/dayLevel.gd" id="1_bubci"]
 [ext_resource type="Texture2D" uid="uid://gigw2vribd8a" path="res://assets/placeholders/tile_map_texture_test.png" id="2_cdrgq"]
@@ -39,6 +43,8 @@
 [ext_resource type="Texture2D" uid="uid://7fyy8i3w7m7m" path="res://assets/item_icons/wall_wood.png" id="35_l4s40"]
 [ext_resource type="Texture2D" uid="uid://wuldtpqa1s5a" path="res://assets/item_icons/wall_rock.png" id="36_aagi5"]
 [ext_resource type="Texture2D" uid="uid://buej5ayf6bj4g" path="res://assets/item_icons/wall_iron.png" id="37_sq8aq"]
+[ext_resource type="Texture2D" uid="uid://1qfki17siiq1" path="res://assets/health_bar/health_bar_under.png" id="38_p5w4g"]
+[ext_resource type="Texture2D" uid="uid://bbsl3s8jdn8yb" path="res://assets/health_bar/health_bar_over.png" id="39_m8bmm"]
 [ext_resource type="PackedScene" uid="uid://podi2c22gd7q" path="res://levels/gameOver.tscn" id="40_yypta"]
 [ext_resource type="AudioStream" uid="uid://c2a07551q1wgu" path="res://assets/sound/DAY CYCLE #1.mp3" id="41_slsio"]
 
@@ -1341,13 +1347,14 @@ shape = SubResource("RectangleShape2D_wsn0a")
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="HealthBar" type="ProgressBar" parent="PlayerUI"]
-offset_left = 648.0
-offset_top = 943.0
-offset_right = 1265.0
-offset_bottom = 1018.0
-step = 1.0
+[node name="HealthBar" type="TextureProgressBar" parent="PlayerUI"]
+offset_left = 578.0
+offset_top = 936.0
+offset_right = 1346.0
+offset_bottom = 1011.0
 value = 100.0
+texture_under = ExtResource("38_p5w4g")
+texture_progress = ExtResource("39_m8bmm")
 
 [node name="GameOver" parent="PlayerUI" instance=ExtResource("40_yypta")]
 visible = false
