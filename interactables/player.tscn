@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://interactables/player.gd" id="1_8pvhl"]
 [ext_resource type="Texture2D" uid="uid://dy0qhrm5u85bo" path="res://assets/Characters Sprites/Player Mushroom_Sprite Sheet (80 x 67).png" id="2_3qouj"]
-[ext_resource type="AudioStream" uid="uid://b66sscu5o4ssn" path="res://assets/sound/DAMAGE SOUND #1.mp3" id="3_n26lc"]
+[ext_resource type="AudioStream" uid="uid://mr48ucyurw6y" path="res://assets/sound/DAMAGE SOUND #1.mp3" id="3_n26lc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5wbr0"]
 atlas = ExtResource("2_3qouj")

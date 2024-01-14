@@ -14,7 +14,7 @@ var ironAdded = false
 
 func _input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.pressed and isCollectable:
-		rockHit.play()
+		#rockHit.play()
 		currentClicks += 1
 		$collectionArea/rockParticles.emitting = true
 		

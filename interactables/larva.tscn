@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b6ybtaffae5hs"]
+[gd_scene load_steps=19 format=3 uid="uid://sbjs32ppw3x"]
 
 [ext_resource type="Texture2D" uid="uid://bb4s1v3dldwps" path="res://assets/Characters Sprites/Larva_Sprite Sheet (105 x 65).png" id="1_72ih2"]
 [ext_resource type="Script" path="res://interactables/larva.gd" id="1_737b3"]
@@ -127,7 +127,7 @@ script = ExtResource("1_737b3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_hqgic")
-animation = &"attack"
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-13, 4)

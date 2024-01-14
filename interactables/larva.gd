@@ -8,8 +8,29 @@ var wall = null
 var health = 100
 var playerInAttackRange = true
 var playerAttackCooldown = false
+var pos : Vector2;
+var old_pos : Vector2;
+var moving = false
+
+@onready var animated_sprite = $AnimatedSprite2D
 
 func _physics_process(delta):
+	pos = global_position
+	if pos != old_pos:
+		moving = true;
+	else:
+		moving = false;
+	old_pos = pos;
+	
+	if moving:
+		print("old vs new pos: ", old_pos, pos)
+		print("Pos results in", moving)
+		animated_sprite.play("walk")
+	elif not moving:
+		animated_sprite.stop()
+	elif not animated_sprite.is_playing():
+		animated_sprite.play("idle")
+		
 	if playerChase:
 		velocity = global_position.direction_to(player.position) * moveSpeed
 		if global_position.distance_to(player.position) > 60:
@@ -60,6 +81,8 @@ func playerAttack():
 		else:
 			health -= 5
 		playerAttackCooldown = true
+		animated_sprite.stop()
+		animated_sprite.play("hurt")
 		$AnimatedSprite2D.modulate = Color.INDIAN_RED
 		await get_tree().create_timer(0.2).timeout
 		$AnimatedSprite2D.modulate = Color.WHITE

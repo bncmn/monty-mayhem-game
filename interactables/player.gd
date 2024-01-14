@@ -10,9 +10,7 @@ var old_pos : Vector2;
 var moving = false
 
 @export var moveSpeed : float = 300
-@onready var sprite_2d = $Sprite2D
 @onready var animated_sprite = $AnimatedSprite2D
-@onready var hurt = $hurt
 var targetLocation = global_position
 
 func update_health_bar():
@@ -89,7 +87,6 @@ func enemyAttack():
 		animated_sprite.stop()
 		animated_sprite.play("hurt")
 		enemyAttackCooldown = true
-		hurt.play()
 		update_health_bar()
 		$AnimatedSprite2D.modulate = Color.INDIAN_RED
 		await get_tree().create_timer(0.2).timeout

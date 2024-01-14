@@ -9,6 +9,8 @@ var health = 100
 var playerInAttackRange = true
 var playerAttackCooldown = false
 
+@onready var animated_sprite = $AnimatedSprite2D
+
 func _physics_process(delta):
 	if playerChase:
 		velocity = global_position.direction_to(player.position) * moveSpeed
@@ -67,6 +69,7 @@ func playerAttack():
 			health -= 5
 		playerAttackCooldown = true
 		$AnimatedSprite2D.modulate = Color.INDIAN_RED
+		animated_sprite.play("hurt")
 		await get_tree().create_timer(0.2).timeout
 		$AnimatedSprite2D.modulate = Color.WHITE
 		$attackCooldown.start()
