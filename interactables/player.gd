@@ -27,6 +27,7 @@ func _physics_process(delta):
 		playerIsAlive = false # add "Game Over" here!
 		health = 0
 		print("DEBUG: Player is dead!")
+		$"../PlayerUI/GameOver".visible = true
 		self.queue_free()
 
 func player():
