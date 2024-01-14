@@ -23,34 +23,39 @@ func _input(event):
 		targetLocation = get_global_mouse_position()
 
 func _physics_process(delta):
-	#print("The current status of velocity is:", @GlobalScope.is_zero_approx())
 	pos = global_position
-	print("Global position is: ", pos)
-	
 	if pos != old_pos:
 		moving = true;
 	else:
 		moving = false;
-	#create old pos from pos
 	old_pos = pos;
 	
-	if moving == false:
-		animated_sprite.play("idle")
-	else:
+	if moving:
+		print("old vs new pos: ", old_pos, pos)
+		print("Pos results in", moving)
 		animated_sprite.play("walk")
+	elif not moving:
+		animated_sprite.stop()
+	elif not animated_sprite.is_playing():
+		animated_sprite.play("idle")
 		
 	enemyAttack()
 	velocity = global_position.direction_to(targetLocation) * moveSpeed
+	
 	if global_position.distance_to(targetLocation) > 10 and !Global.mouseOverEnemy:
 		move_and_slide()
 	
 	if health <= 0:
-		playerIsAlive = false # add "Game Over" here!
+		playerIsAlive = false
+		get_tree().paused = true # add "Game Over" here!
 		health = 0
 		print("DEBUG: Player is dead!")
-		$"../PlayerUI/GameOver".visible = true
-		self.queue_free()
+		animated_sprite.stop()
 		animated_sprite.play("death")
+		animated_sprite.pause()
+		await get_tree().create_timer(1).timeout
+		self.queue_free()
+		$"../PlayerUI/GameOver".visible = true
 
 func player():
 	pass
@@ -73,7 +78,7 @@ func _on_player_hitbox_body_exited(body):
 
 func enemyAttack():
 	var damage
-	if enemyInAttackRange and !enemyAttackCooldown:
+	if enemyInAttackRange and !enemyAttackCooldown and playerIsAlive:
 		if enemyTypeInRange == "egg":
 			damage = 1
 		if enemyTypeInRange == "larva":
@@ -81,6 +86,8 @@ func enemyAttack():
 		if enemyTypeInRange == "beetle":
 			damage = 10
 		health -= damage
+		animated_sprite.stop()
+		animated_sprite.play("hurt")
 		enemyAttackCooldown = true
 		hurt.play()
 		update_health_bar()
@@ -88,7 +95,7 @@ func enemyAttack():
 		await get_tree().create_timer(0.2).timeout
 		$AnimatedSprite2D.modulate = Color.WHITE
 		$attackCooldown.start()
-		animated_sprite.play("hurt")
+
 		print("DEBUG: Player took damage! ", health)
 
 func _on_attack_cooldown_timeout():

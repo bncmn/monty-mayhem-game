@@ -1,5 +1,6 @@
 extends Control
 
+#@onready var buttonClicked = $buttonClicked
 # @onready var gameOverTheme = $gameOverTheme
 
 # func _on_ready():
