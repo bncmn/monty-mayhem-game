@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c2a07551q1wgu"
+path="res://.godot/imported/DAY CYCLE #1.mp3-d103426913095a946a17f7c86231da7e.mp3str"
+
+[deps]
+
+source_file="res://assets/sound/DAY CYCLE #1.mp3"
+dest_files=["res://.godot/imported/DAY CYCLE #1.mp3-d103426913095a946a17f7c86231da7e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
