@@ -13,7 +13,8 @@ config_version=5
 config/name="Game-jam"
 run/main_scene="res://levels/StartMenu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://assets/placeholders/icon.svg"
+boot_splash/bg_color=Color(0.141176, 0.141176, 0.141176, 1)
+config/icon="res://assets/terrain/base_talking.png"
 
 [autoload]
 

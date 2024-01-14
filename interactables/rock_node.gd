@@ -4,6 +4,7 @@ extends "res://interactables/resourceNode.gd"
 
 @onready var rockItem = $"../PlayerUI/PlayerInvGrid/Slot2/Item2"
 @onready var ironItem = $"../PlayerUI/PlayerInvGrid/Slot3/Item3"
+@onready var rockHit = $rockHit
 
 var rock = "res://assets/placeholders/rock_material_placeholder.png"
 var iron = "res://assets/placeholders/metal_placeholder.png"
@@ -13,6 +14,7 @@ var ironAdded = false
 
 func _input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.pressed and isCollectable:
+		rockHit.play()
 		currentClicks += 1
 		$collectionArea/rockParticles.emitting = true
 		

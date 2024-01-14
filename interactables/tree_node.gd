@@ -3,11 +3,12 @@
 extends "res://interactables/resourceNode.gd"
 
 @onready var item = $"../PlayerUI/PlayerInvGrid/Slot1/Item1"
-
+@onready var woodChop = $woodChop
 var wood = "res://assets/placeholders/wood_placeholder.png"
 
 func _input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.pressed and isCollectable:
+		woodChop.play()
 		currentClicks += 1
 		$collectionArea/woodDust.emitting = true
 		
