@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b66sscu5o4ssn"
+path="res://.godot/imported/DAMAGE SOUND #1.mp3-87427f84dce4862baa0a09d0024de7b5.mp3str"
+
+[deps]
+
+source_file="res://assets/sound/DAMAGE SOUND #1.mp3"
+dest_files=["res://.godot/imported/DAMAGE SOUND #1.mp3-87427f84dce4862baa0a09d0024de7b5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

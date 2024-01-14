@@ -1,7 +1,8 @@
-[gd_scene load_steps=20 format=3 uid="uid://mkdb5plpgl08"]
+[gd_scene load_steps=21 format=3 uid="uid://mkdb5plpgl08"]
 
 [ext_resource type="Script" path="res://interactables/player.gd" id="1_8pvhl"]
 [ext_resource type="Texture2D" uid="uid://dy0qhrm5u85bo" path="res://assets/Characters Sprites/Player Mushroom_Sprite Sheet (80 x 67).png" id="2_3qouj"]
+[ext_resource type="AudioStream" uid="uid://b66sscu5o4ssn" path="res://assets/sound/DAMAGE SOUND #1.mp3" id="3_n26lc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5wbr0"]
 atlas = ExtResource("2_3qouj")
@@ -164,6 +165,10 @@ shape = SubResource("CircleShape2D_kv5se")
 
 [node name="dealDamageCooldown" type="Timer" parent="."]
 wait_time = 0.5
+
+[node name="hurt" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_n26lc")
+volume_db = -8.0
 
 [connection signal="body_entered" from="playerHitbox" to="." method="_on_player_hitbox_body_entered"]
 [connection signal="body_exited" from="playerHitbox" to="." method="_on_player_hitbox_body_exited"]

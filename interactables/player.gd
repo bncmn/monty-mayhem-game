@@ -7,6 +7,7 @@ var playerIsAlive = true
 
 @export var moveSpeed : float = 300
 @onready var animations = $AnimationPlayer
+@onready var hurt = $hurt
 var targetLocation = global_position
 
 func update_health_bar():
@@ -43,10 +44,11 @@ func enemyAttack():
 	if enemyInAttackRange and !enemyAttackCooldown:
 		health -= 5
 		enemyAttackCooldown = true
+		hurt.play()
 		update_health_bar()
-		$Sprite2D.modulate = Color.INDIAN_RED
+		$AnimatedSprite2D.modulate = Color.INDIAN_RED
 		await get_tree().create_timer(0.2).timeout
-		$Sprite2D.modulate = Color.WHITE
+		$AnimatedSprite2D.modulate = Color.WHITE
 		$attackCooldown.start()
 		print("DEBUG: Player took damage! ", health)
 
