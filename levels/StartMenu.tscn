@@ -1,9 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://b3yadfgxs73gp"]
+[gd_scene load_steps=8 format=3 uid="uid://b3yadfgxs73gp"]
 
 [ext_resource type="AudioStream" uid="uid://ds3s7stebfcqy" path="res://assets/sound/TITLE THEME - OPTION #1.mp3" id="1_gqtlj"]
+[ext_resource type="Texture2D" uid="uid://1la48ky86eon" path="res://assets/Splash Art/Splash Art - Title Screen.png" id="1_nw6hw"]
 [ext_resource type="Texture2D" uid="uid://ls032y8mhe73" path="res://assets/buttons/btn_start.png" id="1_sl4ri"]
 [ext_resource type="Texture2D" path="res://assets/buttons/btn_exit.png" id="2_mllje"]
 [ext_resource type="AudioStream" uid="uid://d2jkrdeltdn07" path="res://assets/sound/MOUSE CLICKING.mp3" id="4_nv23n"]
+[ext_resource type="Texture2D" uid="uid://3ti5bdl8dr1f" path="res://assets/Splash Art/Splash Art - LOGO.png" id="2_3rslf"]
+[ext_resource type="Texture2D" uid="uid://dnodk6usw6ht8" path="res://assets/buttons/btn_exit.png" id="2_mllje"]
 
 [sub_resource type="GDScript" id="GDScript_2i21k"]
 script/source = "extends Control
@@ -25,6 +28,13 @@ func _on_exit_pressed():
 	
 "
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ev0r2"]
+bg_color = Color(0, 0, 0, 0.152941)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
 [node name="StartMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -34,6 +44,29 @@ grow_horizontal = 2
 grow_vertical = 2
 script = SubResource("GDScript_2i21k")
 
+[node name="SplashArt" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_nw6hw")
+
+[node name="Logo" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 120.0
+offset_right = 822.0
+offset_bottom = 538.0
+texture = ExtResource("2_3rslf")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 328.0
+offset_top = 496.0
+offset_right = 360.0
+offset_bottom = 528.0
+scale = Vector2(6.74047, 7.41214)
+theme_override_styles/panel = SubResource("StyleBoxFlat_ev0r2")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -41,10 +74,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -608.0
-offset_top = 92.0
-offset_right = -464.0
-offset_bottom = 190.0
+offset_left = -656.0
+offset_top = -11.9999
+offset_right = -512.0
+offset_bottom = 90.0001
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.8, 1.8)
