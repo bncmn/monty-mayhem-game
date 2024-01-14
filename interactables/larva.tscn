@@ -1,0 +1,116 @@
+[gd_scene load_steps=15 format=3 uid="uid://b6ybtaffae5hs"]
+
+[ext_resource type="Texture2D" uid="uid://bb4s1v3dldwps" path="res://assets/Characters Sprites/Larva_Sprite Sheet (105 x 65).png" id="1_72ih2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rey2f"]
+atlas = ExtResource("1_72ih2")
+region = Rect2(0, 195, 131, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ccffn"]
+atlas = ExtResource("1_72ih2")
+region = Rect2(0, 130, 105, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iviri"]
+atlas = ExtResource("1_72ih2")
+region = Rect2(105, 130, 105, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i7axo"]
+atlas = ExtResource("1_72ih2")
+region = Rect2(0, 0, 105, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rhlh7"]
+atlas = ExtResource("1_72ih2")
+region = Rect2(105, 0, 105, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ehb30"]
+atlas = ExtResource("1_72ih2")
+region = Rect2(210, 0, 105, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12nwq"]
+atlas = ExtResource("1_72ih2")
+region = Rect2(315, 0, 105, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8t6jx"]
+atlas = ExtResource("1_72ih2")
+region = Rect2(420, 0, 105, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tiro3"]
+atlas = ExtResource("1_72ih2")
+region = Rect2(0, 65, 105, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u6jji"]
+atlas = ExtResource("1_72ih2")
+region = Rect2(105, 65, 105, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3lulu"]
+atlas = ExtResource("1_72ih2")
+region = Rect2(210, 65, 105, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwvpi"]
+atlas = ExtResource("1_72ih2")
+region = Rect2(315, 65, 105, 65)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hqgic"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rey2f")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ccffn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iviri")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i7axo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rhlh7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ehb30")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_12nwq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8t6jx")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tiro3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u6jji")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3lulu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iwvpi")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="Larva" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_hqgic")
+animation = &"attack"

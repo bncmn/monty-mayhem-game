@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://vm3xuvxvwil"]
+[gd_scene load_steps=61 format=3 uid="uid://vm3xuvxvwil"]
 
 [ext_resource type="Script" path="res://levels/dayLevel.gd" id="1_bubci"]
 [ext_resource type="Texture2D" uid="uid://gigw2vribd8a" path="res://assets/placeholders/tile_map_texture_test.png" id="2_cdrgq"]

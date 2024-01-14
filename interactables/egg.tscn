@@ -1,0 +1,123 @@
+[gd_scene load_steps=16 format=3 uid="uid://ds6uwb3ncfu6i"]
+
+[ext_resource type="Texture2D" uid="uid://dyjohtbbmxxwe" path="res://assets/Characters Sprites/Egg_Sprite Sheet (66 x 61).png" id="1_nkuyu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qm11o"]
+atlas = ExtResource("1_nkuyu")
+region = Rect2(0, 183, 66, 61)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lu7ph"]
+atlas = ExtResource("1_nkuyu")
+region = Rect2(0, 122, 66, 61)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ox4ib"]
+atlas = ExtResource("1_nkuyu")
+region = Rect2(66, 122, 66, 61)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_slbjc"]
+atlas = ExtResource("1_nkuyu")
+region = Rect2(0, 0, 66, 61)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_017tr"]
+atlas = ExtResource("1_nkuyu")
+region = Rect2(66, 0, 66, 61)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hvck6"]
+atlas = ExtResource("1_nkuyu")
+region = Rect2(132, 0, 66, 61)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hbc10"]
+atlas = ExtResource("1_nkuyu")
+region = Rect2(198, 0, 66, 61)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s3uyg"]
+atlas = ExtResource("1_nkuyu")
+region = Rect2(0, 61, 66, 61)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xyg0x"]
+atlas = ExtResource("1_nkuyu")
+region = Rect2(66, 61, 66, 61)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_20hyy"]
+atlas = ExtResource("1_nkuyu")
+region = Rect2(132, 61, 66, 61)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mobli"]
+atlas = ExtResource("1_nkuyu")
+region = Rect2(198, 61, 66, 61)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4jtum"]
+atlas = ExtResource("1_nkuyu")
+region = Rect2(264, 61, 66, 61)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hvndl"]
+atlas = ExtResource("1_nkuyu")
+region = Rect2(330, 61, 66, 61)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wfx2s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qm11o")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lu7ph")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ox4ib")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_slbjc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_017tr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hvck6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hbc10")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s3uyg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xyg0x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_20hyy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mobli")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4jtum")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hvndl")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="egg" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_wfx2s")
+animation = &"attack"
