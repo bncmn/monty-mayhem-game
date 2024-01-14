@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b3yadfgxs73gp"]
+[gd_scene load_steps=5 format=3 uid="uid://b3yadfgxs73gp"]
 
 [ext_resource type="AudioStream" uid="uid://ds3s7stebfcqy" path="res://assets/sound/TITLE THEME - OPTION #1.mp3" id="1_gqtlj"]
+[ext_resource type="Texture2D" uid="uid://ls032y8mhe73" path="res://assets/buttons/btn_start.png" id="1_sl4ri"]
+[ext_resource type="Texture2D" uid="uid://dnodk6usw6ht8" path="res://assets/buttons/btn_exit.png" id="2_mllje"]
 
 [sub_resource type="GDScript" id="GDScript_2i21k"]
 script/source = "extends Control
@@ -42,13 +44,15 @@ offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Start" type="Button" parent="VBoxContainer"]
+[node name="Start" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
-text = "Start"
+texture_normal = ExtResource("1_sl4ri")
+stretch_mode = 3
 
-[node name="Exit" type="Button" parent="VBoxContainer"]
+[node name="Exit" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
-text = "Exit"
+texture_normal = ExtResource("2_mllje")
+stretch_mode = 3
 
 [node name="themeSong" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_gqtlj")
