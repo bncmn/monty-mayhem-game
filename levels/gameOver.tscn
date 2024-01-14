@@ -123,3 +123,4 @@ grow_vertical = 0
 text = "No"
 
 [connection signal="pressed" from="Panel/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="Panel/NoExitButton" to="." method="_on_no_exit_button_pressed"]

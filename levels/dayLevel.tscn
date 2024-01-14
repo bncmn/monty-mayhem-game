@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://vm3xuvxvwil"]
+[gd_scene load_steps=57 format=3 uid="uid://vm3xuvxvwil"]
 
 [ext_resource type="Script" path="res://levels/dayLevel.gd" id="1_bubci"]
 [ext_resource type="Texture2D" uid="uid://gigw2vribd8a" path="res://assets/placeholders/tile_map_texture_test.png" id="2_cdrgq"]
@@ -39,6 +39,7 @@
 [ext_resource type="Texture2D" uid="uid://7fyy8i3w7m7m" path="res://assets/item_icons/wall_wood.png" id="35_l4s40"]
 [ext_resource type="Texture2D" uid="uid://wuldtpqa1s5a" path="res://assets/item_icons/wall_rock.png" id="36_aagi5"]
 [ext_resource type="Texture2D" uid="uid://buej5ayf6bj4g" path="res://assets/item_icons/wall_iron.png" id="37_sq8aq"]
+[ext_resource type="PackedScene" uid="uid://podi2c22gd7q" path="res://levels/gameOver.tscn" id="40_yypta"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_io8oq"]
 rough = true
@@ -1346,6 +1347,9 @@ offset_right = 1265.0
 offset_bottom = 1018.0
 step = 1.0
 value = 100.0
+
+[node name="GameOver" parent="PlayerUI" instance=ExtResource("40_yypta")]
+visible = false
 
 [node name="dayPhaseTimer" type="Timer" parent="."]
 wait_time = 120.0
