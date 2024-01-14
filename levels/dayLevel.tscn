@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://vm3xuvxvwil"]
+[gd_scene load_steps=66 format=3 uid="uid://vm3xuvxvwil"]
 
 [ext_resource type="Script" path="res://levels/dayLevel.gd" id="1_bubci"]
 [ext_resource type="Texture2D" uid="uid://gigw2vribd8a" path="res://assets/placeholders/tile_map_texture_test.png" id="2_cdrgq"]
@@ -42,11 +42,11 @@
 [ext_resource type="Texture2D" uid="uid://bbsl3s8jdn8yb" path="res://assets/health_bar/health_bar_over.png" id="39_m8bmm"]
 [ext_resource type="PackedScene" uid="uid://podi2c22gd7q" path="res://levels/gameOver.tscn" id="40_yypta"]
 [ext_resource type="AudioStream" uid="uid://c2a07551q1wgu" path="res://assets/sound/DAY CYCLE #1.mp3" id="41_slsio"]
+[ext_resource type="AudioStream" uid="uid://ds3s7stebfcqy" path="res://assets/sound/TITLE THEME - OPTION #1.mp3" id="41_uf665"]
 [ext_resource type="Script" path="res://interactables/wood wall/WoodMenu.gd" id="42_byl3s"]
 [ext_resource type="Script" path="res://levels/ExitBuild.gd" id="42_w02kr"]
 [ext_resource type="Script" path="res://interactables/stone wall/StoneMenu.gd" id="43_boehq"]
 [ext_resource type="Script" path="res://levels/IronMenu.gd" id="44_ge7r8"]
-[ext_resource type="AudioStream" uid="uid://ds3s7stebfcqy" path="res://assets/sound/TITLE THEME - OPTION #1.mp3" id="41_uf665"]
 [ext_resource type="PackedScene" uid="uid://ds6uwb3ncfu6i" path="res://interactables/egg.tscn" id="45_wwnm0"]
 [ext_resource type="PackedScene" uid="uid://b6ybtaffae5hs" path="res://interactables/larva.tscn" id="46_momso"]
 
@@ -1369,11 +1369,8 @@ wait_time = 10.0
 [node name="enemy" parent="." instance=ExtResource("28_44p0h")]
 position = Vector2(-565, 358)
 
-[node name="nightPhaseTimer" type="Timer" parent="."]
+[node name="nightPhaseTimer2" type="Timer" parent="."]
 wait_time = 120.0
-[node name="genericWall" parent="." instance=ExtResource("29_8agjn")]
-visible = false
-position = Vector2(-221, 536)
 
 [node name="AudioNight" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("41_uf665")
@@ -1544,6 +1541,7 @@ layout_mode = 2
 [node name="Iron9" type="Button" parent="BuildMenuUI/IronMenu/GridContainer"]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
+
 [node name="Larva" parent="." instance=ExtResource("46_momso")]
 position = Vector2(303, -360)
 
