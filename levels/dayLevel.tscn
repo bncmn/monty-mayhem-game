@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=3 uid="uid://vm3xuvxvwil"]
+[gd_scene load_steps=93 format=3 uid="uid://vm3xuvxvwil"]
 
 [ext_resource type="Script" path="res://levels/dayLevel.gd" id="1_bubci"]
 [ext_resource type="Texture2D" uid="uid://gigw2vribd8a" path="res://assets/placeholders/tile_map_texture_test.png" id="2_cdrgq"]
@@ -64,6 +64,7 @@
 [ext_resource type="Texture2D" uid="uid://qvvdcgufae5q" path="res://assets/terrain/wall_tiles/stone_left_side.png" id="59_5nt71"]
 [ext_resource type="Texture2D" uid="uid://42hu5xqfnpis" path="res://assets/terrain/wall_tiles/stone_right_side.png" id="60_s3o44"]
 [ext_resource type="Texture2D" uid="uid://d2wgubgiyqnkg" path="res://assets/terrain/wall_tiles/stone_bottom_left_corner.png" id="61_ftc36"]
+[ext_resource type="Texture2D" uid="uid://2xpahjb251kt" path="res://assets/item_icons/tool_sword.png" id="62_70gig"]
 [ext_resource type="Texture2D" uid="uid://dxvy3vjr1k82d" path="res://assets/terrain/wall_tiles/stone_gate.png" id="62_rp1a3"]
 [ext_resource type="Texture2D" uid="uid://bglxyq5agwy2k" path="res://assets/terrain/wall_tiles/stone_bottom_right_corner.png" id="63_f8xnl"]
 [ext_resource type="Texture2D" uid="uid://bmkcp62dmn17t" path="res://assets/terrain/wall_tiles/iron_top_left_corner.png" id="65_vs2yp"]
@@ -1339,17 +1340,6 @@ shape = SubResource("RectangleShape2D_00npw")
 [node name="PlayerUI" type="CanvasLayer" parent="."]
 process_mode = 3
 
-[node name="PlayerInvBG" type="TextureRect" parent="PlayerUI"]
-process_mode = 3
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -102.0
-offset_bottom = 280.0
-grow_horizontal = 0
-texture = ExtResource("10_7qw5w")
-expand_mode = 1
-
 [node name="PlayerInvGrid" type="GridContainer" parent="PlayerUI"]
 process_mode = 3
 anchors_preset = 1
@@ -1435,14 +1425,6 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-
-[node name="EquipBG" type="TextureRect" parent="PlayerUI/EquipUI"]
-process_mode = 3
-layout_mode = 1
-offset_right = 102.0
-offset_bottom = 280.0
-texture = ExtResource("10_7qw5w")
-expand_mode = 1
 
 [node name="EquipGrid" type="GridContainer" parent="PlayerUI/EquipUI"]
 process_mode = 3
@@ -1532,7 +1514,7 @@ flat = true
 [node name="Sword" type="Button" parent="PlayerUI/CraftUI/CraftGrid"]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
-icon = ExtResource("18_bcj72")
+icon = ExtResource("62_70gig")
 flat = true
 
 [node name="CraftButton" type="Button" parent="PlayerUI/CraftUI/CraftGrid"]
