@@ -4,6 +4,9 @@ var enemyInAttackRange = false
 var enemyAttackCooldown = false
 var health = 100
 var playerIsAlive = true
+var pos : Vector2;
+var old_pos : Vector2;
+var moving = false
 
 @export var moveSpeed : float = 300
 @onready var sprite_2d = $Sprite2D
@@ -19,10 +22,21 @@ func _input(event):
 		targetLocation = get_global_mouse_position()
 
 func _physics_process(delta):
-	if velocity.length() > 0:
-		animated_sprite.play("walk")
+	#print("The current status of velocity is:", @GlobalScope.is_zero_approx())
+	pos = global_position
+	print("Global position is: ", pos)
+	
+	if pos != old_pos:
+		moving = true;
 	else:
+		moving = false;
+	#create old pos from pos
+	old_pos = pos;
+	
+	if moving == false:
 		animated_sprite.play("idle")
+	else:
+		animated_sprite.play("walk")
 		
 	enemyAttack()
 	velocity = global_position.direction_to(targetLocation) * moveSpeed
