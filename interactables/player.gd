@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 var enemyInAttackRange = false
+var enemyTypeInRange = null
 var enemyAttackCooldown = false
 var health = 100
 var playerIsAlive = true
@@ -57,15 +58,29 @@ func player():
 func _on_player_hitbox_body_entered(body):
 	if body.has_method("enemy"):
 		enemyInAttackRange = true
+		if body.has_method("egg"):
+			enemyTypeInRange = "egg"
+		if body.has_method("larva"):
+			enemyTypeInRange = "larva"
+		if body.has_method("beetle"):
+			enemyTypeInRange = "beetle"
 		animated_sprite.play("attack")
 
 func _on_player_hitbox_body_exited(body):
 	if body.has_method("enemy"):
 		enemyInAttackRange = false
+		enemyTypeInRange = false
 
 func enemyAttack():
+	var damage
 	if enemyInAttackRange and !enemyAttackCooldown:
-		health -= 5
+		if enemyTypeInRange == "egg":
+			damage = 1
+		if enemyTypeInRange == "larva":
+			damage = 5
+		if enemyTypeInRange == "beetle":
+			damage = 10
+		health -= damage
 		enemyAttackCooldown = true
 		hurt.play()
 		update_health_bar()

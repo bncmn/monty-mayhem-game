@@ -43,12 +43,6 @@ func _on_detection_area_body_exited(body):
 		wall = null
 		goToWall = false
 
-func enemy():
-	pass
-
-func beetle():
-	pass
-
 func _on_enemy_hitbox_body_entered(body):
 	if body.has_method("player"):
 		playerInAttackRange = true
@@ -84,3 +78,9 @@ func _on_enemy_hitbox_mouse_entered():
 
 func _on_enemy_hitbox_mouse_exited():
 	Global.mouseOverEnemy = false
+
+func larva():
+	pass
+
+func enemy():
+	pass

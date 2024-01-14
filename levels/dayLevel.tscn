@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://vm3xuvxvwil"]
+[gd_scene load_steps=63 format=3 uid="uid://vm3xuvxvwil"]
 
 [ext_resource type="Script" path="res://levels/dayLevel.gd" id="1_bubci"]
 [ext_resource type="Texture2D" uid="uid://gigw2vribd8a" path="res://assets/placeholders/tile_map_texture_test.png" id="2_cdrgq"]
@@ -44,6 +44,8 @@
 [ext_resource type="PackedScene" uid="uid://podi2c22gd7q" path="res://levels/gameOver.tscn" id="40_yypta"]
 [ext_resource type="AudioStream" uid="uid://c2a07551q1wgu" path="res://assets/sound/DAY CYCLE #1.mp3" id="41_slsio"]
 [ext_resource type="AudioStream" uid="uid://ds3s7stebfcqy" path="res://assets/sound/TITLE THEME - OPTION #1.mp3" id="41_uf665"]
+[ext_resource type="PackedScene" uid="uid://ds6uwb3ncfu6i" path="res://interactables/egg.tscn" id="45_wwnm0"]
+[ext_resource type="PackedScene" uid="uid://b6ybtaffae5hs" path="res://interactables/larva.tscn" id="46_momso"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_io8oq"]
 rough = true
@@ -1357,23 +1359,29 @@ texture_progress = ExtResource("39_m8bmm")
 visible = false
 
 [node name="dayPhaseTimer" type="Timer" parent="."]
-wait_time = 120.0
+wait_time = 10.0
+
+[node name="nightPhaseTimer" type="Timer" parent="."]
+wait_time = 10.0
 
 [node name="enemy" parent="." instance=ExtResource("28_44p0h")]
-position = Vector2(-632, 536)
+position = Vector2(-565, 358)
 
 [node name="genericWall" parent="." instance=ExtResource("29_8agjn")]
 visible = false
 position = Vector2(-221, 536)
-
-[node name="nightPhaseTimer" type="Timer" parent="."]
-wait_time = 120.0
 
 [node name="AudioNight" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("41_uf665")
 
 [node name="AudioDay" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("41_slsio")
+
+[node name="Larva" parent="." instance=ExtResource("46_momso")]
+position = Vector2(303, -360)
+
+[node name="egg" parent="." instance=ExtResource("45_wwnm0")]
+position = Vector2(-570, -316)
 
 [connection signal="mouse_entered" from="BaseStatic/BaseSprite/Base" to="BaseUI" method="_on_base_mouse_entered"]
 [connection signal="mouse_exited" from="BaseStatic/BaseSprite/Base" to="BaseUI" method="_on_base_mouse_exited"]

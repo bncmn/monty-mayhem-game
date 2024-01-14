@@ -9,6 +9,12 @@ var health = 100
 var playerInAttackRange = true
 var playerAttackCooldown = false
 
+func egg():
+	pass
+
+func enemy():
+	pass
+
 func _physics_process(delta):
 	if playerChase:
 		velocity = global_position.direction_to(player.position) * moveSpeed
@@ -42,12 +48,6 @@ func _on_detection_area_body_exited(body):
 	if body.has_method("wall"):
 		wall = null
 		goToWall = false
-
-func enemy():
-	pass
-
-func beetle():
-	pass
 
 func _on_enemy_hitbox_body_entered(body):
 	if body.has_method("player"):

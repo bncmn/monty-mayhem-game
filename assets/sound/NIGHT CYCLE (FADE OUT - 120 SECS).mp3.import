@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://xhuaywgrkedg"
+path="res://.godot/imported/NIGHT CYCLE (FADE OUT - 120 SECS).mp3-a306145dcab363983e54ad665e581035.mp3str"
+
+[deps]
+
+source_file="res://assets/sound/NIGHT CYCLE (FADE OUT - 120 SECS).mp3"
+dest_files=["res://.godot/imported/NIGHT CYCLE (FADE OUT - 120 SECS).mp3-a306145dcab363983e54ad665e581035.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

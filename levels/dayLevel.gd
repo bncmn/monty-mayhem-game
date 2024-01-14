@@ -8,6 +8,7 @@ extends Node2D
 @onready var day_music = $AudioDay
 @onready var night_music = $AudioNight
 
+var numDaysPassed = 1
 var randX
 var randY
 var enemies = []
@@ -71,12 +72,18 @@ func _on_build_area_mouse_exited():
 		get_tree().paused = false
 
 func generateEnemies(amountOfEnemies):
+	var enemy
 	var maxDistance = 1000
 	var prevX = 0
 	var prevY = 0
 	randomize()
 	for i in amountOfEnemies:
-		var enemy = preload("res://interactables/enemy.tscn").instantiate()
+		if numDaysPassed % 2 == 0:
+			enemy = preload("res://interactables/larva.tscn").instantiate()
+		elif numDaysPassed % 3 == 0:
+			enemy = preload("res://interactables/enemy.tscn").instantiate()
+		else:
+			enemy = preload("res://interactables/egg.tscn").instantiate()
 		
 		# Get a random location within the ranges provided.
 		randX = randi_range(-2500, 3500)
@@ -133,6 +140,7 @@ func _on_night_phase_timer_timeout():
 		enemy.queue_free()
 	enemies.clear()
 	$dayPhaseTimer.start()
+	numDaysPassed += 1
 	night_music.stop()
 	day_music.play()
 
