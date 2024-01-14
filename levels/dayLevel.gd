@@ -5,6 +5,8 @@ extends Node2D
 @onready var baseNode = get_node("BaseArea")
 @onready var canvas_modulate = $CanvasModulate
 @onready var buildMap = $BuildMap
+@onready var day_music = $AudioDay
+@onready var night_music = $AudioNight
 
 var randX
 var randY
@@ -17,6 +19,7 @@ var ironPress = false
 func _ready():
 	generateResources(1200)
 	$dayPhaseTimer.start()
+	day_music.play()
 	
 	buildMap.close()
 	Global.tilemap = buildMap
@@ -121,6 +124,8 @@ func generateResources(amountOfResourceNodes):
 func _on_day_phase_timer_timeout():
 	generateEnemies(30)
 	$nightPhaseTimer.start()
+	day_music.stop()
+	night_music.play()
 
 func _on_night_phase_timer_timeout():
 	for enemy in enemies:
@@ -128,6 +133,8 @@ func _on_night_phase_timer_timeout():
 		enemy.queue_free()
 	enemies.clear()
 	$dayPhaseTimer.start()
+	night_music.stop()
+	day_music.play()
 
 func _on_wall_type_1_pressed():
 	woodPress = true
