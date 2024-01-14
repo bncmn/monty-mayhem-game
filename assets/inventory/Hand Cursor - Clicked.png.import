@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8jw7klu4r5n3"
-path="res://.godot/imported/stone_gate_open.png-f5f49f993b639b11c2f8a7543641720e.ctex"
+uid="uid://duxwe6b5kvdhg"
+path="res://.godot/imported/Hand Cursor - Clicked.png-ff1e48b090ca26494a44dd67a569cdbd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/terrain/wall_tiles/stone_gate_open.png"
-dest_files=["res://.godot/imported/stone_gate_open.png-f5f49f993b639b11c2f8a7543641720e.ctex"]
+source_file="res://assets/inventory/Hand Cursor - Clicked.png"
+dest_files=["res://.godot/imported/Hand Cursor - Clicked.png-ff1e48b090ca26494a44dd67a569cdbd.ctex"]
 
 [params]
 

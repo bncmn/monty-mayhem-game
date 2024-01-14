@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8jw7klu4r5n3"
-path="res://.godot/imported/stone_gate_open.png-f5f49f993b639b11c2f8a7543641720e.ctex"
+uid="uid://1qfki17siiq1"
+path="res://.godot/imported/health_bar_under.png-ab0ad065de9b78d8b2556f7be5fec737.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/terrain/wall_tiles/stone_gate_open.png"
-dest_files=["res://.godot/imported/stone_gate_open.png-f5f49f993b639b11c2f8a7543641720e.ctex"]
+source_file="res://assets/health_bar/health_bar_under.png"
+dest_files=["res://.godot/imported/health_bar_under.png-ab0ad065de9b78d8b2556f7be5fec737.ctex"]
 
 [params]
 

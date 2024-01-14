@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://vm3xuvxvwil"]
+[gd_scene load_steps=63 format=3 uid="uid://vm3xuvxvwil"]
 
 [ext_resource type="Script" path="res://levels/dayLevel.gd" id="1_bubci"]
 [ext_resource type="Texture2D" uid="uid://gigw2vribd8a" path="res://assets/placeholders/tile_map_texture_test.png" id="2_cdrgq"]
@@ -38,12 +38,17 @@
 [ext_resource type="Texture2D" uid="uid://7fyy8i3w7m7m" path="res://assets/item_icons/wall_wood.png" id="35_l4s40"]
 [ext_resource type="Texture2D" uid="uid://wuldtpqa1s5a" path="res://assets/item_icons/wall_rock.png" id="36_aagi5"]
 [ext_resource type="Texture2D" uid="uid://buej5ayf6bj4g" path="res://assets/item_icons/wall_iron.png" id="37_sq8aq"]
+[ext_resource type="Texture2D" uid="uid://1qfki17siiq1" path="res://assets/health_bar/health_bar_under.png" id="38_p5w4g"]
+[ext_resource type="Texture2D" uid="uid://bbsl3s8jdn8yb" path="res://assets/health_bar/health_bar_over.png" id="39_m8bmm"]
 [ext_resource type="PackedScene" uid="uid://podi2c22gd7q" path="res://levels/gameOver.tscn" id="40_yypta"]
 [ext_resource type="AudioStream" uid="uid://c2a07551q1wgu" path="res://assets/sound/DAY CYCLE #1.mp3" id="41_slsio"]
 [ext_resource type="Script" path="res://interactables/wood wall/WoodMenu.gd" id="42_byl3s"]
 [ext_resource type="Script" path="res://levels/ExitBuild.gd" id="42_w02kr"]
 [ext_resource type="Script" path="res://interactables/stone wall/StoneMenu.gd" id="43_boehq"]
 [ext_resource type="Script" path="res://levels/IronMenu.gd" id="44_ge7r8"]
+[ext_resource type="AudioStream" uid="uid://ds3s7stebfcqy" path="res://assets/sound/TITLE THEME - OPTION #1.mp3" id="41_uf665"]
+[ext_resource type="PackedScene" uid="uid://ds6uwb3ncfu6i" path="res://interactables/egg.tscn" id="45_wwnm0"]
+[ext_resource type="PackedScene" uid="uid://b6ybtaffae5hs" path="res://interactables/larva.tscn" id="46_momso"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_io8oq"]
 rough = true
@@ -1343,27 +1348,37 @@ shape = SubResource("RectangleShape2D_wsn0a")
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="HealthBar" type="ProgressBar" parent="PlayerUI"]
-offset_left = 648.0
-offset_top = 943.0
-offset_right = 1265.0
-offset_bottom = 1018.0
-step = 1.0
+[node name="HealthBar" type="TextureProgressBar" parent="PlayerUI"]
+offset_left = 578.0
+offset_top = 936.0
+offset_right = 1346.0
+offset_bottom = 1011.0
 value = 100.0
+texture_under = ExtResource("38_p5w4g")
+texture_progress = ExtResource("39_m8bmm")
 
 [node name="GameOver" parent="PlayerUI" instance=ExtResource("40_yypta")]
 visible = false
 
 [node name="dayPhaseTimer" type="Timer" parent="."]
-wait_time = 120.0
+wait_time = 10.0
+
+[node name="nightPhaseTimer" type="Timer" parent="."]
+wait_time = 10.0
 
 [node name="enemy" parent="." instance=ExtResource("28_44p0h")]
-position = Vector2(-632, 536)
+position = Vector2(-565, 358)
 
 [node name="nightPhaseTimer" type="Timer" parent="."]
 wait_time = 120.0
+[node name="genericWall" parent="." instance=ExtResource("29_8agjn")]
+visible = false
+position = Vector2(-221, 536)
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioNight" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("41_uf665")
+
+[node name="AudioDay" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("41_slsio")
 
 [node name="BuildMenuUI" type="CanvasLayer" parent="."]
@@ -1529,6 +1544,11 @@ layout_mode = 2
 [node name="Iron9" type="Button" parent="BuildMenuUI/IronMenu/GridContainer"]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
+[node name="Larva" parent="." instance=ExtResource("46_momso")]
+position = Vector2(303, -360)
+
+[node name="egg" parent="." instance=ExtResource("45_wwnm0")]
+position = Vector2(-570, -316)
 
 [connection signal="mouse_entered" from="BaseStatic/BaseSprite/Base" to="BaseUI" method="_on_base_mouse_entered"]
 [connection signal="mouse_exited" from="BaseStatic/BaseSprite/Base" to="BaseUI" method="_on_base_mouse_exited"]
