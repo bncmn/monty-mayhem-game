@@ -66,6 +66,16 @@ func _on_build_area_mouse_exited():
 		get_tree().paused = true
 	else: 
 		get_tree().paused = false
+		
+func _on_wall_menu_area_mouse_entered():
+	get_tree().paused = true
+
+func _on_wall_menu_area_mouse_exited():
+	if baseInv.isOpen:
+		get_tree().paused = true
+	else: 
+		get_tree().paused = false
+
 
 func generateEnemies(amountOfEnemies):
 	var enemy
@@ -284,3 +294,6 @@ func _on_iron_8_pressed():
 func _on_iron_9_pressed():
 	var ironWall = preload("res://interactables/iron wall/iron_wall_9.tscn").instantiate()
 	add_child(ironWall)
+
+
+

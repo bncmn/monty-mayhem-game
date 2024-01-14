@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://vm3xuvxvwil"]
+[gd_scene load_steps=92 format=3 uid="uid://vm3xuvxvwil"]
 
 [ext_resource type="Script" path="res://levels/dayLevel.gd" id="1_bubci"]
 [ext_resource type="Texture2D" uid="uid://gigw2vribd8a" path="res://assets/placeholders/tile_map_texture_test.png" id="2_cdrgq"]
@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c1t4cw2r1yhj5" path="res://assets/terrain/128x128_grid.png" id="5_ktf4p"]
 [ext_resource type="PackedScene" uid="uid://baa6tpbjgbiju" path="res://interactables/axe.tscn" id="6_4ixg5"]
 [ext_resource type="Texture2D" uid="uid://bvdxy1jj2ynh8" path="res://assets/terrain/64x64_grid.png" id="6_57f43"]
-[ext_resource type="Script" path="res://levels/BuildMap.gd" id="7_jkgok"]
+[ext_resource type="Script" path="res://ui/menu/BuildMap.gd" id="7_jkgok"]
 [ext_resource type="PackedScene" uid="uid://bd54106u2btey" path="res://interactables/pickaxe.tscn" id="7_rwamj"]
 [ext_resource type="PackedScene" uid="uid://dbuyrbtg8i3ul" path="res://interactables/sword.tscn" id="8_xts8i"]
 [ext_resource type="Texture2D" uid="uid://r6wyo55xruut" path="res://assets/terrain/base_smiling.png" id="9_sda02"]
@@ -44,11 +44,36 @@
 [ext_resource type="AudioStream" uid="uid://c2a07551q1wgu" path="res://assets/sound/DAY CYCLE #1.mp3" id="41_slsio"]
 [ext_resource type="AudioStream" uid="uid://ds3s7stebfcqy" path="res://assets/sound/TITLE THEME - OPTION #1.mp3" id="41_uf665"]
 [ext_resource type="Script" path="res://interactables/wood wall/WoodMenu.gd" id="42_byl3s"]
-[ext_resource type="Script" path="res://levels/ExitBuild.gd" id="42_w02kr"]
+[ext_resource type="Script" path="res://ui/menu/ExitBuild.gd" id="42_w02kr"]
 [ext_resource type="Script" path="res://interactables/stone wall/StoneMenu.gd" id="43_boehq"]
-[ext_resource type="Script" path="res://levels/IronMenu.gd" id="44_ge7r8"]
+[ext_resource type="Script" path="res://ui/menu/IronMenu.gd" id="44_ge7r8"]
+[ext_resource type="Texture2D" uid="uid://dnodk6usw6ht8" path="res://assets/buttons/btn_exit.png" id="44_kur8a"]
 [ext_resource type="PackedScene" uid="uid://ds6uwb3ncfu6i" path="res://interactables/egg.tscn" id="45_wwnm0"]
-[ext_resource type="PackedScene" uid="uid://sbjs32ppw3x" path="res://interactables/larva.tscn" id="46_momso"]
+[ext_resource type="PackedScene" uid="uid://b6ybtaffae5hs" path="res://interactables/larva.tscn" id="46_momso"]
+[ext_resource type="Texture2D" uid="uid://db6wdbndvwrqx" path="res://assets/terrain/wall_tiles/wood_left_top_corner.png" id="47_3n7mu"]
+[ext_resource type="Texture2D" uid="uid://c8anpstk0u30q" path="res://assets/terrain/wall_tiles/wood_horizontal_side.png" id="48_s0o3e"]
+[ext_resource type="Texture2D" uid="uid://cggbunlx1sv7n" path="res://assets/terrain/wall_tiles/wood_top_right_corner.png" id="49_84178"]
+[ext_resource type="Texture2D" uid="uid://3vfyapgvlple" path="res://assets/terrain/wall_tiles/wood_left_side.png" id="50_kn8xm"]
+[ext_resource type="Texture2D" uid="uid://px4ndam7ltx2" path="res://assets/terrain/wall_tiles/wood_right_side.png" id="51_glipe"]
+[ext_resource type="Texture2D" uid="uid://ix32sqs0xvdx" path="res://assets/terrain/wall_tiles/wood_bottom_left_corner.png" id="52_g2jja"]
+[ext_resource type="Texture2D" uid="uid://cg0rjyvb7rfvu" path="res://assets/terrain/wall_tiles/wood_gate.png" id="53_bdl86"]
+[ext_resource type="Texture2D" uid="uid://bygjdp7jmfjes" path="res://assets/terrain/wall_tiles/wood_bottom_right_corner.png" id="54_rt4jk"]
+[ext_resource type="Texture2D" uid="uid://dyeid3gk0cc62" path="res://assets/terrain/wall_tiles/stone_top_left_corner.png" id="56_h6cyu"]
+[ext_resource type="Texture2D" uid="uid://bcocc2a0qoi5p" path="res://assets/terrain/wall_tiles/stone_horizontal_side.png" id="57_3klma"]
+[ext_resource type="Texture2D" uid="uid://dgb242dcp6eea" path="res://assets/terrain/wall_tiles/stone_top_right_corner.png" id="58_b27oi"]
+[ext_resource type="Texture2D" uid="uid://qvvdcgufae5q" path="res://assets/terrain/wall_tiles/stone_left_side.png" id="59_5nt71"]
+[ext_resource type="Texture2D" uid="uid://42hu5xqfnpis" path="res://assets/terrain/wall_tiles/stone_right_side.png" id="60_s3o44"]
+[ext_resource type="Texture2D" uid="uid://d2wgubgiyqnkg" path="res://assets/terrain/wall_tiles/stone_bottom_left_corner.png" id="61_ftc36"]
+[ext_resource type="Texture2D" uid="uid://dxvy3vjr1k82d" path="res://assets/terrain/wall_tiles/stone_gate.png" id="62_rp1a3"]
+[ext_resource type="Texture2D" uid="uid://bglxyq5agwy2k" path="res://assets/terrain/wall_tiles/stone_bottom_right_corner.png" id="63_f8xnl"]
+[ext_resource type="Texture2D" uid="uid://bmkcp62dmn17t" path="res://assets/terrain/wall_tiles/iron_top_left_corner.png" id="65_vs2yp"]
+[ext_resource type="Texture2D" uid="uid://cij00rqy8lo3f" path="res://assets/terrain/wall_tiles/iron_horizontal_side.png" id="66_0bdde"]
+[ext_resource type="Texture2D" uid="uid://cukqkkn1rr8o8" path="res://assets/terrain/wall_tiles/iron_top_right_corner.png" id="67_nvst2"]
+[ext_resource type="Texture2D" uid="uid://dtna8dvflslkg" path="res://assets/terrain/wall_tiles/iron_left_side.png" id="68_iiuvq"]
+[ext_resource type="Texture2D" uid="uid://b2waax34xufsc" path="res://assets/terrain/wall_tiles/iron_right_side.png" id="69_748dc"]
+[ext_resource type="Texture2D" uid="uid://cgpuah2jfmk52" path="res://assets/terrain/wall_tiles/iron_bottom_left_corner.png" id="70_8gd8v"]
+[ext_resource type="Texture2D" uid="uid://cppc1452dyocj" path="res://assets/terrain/wall_tiles/iron_gate.png" id="71_516l7"]
+[ext_resource type="Texture2D" uid="uid://dlaqjpmsmdunq" path="res://assets/terrain/wall_tiles/iron_right_bottom_corner.png" id="72_isirw"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_io8oq"]
 rough = true
@@ -893,6 +918,9 @@ radius = 259.095
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dd3du"]
 texture = ExtResource("18_bcj72")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_00npw"]
+size = Vector2(258.5, 264)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_upik3"]
 size = Vector2(150, 326)
 
@@ -900,7 +928,7 @@ size = Vector2(150, 326)
 size = Vector2(483, 112)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wsn0a"]
-size = Vector2(472, 111.5)
+size = Vector2(472, 168.5)
 
 [node name="dayLevel" type="Node2D"]
 script = ExtResource("1_bubci")
@@ -1084,6 +1112,229 @@ offset_top = 53.0
 offset_right = 47.0
 offset_bottom = 76.0
 script = ExtResource("22_2d0r4")
+
+[node name="BuildMenuUI" type="CanvasLayer" parent="."]
+
+[node name="ExitBuild" type="Button" parent="BuildMenuUI"]
+custom_minimum_size = Vector2(60, 60)
+offset_left = 1009.0
+offset_top = 99.0
+offset_right = 1101.0
+offset_bottom = 159.0
+icon = ExtResource("44_kur8a")
+flat = true
+script = ExtResource("42_w02kr")
+
+[node name="WoodMenu" type="Control" parent="BuildMenuUI"]
+layout_mode = 3
+anchor_right = 0.108
+anchor_bottom = 0.086
+offset_left = 1470.0
+offset_top = 9.0
+offset_right = 1479.64
+offset_bottom = 134.12
+script = ExtResource("42_byl3s")
+
+[node name="GridContainer" type="GridContainer" parent="BuildMenuUI/WoodMenu"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+columns = 3
+
+[node name="Wood1" type="Button" parent="BuildMenuUI/WoodMenu/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+icon = ExtResource("47_3n7mu")
+flat = true
+
+[node name="Wood2" type="Button" parent="BuildMenuUI/WoodMenu/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+icon = ExtResource("48_s0o3e")
+flat = true
+
+[node name="Wood3" type="Button" parent="BuildMenuUI/WoodMenu/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+icon = ExtResource("49_84178")
+flat = true
+
+[node name="Wood4" type="Button" parent="BuildMenuUI/WoodMenu/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+icon = ExtResource("50_kn8xm")
+flat = true
+
+[node name="Wood5" type="Button" parent="BuildMenuUI/WoodMenu/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+flat = true
+
+[node name="Wood6" type="Button" parent="BuildMenuUI/WoodMenu/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+icon = ExtResource("51_glipe")
+flat = true
+
+[node name="Wood7" type="Button" parent="BuildMenuUI/WoodMenu/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+icon = ExtResource("52_g2jja")
+flat = true
+
+[node name="Wood8" type="Button" parent="BuildMenuUI/WoodMenu/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+icon = ExtResource("53_bdl86")
+flat = true
+
+[node name="Wood9" type="Button" parent="BuildMenuUI/WoodMenu/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+icon = ExtResource("54_rt4jk")
+flat = true
+
+[node name="StoneMenu" type="Control" parent="BuildMenuUI"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1469.0
+offset_top = 10.0
+offset_right = 1659.0
+offset_bottom = 199.0
+script = ExtResource("43_boehq")
+
+[node name="GridContainer" type="GridContainer" parent="BuildMenuUI/StoneMenu"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+columns = 3
+
+[node name="Stone1" type="Button" parent="BuildMenuUI/StoneMenu/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+icon = ExtResource("56_h6cyu")
+flat = true
+
+[node name="Stone2" type="Button" parent="BuildMenuUI/StoneMenu/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+icon = ExtResource("57_3klma")
+flat = true
+
+[node name="Stone3" type="Button" parent="BuildMenuUI/StoneMenu/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+icon = ExtResource("58_b27oi")
+flat = true
+
+[node name="Stone4" type="Button" parent="BuildMenuUI/StoneMenu/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+icon = ExtResource("59_5nt71")
+flat = true
+
+[node name="Stone5" type="Button" parent="BuildMenuUI/StoneMenu/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+flat = true
+
+[node name="Stone6" type="Button" parent="BuildMenuUI/StoneMenu/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+icon = ExtResource("60_s3o44")
+flat = true
+
+[node name="Stone7" type="Button" parent="BuildMenuUI/StoneMenu/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+icon = ExtResource("61_ftc36")
+flat = true
+
+[node name="Stone8" type="Button" parent="BuildMenuUI/StoneMenu/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+icon = ExtResource("62_rp1a3")
+flat = true
+
+[node name="Stone9" type="Button" parent="BuildMenuUI/StoneMenu/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+icon = ExtResource("63_f8xnl")
+flat = true
+
+[node name="IronMenu" type="Control" parent="BuildMenuUI"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1469.0
+offset_top = 10.0
+offset_right = 1659.0
+offset_bottom = 199.0
+script = ExtResource("44_ge7r8")
+
+[node name="GridContainer" type="GridContainer" parent="BuildMenuUI/IronMenu"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+columns = 3
+
+[node name="Iron1" type="Button" parent="BuildMenuUI/IronMenu/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+icon = ExtResource("65_vs2yp")
+flat = true
+
+[node name="Iron2" type="Button" parent="BuildMenuUI/IronMenu/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+icon = ExtResource("66_0bdde")
+flat = true
+
+[node name="Iron3" type="Button" parent="BuildMenuUI/IronMenu/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+icon = ExtResource("67_nvst2")
+flat = true
+
+[node name="Iron4" type="Button" parent="BuildMenuUI/IronMenu/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+icon = ExtResource("68_iiuvq")
+flat = true
+
+[node name="Iron5" type="Button" parent="BuildMenuUI/IronMenu/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+flat = true
+
+[node name="Iron6" type="Button" parent="BuildMenuUI/IronMenu/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+icon = ExtResource("69_748dc")
+flat = true
+
+[node name="Iron7" type="Button" parent="BuildMenuUI/IronMenu/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+icon = ExtResource("70_8gd8v")
+flat = true
+
+[node name="Iron8" type="Button" parent="BuildMenuUI/IronMenu/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+icon = ExtResource("71_516l7")
+flat = true
+
+[node name="Iron9" type="Button" parent="BuildMenuUI/IronMenu/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+icon = ExtResource("72_isirw")
+flat = true
+
+[node name="WallMenuArea" type="Area2D" parent="BuildMenuUI"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BuildMenuUI/WallMenuArea"]
+position = Vector2(1584.25, 131)
+shape = SubResource("RectangleShape2D_00npw")
 
 [node name="PlayerUI" type="CanvasLayer" parent="."]
 process_mode = 3
@@ -1341,7 +1592,7 @@ flat = true
 [node name="BuildArea" type="Area2D" parent="PlayerUI/BuildUI"]
 
 [node name="BuildCollision" type="CollisionShape2D" parent="PlayerUI/BuildUI/BuildArea"]
-position = Vector2(213, 44.25)
+position = Vector2(213, 72.75)
 shape = SubResource("RectangleShape2D_wsn0a")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="PlayerUI"]
@@ -1378,170 +1629,6 @@ stream = ExtResource("41_uf665")
 [node name="AudioDay" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("41_slsio")
 
-[node name="BuildMenuUI" type="CanvasLayer" parent="."]
-
-[node name="ExitBuild" type="Button" parent="BuildMenuUI"]
-custom_minimum_size = Vector2(60, 60)
-offset_left = 1025.0
-offset_top = 121.0
-offset_right = 1085.0
-offset_bottom = 181.0
-script = ExtResource("42_w02kr")
-
-[node name="WoodMenu" type="Control" parent="BuildMenuUI"]
-layout_mode = 3
-anchor_right = 0.108
-anchor_bottom = 0.086
-offset_left = 1518.0
-offset_top = 19.0
-offset_right = 1498.64
-offset_bottom = 115.12
-script = ExtResource("42_byl3s")
-
-[node name="GridContainer" type="GridContainer" parent="BuildMenuUI/WoodMenu"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-columns = 3
-
-[node name="Wood1" type="Button" parent="BuildMenuUI/WoodMenu/GridContainer"]
-custom_minimum_size = Vector2(60, 60)
-layout_mode = 2
-
-[node name="Wood2" type="Button" parent="BuildMenuUI/WoodMenu/GridContainer"]
-custom_minimum_size = Vector2(60, 60)
-layout_mode = 2
-
-[node name="Wood3" type="Button" parent="BuildMenuUI/WoodMenu/GridContainer"]
-custom_minimum_size = Vector2(60, 60)
-layout_mode = 2
-
-[node name="Wood4" type="Button" parent="BuildMenuUI/WoodMenu/GridContainer"]
-custom_minimum_size = Vector2(60, 60)
-layout_mode = 2
-
-[node name="Wood5" type="Button" parent="BuildMenuUI/WoodMenu/GridContainer"]
-custom_minimum_size = Vector2(60, 60)
-layout_mode = 2
-
-[node name="Wood6" type="Button" parent="BuildMenuUI/WoodMenu/GridContainer"]
-custom_minimum_size = Vector2(60, 60)
-layout_mode = 2
-
-[node name="Wood7" type="Button" parent="BuildMenuUI/WoodMenu/GridContainer"]
-custom_minimum_size = Vector2(60, 60)
-layout_mode = 2
-
-[node name="Wood8" type="Button" parent="BuildMenuUI/WoodMenu/GridContainer"]
-custom_minimum_size = Vector2(60, 60)
-layout_mode = 2
-
-[node name="Wood9" type="Button" parent="BuildMenuUI/WoodMenu/GridContainer"]
-custom_minimum_size = Vector2(60, 60)
-layout_mode = 2
-
-[node name="StoneMenu" type="Control" parent="BuildMenuUI"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 1517.0
-offset_top = 20.0
-offset_right = 1707.0
-offset_bottom = 209.0
-script = ExtResource("43_boehq")
-
-[node name="GridContainer" type="GridContainer" parent="BuildMenuUI/StoneMenu"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-columns = 3
-
-[node name="Stone1" type="Button" parent="BuildMenuUI/StoneMenu/GridContainer"]
-custom_minimum_size = Vector2(60, 60)
-layout_mode = 2
-
-[node name="Stone2" type="Button" parent="BuildMenuUI/StoneMenu/GridContainer"]
-custom_minimum_size = Vector2(60, 60)
-layout_mode = 2
-
-[node name="Stone3" type="Button" parent="BuildMenuUI/StoneMenu/GridContainer"]
-custom_minimum_size = Vector2(60, 60)
-layout_mode = 2
-
-[node name="Stone4" type="Button" parent="BuildMenuUI/StoneMenu/GridContainer"]
-custom_minimum_size = Vector2(60, 60)
-layout_mode = 2
-
-[node name="Stone5" type="Button" parent="BuildMenuUI/StoneMenu/GridContainer"]
-custom_minimum_size = Vector2(60, 60)
-layout_mode = 2
-
-[node name="Stone6" type="Button" parent="BuildMenuUI/StoneMenu/GridContainer"]
-custom_minimum_size = Vector2(60, 60)
-layout_mode = 2
-
-[node name="Stone7" type="Button" parent="BuildMenuUI/StoneMenu/GridContainer"]
-custom_minimum_size = Vector2(60, 60)
-layout_mode = 2
-
-[node name="Stone8" type="Button" parent="BuildMenuUI/StoneMenu/GridContainer"]
-custom_minimum_size = Vector2(60, 60)
-layout_mode = 2
-
-[node name="Stone9" type="Button" parent="BuildMenuUI/StoneMenu/GridContainer"]
-custom_minimum_size = Vector2(60, 60)
-layout_mode = 2
-
-[node name="IronMenu" type="Control" parent="BuildMenuUI"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 1517.0
-offset_top = 20.0
-offset_right = 1707.0
-offset_bottom = 209.0
-script = ExtResource("44_ge7r8")
-
-[node name="GridContainer" type="GridContainer" parent="BuildMenuUI/IronMenu"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-columns = 3
-
-[node name="Iron1" type="Button" parent="BuildMenuUI/IronMenu/GridContainer"]
-custom_minimum_size = Vector2(60, 60)
-layout_mode = 2
-
-[node name="Iron2" type="Button" parent="BuildMenuUI/IronMenu/GridContainer"]
-custom_minimum_size = Vector2(60, 60)
-layout_mode = 2
-
-[node name="Iron3" type="Button" parent="BuildMenuUI/IronMenu/GridContainer"]
-custom_minimum_size = Vector2(60, 60)
-layout_mode = 2
-
-[node name="Iron4" type="Button" parent="BuildMenuUI/IronMenu/GridContainer"]
-custom_minimum_size = Vector2(60, 60)
-layout_mode = 2
-
-[node name="Iron5" type="Button" parent="BuildMenuUI/IronMenu/GridContainer"]
-custom_minimum_size = Vector2(60, 60)
-layout_mode = 2
-
-[node name="Iron6" type="Button" parent="BuildMenuUI/IronMenu/GridContainer"]
-custom_minimum_size = Vector2(60, 60)
-layout_mode = 2
-
-[node name="Iron7" type="Button" parent="BuildMenuUI/IronMenu/GridContainer"]
-custom_minimum_size = Vector2(60, 60)
-layout_mode = 2
-
-[node name="Iron8" type="Button" parent="BuildMenuUI/IronMenu/GridContainer"]
-custom_minimum_size = Vector2(60, 60)
-layout_mode = 2
-
-[node name="Iron9" type="Button" parent="BuildMenuUI/IronMenu/GridContainer"]
-custom_minimum_size = Vector2(60, 60)
-layout_mode = 2
-
 [node name="Larva" parent="." instance=ExtResource("46_momso")]
 position = Vector2(303, -360)
 
@@ -1555,31 +1642,6 @@ position = Vector2(-570, -316)
 [connection signal="closed" from="BaseUI/BaseInvUI" to="." method="_on_base_inv_ui_closed"]
 [connection signal="opened" from="BaseUI/BaseInvUI" to="." method="_on_base_inv_ui_opened"]
 [connection signal="pressed" from="BaseUI/BaseInvUI/BaseInvExit" to="BaseUI" method="_on_base_inv_exit_pressed"]
-[connection signal="mouse_entered" from="PlayerUI/PlayerInvArea" to="." method="_on_player_inv_area_mouse_entered"]
-[connection signal="mouse_exited" from="PlayerUI/PlayerInvArea" to="." method="_on_player_inv_area_mouse_exited"]
-[connection signal="pressed" from="PlayerUI/CraftUI/CraftGrid/Axe" to="PlayerUI/EquipUI/EquipGrid/Slot1" method="_on_axe_pressed"]
-[connection signal="pressed" from="PlayerUI/CraftUI/CraftGrid/Axe" to="PlayerUI/EquipUI/EquipGrid/Slot2" method="_on_axe_pressed"]
-[connection signal="pressed" from="PlayerUI/CraftUI/CraftGrid/Axe" to="PlayerUI/EquipUI/EquipGrid/Slot3" method="_on_axe_pressed"]
-[connection signal="pressed" from="PlayerUI/CraftUI/CraftGrid/Pickaxe" to="PlayerUI/EquipUI/EquipGrid/Slot1" method="_on_pickaxe_pressed"]
-[connection signal="pressed" from="PlayerUI/CraftUI/CraftGrid/Pickaxe" to="PlayerUI/EquipUI/EquipGrid/Slot2" method="_on_pickaxe_pressed"]
-[connection signal="pressed" from="PlayerUI/CraftUI/CraftGrid/Pickaxe" to="PlayerUI/EquipUI/EquipGrid/Slot3" method="_on_pickaxe_pressed"]
-[connection signal="pressed" from="PlayerUI/CraftUI/CraftGrid/Sword" to="PlayerUI/EquipUI/EquipGrid/Slot1" method="_on_sword_pressed"]
-[connection signal="pressed" from="PlayerUI/CraftUI/CraftGrid/Sword" to="PlayerUI/EquipUI/EquipGrid/Slot2" method="_on_sword_pressed"]
-[connection signal="pressed" from="PlayerUI/CraftUI/CraftGrid/Sword" to="PlayerUI/EquipUI/EquipGrid/Slot3" method="_on_sword_pressed"]
-[connection signal="pressed" from="PlayerUI/CraftUI/CraftGrid/CraftButton" to="PlayerUI/EquipUI/EquipGrid/Slot1" method="_on_craft_button_pressed"]
-[connection signal="pressed" from="PlayerUI/CraftUI/CraftGrid/CraftButton" to="PlayerUI/EquipUI/EquipGrid/Slot2" method="_on_craft_button_pressed"]
-[connection signal="pressed" from="PlayerUI/CraftUI/CraftGrid/CraftButton" to="PlayerUI/EquipUI/EquipGrid/Slot3" method="_on_craft_button_pressed"]
-[connection signal="mouse_entered" from="PlayerUI/CraftUI/CraftArea" to="." method="_on_craft_area_mouse_entered"]
-[connection signal="mouse_exited" from="PlayerUI/CraftUI/CraftArea" to="." method="_on_craft_area_mouse_exited"]
-[connection signal="pressed" from="PlayerUI/BuildUI/BuildGrid/BuildButton" to="." method="_on_build_button_pressed"]
-[connection signal="pressed" from="PlayerUI/BuildUI/BuildGrid/WallType1" to="." method="_on_wall_type_1_pressed"]
-[connection signal="pressed" from="PlayerUI/BuildUI/BuildGrid/WallType2" to="." method="_on_wall_type_2_pressed"]
-[connection signal="pressed" from="PlayerUI/BuildUI/BuildGrid/WallType3" to="." method="_on_wall_type_3_pressed"]
-[connection signal="mouse_entered" from="PlayerUI/BuildUI/BuildArea" to="." method="_on_build_area_mouse_entered"]
-[connection signal="mouse_exited" from="PlayerUI/BuildUI/BuildArea" to="." method="_on_build_area_mouse_exited"]
-[connection signal="ready" from="dayPhaseTimer" to="." method="_on_day_phase_timer_ready"]
-[connection signal="timeout" from="dayPhaseTimer" to="." method="_on_day_phase_timer_timeout"]
-[connection signal="timeout" from="nightPhaseTimer" to="." method="_on_night_phase_timer_timeout"]
 [connection signal="pressed" from="BuildMenuUI/ExitBuild" to="." method="_on_exit_build_pressed"]
 [connection signal="pressed" from="BuildMenuUI/WoodMenu/GridContainer/Wood1" to="." method="_on_wood_1_pressed"]
 [connection signal="pressed" from="BuildMenuUI/WoodMenu/GridContainer/Wood2" to="." method="_on_wood_2_pressed"]
@@ -1605,3 +1667,30 @@ position = Vector2(-570, -316)
 [connection signal="pressed" from="BuildMenuUI/IronMenu/GridContainer/Iron7" to="." method="_on_iron_7_pressed"]
 [connection signal="pressed" from="BuildMenuUI/IronMenu/GridContainer/Iron8" to="." method="_on_iron_8_pressed"]
 [connection signal="pressed" from="BuildMenuUI/IronMenu/GridContainer/Iron9" to="." method="_on_iron_9_pressed"]
+[connection signal="mouse_entered" from="BuildMenuUI/WallMenuArea" to="." method="_on_wall_menu_area_mouse_entered"]
+[connection signal="mouse_exited" from="BuildMenuUI/WallMenuArea" to="." method="_on_wall_menu_area_mouse_exited"]
+[connection signal="mouse_entered" from="PlayerUI/PlayerInvArea" to="." method="_on_player_inv_area_mouse_entered"]
+[connection signal="mouse_exited" from="PlayerUI/PlayerInvArea" to="." method="_on_player_inv_area_mouse_exited"]
+[connection signal="pressed" from="PlayerUI/CraftUI/CraftGrid/Axe" to="PlayerUI/EquipUI/EquipGrid/Slot1" method="_on_axe_pressed"]
+[connection signal="pressed" from="PlayerUI/CraftUI/CraftGrid/Axe" to="PlayerUI/EquipUI/EquipGrid/Slot2" method="_on_axe_pressed"]
+[connection signal="pressed" from="PlayerUI/CraftUI/CraftGrid/Axe" to="PlayerUI/EquipUI/EquipGrid/Slot3" method="_on_axe_pressed"]
+[connection signal="pressed" from="PlayerUI/CraftUI/CraftGrid/Pickaxe" to="PlayerUI/EquipUI/EquipGrid/Slot1" method="_on_pickaxe_pressed"]
+[connection signal="pressed" from="PlayerUI/CraftUI/CraftGrid/Pickaxe" to="PlayerUI/EquipUI/EquipGrid/Slot2" method="_on_pickaxe_pressed"]
+[connection signal="pressed" from="PlayerUI/CraftUI/CraftGrid/Pickaxe" to="PlayerUI/EquipUI/EquipGrid/Slot3" method="_on_pickaxe_pressed"]
+[connection signal="pressed" from="PlayerUI/CraftUI/CraftGrid/Sword" to="PlayerUI/EquipUI/EquipGrid/Slot1" method="_on_sword_pressed"]
+[connection signal="pressed" from="PlayerUI/CraftUI/CraftGrid/Sword" to="PlayerUI/EquipUI/EquipGrid/Slot2" method="_on_sword_pressed"]
+[connection signal="pressed" from="PlayerUI/CraftUI/CraftGrid/Sword" to="PlayerUI/EquipUI/EquipGrid/Slot3" method="_on_sword_pressed"]
+[connection signal="pressed" from="PlayerUI/CraftUI/CraftGrid/CraftButton" to="PlayerUI/EquipUI/EquipGrid/Slot1" method="_on_craft_button_pressed"]
+[connection signal="pressed" from="PlayerUI/CraftUI/CraftGrid/CraftButton" to="PlayerUI/EquipUI/EquipGrid/Slot2" method="_on_craft_button_pressed"]
+[connection signal="pressed" from="PlayerUI/CraftUI/CraftGrid/CraftButton" to="PlayerUI/EquipUI/EquipGrid/Slot3" method="_on_craft_button_pressed"]
+[connection signal="mouse_entered" from="PlayerUI/CraftUI/CraftArea" to="." method="_on_craft_area_mouse_entered"]
+[connection signal="mouse_exited" from="PlayerUI/CraftUI/CraftArea" to="." method="_on_craft_area_mouse_exited"]
+[connection signal="pressed" from="PlayerUI/BuildUI/BuildGrid/BuildButton" to="." method="_on_build_button_pressed"]
+[connection signal="pressed" from="PlayerUI/BuildUI/BuildGrid/WallType1" to="." method="_on_wall_type_1_pressed"]
+[connection signal="pressed" from="PlayerUI/BuildUI/BuildGrid/WallType2" to="." method="_on_wall_type_2_pressed"]
+[connection signal="pressed" from="PlayerUI/BuildUI/BuildGrid/WallType3" to="." method="_on_wall_type_3_pressed"]
+[connection signal="mouse_entered" from="PlayerUI/BuildUI/BuildArea" to="." method="_on_build_area_mouse_entered"]
+[connection signal="mouse_exited" from="PlayerUI/BuildUI/BuildArea" to="." method="_on_build_area_mouse_exited"]
+[connection signal="ready" from="dayPhaseTimer" to="." method="_on_day_phase_timer_ready"]
+[connection signal="timeout" from="dayPhaseTimer" to="." method="_on_day_phase_timer_timeout"]
+[connection signal="timeout" from="nightPhaseTimer" to="." method="_on_night_phase_timer_timeout"]
