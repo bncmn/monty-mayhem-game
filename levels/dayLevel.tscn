@@ -48,7 +48,7 @@
 [ext_resource type="Script" path="res://interactables/stone wall/StoneMenu.gd" id="43_boehq"]
 [ext_resource type="Script" path="res://levels/IronMenu.gd" id="44_ge7r8"]
 [ext_resource type="PackedScene" uid="uid://ds6uwb3ncfu6i" path="res://interactables/egg.tscn" id="45_wwnm0"]
-[ext_resource type="PackedScene" uid="uid://b6ybtaffae5hs" path="res://interactables/larva.tscn" id="46_momso"]
+[ext_resource type="PackedScene" uid="uid://sbjs32ppw3x" path="res://interactables/larva.tscn" id="46_momso"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_io8oq"]
 rough = true
@@ -1361,10 +1361,10 @@ texture_progress = ExtResource("39_m8bmm")
 visible = false
 
 [node name="dayPhaseTimer" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 120.0
 
 [node name="nightPhaseTimer" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 120.0
 
 [node name="enemy" parent="." instance=ExtResource("28_44p0h")]
 position = Vector2(-565, 358)
