@@ -7,6 +7,10 @@ extends Node2D
 @onready var buildMap = $BuildMap
 @onready var day_music = $AudioDay
 @onready var night_music = $AudioNight
+@onready var woodMenu = $BuildMenuUI/WoodMenu
+@onready var stoneMenu = $BuildMenuUI/StoneMenu
+@onready var ironMenu = $BuildMenuUI/IronMenu
+@onready var exitBuild = $BuildMenuUI/ExitBuild
 
 var numDaysPassed = 1
 var randX
@@ -20,23 +24,15 @@ var ironPress = false
 func _ready():
 	generateResources(1200)
 	$dayPhaseTimer.start()
+	#day_music.play()
 	day_music.play()
 	
 	buildMap.close()
+	exitBuild.close()
+	woodMenu.close()
+	stoneMenu.close()
+	ironMenu.close()
 	Global.tilemap = buildMap
-	set_process(false)
-
-func _process(delta):
-	var woodWall = preload("res://interactables/woodWall.tscn").instantiate()
-	var stoneWall = preload("res://interactables/stoneWall.tscn").instantiate()
-	var ironWall = preload("res://interactables/ironWall.tscn").instantiate()
-	
-	if woodPress == true:
-		add_child(woodWall)
-	elif stonePress == true:
-		add_child(stoneWall)
-	elif ironPress == true:
-		add_child(ironWall)
 
 func _on_base_inv_ui_closed():
 	get_tree().paused = false
@@ -145,14 +141,146 @@ func _on_night_phase_timer_timeout():
 	day_music.play()
 
 func _on_wall_type_1_pressed():
-	woodPress = true
+	woodMenu.open()
+	stoneMenu.close()
+	ironMenu.close()
 
 func _on_wall_type_2_pressed():
-	stonePress = true
+	stoneMenu.open()
+	woodMenu.close()
+	ironMenu.close()
 
 func _on_wall_type_3_pressed():
-	ironPress = true
+	ironMenu.open()
+	woodMenu.close()
+	stoneMenu.close()
 
 func _on_build_button_pressed():
-	set_process(true)
 	buildMap.open()
+	exitBuild.open()
+
+func _on_exit_build_pressed():
+	buildMap.close()
+	exitBuild.close()
+	woodMenu.close()
+	stoneMenu.close()
+	ironMenu.close()
+
+func _on_wood_1_pressed():
+	var woodWall = preload("res://interactables/wood wall/wood_wall.tscn").instantiate()
+	add_child(woodWall)
+
+
+func _on_wood_2_pressed():
+	var woodWall = preload("res://interactables/wood wall/wood_wall_2.tscn").instantiate()
+	add_child(woodWall)
+
+
+func _on_wood_3_pressed():
+	var woodWall = preload("res://interactables/wood wall/wood_wall_3.tscn").instantiate()
+	add_child(woodWall)
+
+
+func _on_wood_4_pressed():
+	var woodWall = preload("res://interactables/wood wall/wood_wall_4.tscn").instantiate()
+	add_child(woodWall)
+
+
+func _on_wood_6_pressed():
+	var woodWall = preload("res://interactables/wood wall/wood_wall_6.tscn").instantiate()
+	add_child(woodWall)
+
+
+func _on_wood_7_pressed():
+	var woodWall = preload("res://interactables/wood wall/wood_wall_7.tscn").instantiate()
+	add_child(woodWall)
+
+
+func _on_wood_8_pressed():
+	var woodWall = preload("res://interactables/wood wall/wood_wall_8.tscn").instantiate()
+	add_child(woodWall)
+
+
+func _on_wood_9_pressed():
+	var woodWall = preload("res://interactables/wood wall/wood_wall_9.tscn").instantiate()
+	add_child(woodWall)
+
+
+func _on_stone_1_pressed():
+	var stoneWall = preload("res://interactables/stone wall/stone_wall.tscn").instantiate()
+	add_child(stoneWall)
+
+
+func _on_stone_2_pressed():
+	var stoneWall = preload("res://interactables/stone wall/stone_wall_2.tscn").instantiate()
+	add_child(stoneWall)
+
+
+func _on_stone_3_pressed():
+	var stoneWall = preload("res://interactables/stone wall/stone_wall_3.tscn").instantiate()
+	add_child(stoneWall)
+
+
+func _on_stone_4_pressed():
+	var stoneWall = preload("res://interactables/stone wall/stone_wall_4.tscn").instantiate()
+	add_child(stoneWall)
+
+
+func _on_stone_6_pressed():
+	var stoneWall = preload("res://interactables/stone wall/stone_wall_6.tscn").instantiate()
+	add_child(stoneWall)
+
+
+func _on_stone_7_pressed():
+	var stoneWall = preload("res://interactables/stone wall/stone_wall_7.tscn").instantiate()
+	add_child(stoneWall)
+
+
+func _on_stone_8_pressed():
+	var stoneWall = preload("res://interactables/stone wall/stone_wall_8.tscn").instantiate()
+	add_child(stoneWall)
+
+
+func _on_stone_9_pressed():
+	var stoneWall = preload("res://interactables/stone wall/stone_wall_9.tscn").instantiate()
+	add_child(stoneWall)
+
+
+func _on_iron_1_pressed():
+	var ironWall = preload("res://interactables/iron wall/iron_wall.tscn").instantiate()
+	add_child(ironWall)
+
+
+func _on_iron_2_pressed():
+	var ironWall = preload("res://interactables/iron wall/iron_wall_2.tscn").instantiate()
+	add_child(ironWall)
+
+
+func _on_iron_3_pressed():
+	var ironWall = preload("res://interactables/iron wall/iron_wall_3.tscn").instantiate()
+	add_child(ironWall)
+
+
+func _on_iron_4_pressed():
+	var ironWall = preload("res://interactables/iron wall/iron_wall_4.tscn").instantiate()
+	add_child(ironWall)
+
+
+func _on_iron_6_pressed():
+	var ironWall = preload("res://interactables/iron wall/iron_wall_6.tscn").instantiate()
+	add_child(ironWall)
+
+
+func _on_iron_7_pressed():
+	var ironWall = preload("res://interactables/iron wall/iron_wall_7.tscn").instantiate()
+	add_child(ironWall)
+
+
+func _on_iron_8_pressed():
+	var ironWall = preload("res://interactables/iron wall/iron_wall_8.tscn").instantiate()
+	add_child(ironWall)
+
+
+func _on_iron_9_pressed():
+	var ironWall = preload("res://interactables/iron wall/iron_wall_9.tscn").instantiate()
+	add_child(ironWall)

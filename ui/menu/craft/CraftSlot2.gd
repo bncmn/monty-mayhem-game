@@ -12,7 +12,6 @@ func _process(delta):
 		pickaxeText.texture = load(pickaxeBroken)
 		pickaxeText.expand_mode = 1
 		pickaxeText.size = Vector2(80, 80)
-		PlayerInventory.printToConsole()
 
 func _on_axe_pressed():
 	pickaxePress = false

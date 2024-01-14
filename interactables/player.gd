@@ -17,16 +17,24 @@ func update_health_bar():
 	$"../PlayerUI/HealthBar".value = health
 
 func _input(event):
-	if event.is_action_pressed("mouseLeft") and !Global.mouseOverResource:
+	if event.is_action_pressed("mouseLeft") and !Global.mouseOverResource and !$"../BuildMap".isOpen:
 		targetLocation = get_global_mouse_position()
 
 func _physics_process(delta):
+	#print("The current status of velocity is:", @GlobalScope.is_zero_approx())
+	pos = global_position
+	print("Global position is: ", pos)
+	
 	pos = global_position
 	if pos != old_pos:
 		moving = true;
 	else:
 		moving = false;
+	#create old pos from pos
 	old_pos = pos;
+	
+	if moving == false:
+		old_pos = pos;
 	
 	if moving:
 		print("old vs new pos: ", old_pos, pos)
@@ -36,6 +44,8 @@ func _physics_process(delta):
 		animated_sprite.stop()
 	elif not animated_sprite.is_playing():
 		animated_sprite.play("idle")
+	else:
+		animated_sprite.play("walk")
 		
 	enemyAttack()
 	velocity = global_position.direction_to(targetLocation) * moveSpeed

@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://d23vafa3don33"]
+
+[ext_resource type="Texture2D" uid="uid://dosrkve1135e3" path="res://assets/terrain/wall_tiles/iron_bottom_left_corner.png" id="1_2h3ar"]
+[ext_resource type="Script" path="res://interactables/sprite_2d.gd" id="1_wewde"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xpldt"]
+size = Vector2(44, 28)
+
+[node name="Sprite2D" type="Sprite2D"]
+position = Vector2(0, 64)
+texture = ExtResource("1_2h3ar")
+script = ExtResource("1_wewde")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(7, 2)
+shape = SubResource("RectangleShape2D_xpldt")

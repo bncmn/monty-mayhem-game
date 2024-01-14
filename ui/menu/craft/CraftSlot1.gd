@@ -12,7 +12,6 @@ func _process(delta):
 		axeText.texture = load(axeBroken)
 		axeText.expand_mode = 1
 		axeText.size = Vector2(80, 80)
-		PlayerInventory.printToConsole()
 
 func _on_axe_pressed():
 	axePress = true
