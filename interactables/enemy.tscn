@@ -330,8 +330,8 @@ script = ExtResource("1_nbn3f")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(9, -10)
 sprite_frames = SubResource("SpriteFrames_8s6ra")
-animation = &"beetle_attack"
-frame_progress = 0.575839
+animation = &"beetle_walk"
+autoplay = "beetle_idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -10)

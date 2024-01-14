@@ -30,6 +30,7 @@ window/size/viewport_height=1080
 window/size/mode=2
 window/stretch/mode="viewport"
 window/vsync/vsync_mode=0
+mouse_cursor/custom_image="res://assets/inventory/hand_cursor_default.png"
 
 [input]
 

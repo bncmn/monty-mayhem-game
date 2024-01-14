@@ -6,7 +6,8 @@ var health = 100
 var playerIsAlive = true
 
 @export var moveSpeed : float = 300
-@onready var animations = $AnimationPlayer
+@onready var sprite_2d = $Sprite2D
+@onready var animated_sprite = $AnimatedSprite2D
 @onready var hurt = $hurt
 var targetLocation = global_position
 
@@ -18,6 +19,11 @@ func _input(event):
 		targetLocation = get_global_mouse_position()
 
 func _physics_process(delta):
+	if velocity.length() > 0:
+		animated_sprite.play("walk")
+	else:
+		animated_sprite.play("idle")
+		
 	enemyAttack()
 	velocity = global_position.direction_to(targetLocation) * moveSpeed
 	if global_position.distance_to(targetLocation) > 10 and !Global.mouseOverEnemy:
@@ -29,6 +35,7 @@ func _physics_process(delta):
 		print("DEBUG: Player is dead!")
 		$"../PlayerUI/GameOver".visible = true
 		self.queue_free()
+		animated_sprite.play("death")
 
 func player():
 	pass
@@ -36,6 +43,7 @@ func player():
 func _on_player_hitbox_body_entered(body):
 	if body.has_method("enemy"):
 		enemyInAttackRange = true
+		animated_sprite.play("attack")
 
 func _on_player_hitbox_body_exited(body):
 	if body.has_method("enemy"):
@@ -51,6 +59,7 @@ func enemyAttack():
 		await get_tree().create_timer(0.2).timeout
 		$AnimatedSprite2D.modulate = Color.WHITE
 		$attackCooldown.start()
+		animated_sprite.play("hurt")
 		print("DEBUG: Player took damage! ", health)
 
 func _on_attack_cooldown_timeout():
