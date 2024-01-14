@@ -23,9 +23,6 @@ func _input(event):
 func _physics_process(delta):
 	#print("The current status of velocity is:", @GlobalScope.is_zero_approx())
 	pos = global_position
-	print("Global position is: ", pos)
-	
-	pos = global_position
 	if pos != old_pos:
 		moving = true;
 	else:
