@@ -21,7 +21,7 @@ Project Manager:
 * [Mai Nguyen](https://maibn.art/)
 
 Composer & Sound Designer: 
-* Hannah Tamblyn
+* [Hannah Tamblyn](https://www.instagram.com/hannahtamblyn/)
 
 Game Art: 
 * [James Huang](https://www.instagram.com/jamesexcalibur/)
