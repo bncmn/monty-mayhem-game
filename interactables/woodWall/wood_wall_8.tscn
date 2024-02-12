@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://dgq05uwabj8to"]
+
+[ext_resource type="Script" path="res://interactables/woodWall/woodWall8.gd" id="1_8re6o"]
+[ext_resource type="Script" path="res://interactables/woodWall/wood2Static.gd" id="2_qorfm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_burao"]
+size = Vector2(77, 58)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rxorq"]
+radius = 177.37
+
+[node name="woodWall8" type="Sprite2D"]
+script = ExtResource("1_8re6o")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+script = ExtResource("2_qorfm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1.5, 12)
+shape = SubResource("RectangleShape2D_burao")
+disabled = true
+
+[node name="attackCooldown" type="Timer" parent="."]
+
+[node name="wallHitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wallHitbox"]
+shape = SubResource("CircleShape2D_rxorq")
+
+[connection signal="timeout" from="attackCooldown" to="StaticBody2D" method="_on_attack_cooldown_timeout"]
+[connection signal="body_entered" from="wallHitbox" to="StaticBody2D" method="_on_wall_hitbox_body_entered"]
+[connection signal="body_exited" from="wallHitbox" to="StaticBody2D" method="_on_wall_hitbox_body_exited"]

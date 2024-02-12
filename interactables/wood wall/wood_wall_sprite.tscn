@@ -1,8 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://ndn6xrr5cu3s"]
-
-[ext_resource type="Texture2D" uid="uid://c8anpstk0u30q" path="res://assets/terrain/wall_tiles/wood_horizontal_side.png" id="1_fj0xi"]
-[ext_resource type="Script" path="res://interactables/wood wall/woodWallSprite.gd" id="2_vfc8o"]
-
-[node name="woodWallSprite" type="Sprite2D"]
-texture = ExtResource("1_fj0xi")
-script = ExtResource("2_vfc8o")

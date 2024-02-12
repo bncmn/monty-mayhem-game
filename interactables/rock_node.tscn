@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://d1dq4grn1ug7p"]
 
 [ext_resource type="PackedScene" uid="uid://qhmpl601pxhk" path="res://interactables/resourceNode.tscn" id="1_w1w6i"]
-[ext_resource type="Script" path="res://interactables/rock_node.gd" id="2_ho2dv"]
+[ext_resource type="Script" path="res://interactables/scripts/rock_node.gd" id="2_ho2dv"]
 [ext_resource type="Texture2D" uid="uid://bym7mul4l6yay" path="res://assets/resources/rock.png" id="3_8t5tt"]
 [ext_resource type="AudioStream" uid="uid://bosix7ffapaal" path="res://assets/sound/BUILDING.mp3" id="4_bnbtg"]
 

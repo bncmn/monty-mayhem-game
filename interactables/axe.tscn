@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://baa6tpbjgbiju"]
 
-[ext_resource type="Script" path="res://interactables/axe.gd" id="1_n7de3"]
+[ext_resource type="Script" path="res://interactables/scripts/axe.gd" id="1_n7de3"]
 [ext_resource type="Texture2D" uid="uid://7afqmapkb65e" path="res://assets/placeholders/wood axe_placeholder.png" id="2_fmcjc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2nb1i"]

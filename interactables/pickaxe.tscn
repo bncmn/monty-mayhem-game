@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bd54106u2btey"]
 
-[ext_resource type="Script" path="res://interactables/pickaxe.gd" id="1_gsn31"]
+[ext_resource type="Script" path="res://interactables/scripts/pickaxe.gd" id="1_gsn31"]
 [ext_resource type="Texture2D" uid="uid://ehf13dta2wgg" path="res://assets/placeholders/Pickaxe_placeholder.png" id="2_xu1bu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2nb1i"]

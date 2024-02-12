@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://qu62atcx28if"]
 
 [ext_resource type="Texture2D" uid="uid://b710lf8tx5g58" path="res://assets/placeholders/enemy_placeholder.png" id="1_iw66c"]
-[ext_resource type="Script" path="res://interactables/enemy.gd" id="1_nbn3f"]
+[ext_resource type="Script" path="res://interactables/scripts/enemy.gd" id="1_nbn3f"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nykio"]
 radius = 23.0217

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dkfuogdndq437"]
 
-[ext_resource type="Script" path="res://interactables/genericWall.gd" id="1_ogffa"]
+[ext_resource type="Script" path="res://interactables/scripts/genericWall.gd" id="1_ogffa"]
 [ext_resource type="Texture2D" uid="uid://cs05fis302t8c" path="res://assets/placeholders/icon.svg" id="2_4kwwp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v7mq1"]

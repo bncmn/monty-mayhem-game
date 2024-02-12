@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dbuyrbtg8i3ul"]
 
-[ext_resource type="Script" path="res://interactables/sword.gd" id="1_binft"]
+[ext_resource type="Script" path="res://interactables/scripts/sword.gd" id="1_binft"]
 [ext_resource type="Texture2D" uid="uid://d13ucmx0v1jxq" path="res://assets/equipment/SwordDestroyer.png" id="2_27i2j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f6d1x"]

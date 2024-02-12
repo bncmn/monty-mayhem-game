@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://1m26qivmj1w0"
+path="res://.godot/imported/WIN SONG.mp3-b75896d21452ab4b0b4c97a2728be420.mp3str"
+
+[deps]
+
+source_file="res://assets/sound/WIN SONG.mp3"
+dest_files=["res://.godot/imported/WIN SONG.mp3-b75896d21452ab4b0b4c97a2728be420.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

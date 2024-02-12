@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://wkr4cxtlcin7"
+path="res://.godot/imported/_START GAME_ button (UI).mp3-34e68332e0a12d1a06ecfb6c78358267.mp3str"
+
+[deps]
+
+source_file="res://assets/sound/_START GAME_ button (UI).mp3"
+dest_files=["res://.godot/imported/_START GAME_ button (UI).mp3-34e68332e0a12d1a06ecfb6c78358267.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
